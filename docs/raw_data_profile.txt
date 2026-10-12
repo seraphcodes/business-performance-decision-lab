@@ -1,0 +1,49 @@
+Reading the Excel file (this can take 1-3 minutes)...
+Sheet 'Year 2009-2010': 525,461 rows, 8 columns
+Sheet 'Year 2010-2011': 541,910 rows, 8 columns
+
+Columns and types as pandas read them:
+Invoice                object
+StockCode              object
+Description            object
+Quantity                int64
+InvoiceDate    datetime64[us]
+Price                 float64
+Customer ID           float64
+Country                   str
+
+Total rows: 1,067,371
+Date range: 2009-12-01 07:45:00  ->  2011-12-09 12:50:00
+
+Missing values per column:
+InvoiceNo           0
+StockCode           0
+Description      4382
+Quantity            0
+InvoiceDate         0
+UnitPrice           0
+CustomerID     243007
+Country             0
+Rows without CustomerID: 22.8%
+
+Cancellation rows (InvoiceNo starts with C): 19,494
+Rows with Quantity <= 0: 22,950
+Rows with UnitPrice <= 0: 6,207
+Exact duplicate rows: 34,335
+
+Rows with non-product-looking StockCode: 6,093
+Most common of those codes:
+StockCode
+POST            2122
+DOT             1446
+M               1421
+C2               282
+D                177
+S                104
+BANK CHARGES     102
+ADJUST            67
+AMAZONFEE         43
+DCGS0058          31
+
+Revenue check (Quantity x UnitPrice), all rows including cancellations:
+19,287,250.57
