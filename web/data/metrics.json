@@ -1,0 +1,2126 @@
+{
+ "meta": {
+  "dataset": "Online Retail II, UCI Machine Learning Repository (Chen, 2012), CC BY 4.0",
+  "doi": "https://doi.org/10.24432/C5CG6D",
+  "currency": "GBP",
+  "built_at": "2026-10-28T13:53:30",
+  "source_file": "online_retail_II.xlsx",
+  "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
+  "reconciliation_checks_passed": "18 of 18",
+  "export_checks": [
+   {
+    "name": "monthly gross",
+    "passed": true,
+    "detail": "19,700,954.46"
+   },
+   {
+    "name": "monthly cancellations",
+    "passed": true,
+    "detail": "-719,692.94"
+   },
+   {
+    "name": "monthly net",
+    "passed": true,
+    "detail": "18,981,261.52"
+   },
+   {
+    "name": "countries net",
+    "passed": true,
+    "detail": "18,981,261.52"
+   },
+   {
+    "name": "products net",
+    "passed": true,
+    "detail": "18,981,261.52"
+   }
+  ]
+ },
+ "kpis": {
+  "gross_product_sales": 19700954.457,
+  "cancellation_value": -719692.94,
+  "net_product_revenue": 18981261.517,
+  "cancellation_rate_pct": 3.6531,
+  "sales_invoices": 39516.0,
+  "credit_notes": 7406.0,
+  "known_customers": 5852.0,
+  "avg_order_value": 498.5564,
+  "known_customer_share_pct": 86.9244
+ },
+ "monthly": [
+  {
+   "year_month": "2009-12",
+   "is_partial_month": 0,
+   "gross_product_sales": 801102.97,
+   "cancellation_value": -19561.28,
+   "net_product_revenue": 781541.69,
+   "units_sold": 426738,
+   "sales_invoices": 1666,
+   "credit_notes": 379,
+   "known_customers": 951,
+   "cancellation_rate_pct": 2.44,
+   "avg_order_value": 480.85
+  },
+  {
+   "year_month": "2010-01",
+   "is_partial_month": 0,
+   "gross_product_sales": 613850.81,
+   "cancellation_value": -7465.63,
+   "net_product_revenue": 606385.18,
+   "units_sold": 391267,
+   "sales_invoices": 1049,
+   "credit_notes": 241,
+   "known_customers": 701,
+   "cancellation_rate_pct": 1.22,
+   "avg_order_value": 585.18
+  },
+  {
+   "year_month": "2010-02",
+   "is_partial_month": 0,
+   "gross_product_sales": 539744.69,
+   "cancellation_value": -12584.39,
+   "net_product_revenue": 527160.3,
+   "units_sold": 382528,
+   "sales_invoices": 1189,
+   "credit_notes": 219,
+   "known_customers": 771,
+   "cancellation_rate_pct": 2.33,
+   "avg_order_value": 453.95
+  },
+  {
+   "year_month": "2010-03",
+   "is_partial_month": 0,
+   "gross_product_sales": 764333.85,
+   "cancellation_value": -9657.2,
+   "net_product_revenue": 754676.65,
+   "units_sold": 526362,
+   "sales_invoices": 1647,
+   "credit_notes": 351,
+   "known_customers": 1051,
+   "cancellation_rate_pct": 1.26,
+   "avg_order_value": 464.08
+  },
+  {
+   "year_month": "2010-04",
+   "is_partial_month": 0,
+   "gross_product_sales": 648993.82,
+   "cancellation_value": -10025.26,
+   "net_product_revenue": 638968.56,
+   "units_sold": 367559,
+   "sales_invoices": 1435,
+   "credit_notes": 263,
+   "known_customers": 939,
+   "cancellation_rate_pct": 1.54,
+   "avg_order_value": 452.26
+  },
+  {
+   "year_month": "2010-05",
+   "is_partial_month": 0,
+   "gross_product_sales": 645645.39,
+   "cancellation_value": -37294.14,
+   "net_product_revenue": 608351.25,
+   "units_sold": 396776,
+   "sales_invoices": 1484,
+   "credit_notes": 387,
+   "known_customers": 965,
+   "cancellation_rate_pct": 5.78,
+   "avg_order_value": 435.07
+  },
+  {
+   "year_month": "2010-06",
+   "is_partial_month": 0,
+   "gross_product_sales": 699316.02,
+   "cancellation_value": -26380.61,
+   "net_product_revenue": 672935.41,
+   "units_sold": 408054,
+   "sales_invoices": 1612,
+   "credit_notes": 319,
+   "known_customers": 1034,
+   "cancellation_rate_pct": 3.77,
+   "avg_order_value": 433.82
+  },
+  {
+   "year_month": "2010-07",
+   "is_partial_month": 0,
+   "gross_product_sales": 634896.99,
+   "cancellation_value": -17132.73,
+   "net_product_revenue": 617764.26,
+   "units_sold": 338581,
+   "sales_invoices": 1507,
+   "credit_notes": 314,
+   "known_customers": 924,
+   "cancellation_rate_pct": 2.7,
+   "avg_order_value": 421.3
+  },
+  {
+   "year_month": "2010-08",
+   "is_partial_month": 0,
+   "gross_product_sales": 676060.72,
+   "cancellation_value": -12418.65,
+   "net_product_revenue": 663642.07,
+   "units_sold": 472971,
+   "sales_invoices": 1402,
+   "credit_notes": 242,
+   "known_customers": 910,
+   "cancellation_rate_pct": 1.84,
+   "avg_order_value": 482.21
+  },
+  {
+   "year_month": "2010-09",
+   "is_partial_month": 0,
+   "gross_product_sales": 871878.34,
+   "cancellation_value": -27777.97,
+   "net_product_revenue": 844100.37,
+   "units_sold": 584855,
+   "sales_invoices": 1789,
+   "credit_notes": 319,
+   "known_customers": 1136,
+   "cancellation_rate_pct": 3.19,
+   "avg_order_value": 487.36
+  },
+  {
+   "year_month": "2010-10",
+   "is_partial_month": 0,
+   "gross_product_sales": 1098017.67,
+   "cancellation_value": -25550.02,
+   "net_product_revenue": 1072467.65,
+   "units_sold": 621610,
+   "sales_invoices": 2244,
+   "credit_notes": 406,
+   "known_customers": 1492,
+   "cancellation_rate_pct": 2.33,
+   "avg_order_value": 489.31
+  },
+  {
+   "year_month": "2010-11",
+   "is_partial_month": 0,
+   "gross_product_sales": 1435680.12,
+   "cancellation_value": -35120.88,
+   "net_product_revenue": 1400559.24,
+   "units_sold": 727553,
+   "sales_invoices": 2719,
+   "credit_notes": 544,
+   "known_customers": 1606,
+   "cancellation_rate_pct": 2.45,
+   "avg_order_value": 528.02
+  },
+  {
+   "year_month": "2010-12",
+   "is_partial_month": 0,
+   "gross_product_sales": 777931.77,
+   "cancellation_value": -17607.86,
+   "net_product_revenue": 760323.91,
+   "units_sold": 358749,
+   "sales_invoices": 1550,
+   "credit_notes": 301,
+   "known_customers": 884,
+   "cancellation_rate_pct": 2.26,
+   "avg_order_value": 501.89
+  },
+  {
+   "year_month": "2011-01",
+   "is_partial_month": 0,
+   "gross_product_sales": 671933.19,
+   "cancellation_value": -91526.3,
+   "net_product_revenue": 580406.89,
+   "units_sold": 387424,
+   "sales_invoices": 1081,
+   "credit_notes": 247,
+   "known_customers": 739,
+   "cancellation_rate_pct": 13.62,
+   "avg_order_value": 621.58
+  },
+  {
+   "year_month": "2011-02",
+   "is_partial_month": 0,
+   "gross_product_sales": 508886.2,
+   "cancellation_value": -8375.87,
+   "net_product_revenue": 500510.33,
+   "units_sold": 283248,
+   "sales_invoices": 1093,
+   "credit_notes": 191,
+   "known_customers": 757,
+   "cancellation_rate_pct": 1.65,
+   "avg_order_value": 465.59
+  },
+  {
+   "year_month": "2011-03",
+   "is_partial_month": 0,
+   "gross_product_sales": 691257.61,
+   "cancellation_value": -10675.3,
+   "net_product_revenue": 680582.31,
+   "units_sold": 377109,
+   "sales_invoices": 1440,
+   "credit_notes": 281,
+   "known_customers": 973,
+   "cancellation_rate_pct": 1.54,
+   "avg_order_value": 480.04
+  },
+  {
+   "year_month": "2011-04",
+   "is_partial_month": 0,
+   "gross_product_sales": 516218.12,
+   "cancellation_value": -33316.91,
+   "net_product_revenue": 482901.21,
+   "units_sold": 308513,
+   "sales_invoices": 1235,
+   "credit_notes": 220,
+   "known_customers": 853,
+   "cancellation_rate_pct": 6.45,
+   "avg_order_value": 417.99
+  },
+  {
+   "year_month": "2011-05",
+   "is_partial_month": 0,
+   "gross_product_sales": 741192.41,
+   "cancellation_value": -8948.23,
+   "net_product_revenue": 732244.18,
+   "units_sold": 395390,
+   "sales_invoices": 1668,
+   "credit_notes": 267,
+   "known_customers": 1054,
+   "cancellation_rate_pct": 1.21,
+   "avg_order_value": 444.36
+  },
+  {
+   "year_month": "2011-06",
+   "is_partial_month": 0,
+   "gross_product_sales": 738751.87,
+   "cancellation_value": -13760.84,
+   "net_product_revenue": 724991.03,
+   "units_sold": 388826,
+   "sales_invoices": 1525,
+   "credit_notes": 299,
+   "known_customers": 990,
+   "cancellation_rate_pct": 1.86,
+   "avg_order_value": 484.43
+  },
+  {
+   "year_month": "2011-07",
+   "is_partial_month": 0,
+   "gross_product_sales": 689364.41,
+   "cancellation_value": -11409.21,
+   "net_product_revenue": 677955.2,
+   "units_sold": 401357,
+   "sales_invoices": 1452,
+   "credit_notes": 236,
+   "known_customers": 946,
+   "cancellation_rate_pct": 1.66,
+   "avg_order_value": 474.77
+  },
+  {
+   "year_month": "2011-08",
+   "is_partial_month": 0,
+   "gross_product_sales": 725513.5,
+   "cancellation_value": -22929.52,
+   "net_product_revenue": 702583.98,
+   "units_sold": 421445,
+   "sales_invoices": 1339,
+   "credit_notes": 240,
+   "known_customers": 933,
+   "cancellation_rate_pct": 3.16,
+   "avg_order_value": 541.83
+  },
+  {
+   "year_month": "2011-09",
+   "is_partial_month": 0,
+   "gross_product_sales": 1030475.36,
+   "cancellation_value": -17044.68,
+   "net_product_revenue": 1013430.68,
+   "units_sold": 569948,
+   "sales_invoices": 1818,
+   "credit_notes": 299,
+   "known_customers": 1259,
+   "cancellation_rate_pct": 1.65,
+   "avg_order_value": 566.82
+  },
+  {
+   "year_month": "2011-10",
+   "is_partial_month": 0,
+   "gross_product_sales": 1106669.82,
+   "cancellation_value": -43992.16,
+   "net_product_revenue": 1062677.66,
+   "units_sold": 621729,
+   "sales_invoices": 2005,
+   "credit_notes": 308,
+   "known_customers": 1361,
+   "cancellation_rate_pct": 3.98,
+   "avg_order_value": 551.96
+  },
+  {
+   "year_month": "2011-11",
+   "is_partial_month": 0,
+   "gross_product_sales": 1457745.53,
+   "cancellation_value": -25010.54,
+   "net_product_revenue": 1432734.99,
+   "units_sold": 750082,
+   "sales_invoices": 2751,
+   "credit_notes": 396,
+   "known_customers": 1660,
+   "cancellation_rate_pct": 1.72,
+   "avg_order_value": 529.9
+  },
+  {
+   "year_month": "2011-12",
+   "is_partial_month": 1,
+   "gross_product_sales": 615493.27,
+   "cancellation_value": -174126.76,
+   "net_product_revenue": 441366.51,
+   "units_sold": 313283,
+   "sales_invoices": 816,
+   "credit_notes": 137,
+   "known_customers": 614,
+   "cancellation_rate_pct": 28.29,
+   "avg_order_value": 754.28
+  }
+ ],
+ "services": [
+  {
+   "year_month": "2009-12",
+   "service_type": "discount",
+   "line_count": 7,
+   "value": -110.5
+  },
+  {
+   "year_month": "2009-12",
+   "service_type": "fee",
+   "line_count": 3,
+   "value": -848.43
+  },
+  {
+   "year_month": "2009-12",
+   "service_type": "gift_voucher",
+   "line_count": 8,
+   "value": 217.37
+  },
+  {
+   "year_month": "2009-12",
+   "service_type": "manual",
+   "line_count": 31,
+   "value": -2848.51
+  },
+  {
+   "year_month": "2009-12",
+   "service_type": "postage_carriage",
+   "line_count": 114,
+   "value": 21781.99
+  },
+  {
+   "year_month": "2009-12",
+   "service_type": "test",
+   "line_count": 6,
+   "value": 113.5
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "adjustment",
+   "line_count": 64,
+   "value": 7566.29
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "discount",
+   "line_count": 6,
+   "value": -216.78
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "fee",
+   "line_count": 1,
+   "value": -767.99
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "gift_voucher",
+   "line_count": 10,
+   "value": -1.48
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "manual",
+   "line_count": 34,
+   "value": -2674.19
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "postage_carriage",
+   "line_count": 92,
+   "value": 13651.86
+  },
+  {
+   "year_month": "2010-01",
+   "service_type": "test",
+   "line_count": 4,
+   "value": 90.0
+  },
+  {
+   "year_month": "2010-02",
+   "service_type": "discount",
+   "line_count": 5,
+   "value": -1509.7
+  },
+  {
+   "year_month": "2010-02",
+   "service_type": "fee",
+   "line_count": 2,
+   "value": -452.54
+  },
+  {
+   "year_month": "2010-02",
+   "service_type": "gift_voucher",
+   "line_count": 1,
+   "value": 17.02
+  },
+  {
+   "year_month": "2010-02",
+   "service_type": "manual",
+   "line_count": 38,
+   "value": -1396.45
+  },
+  {
+   "year_month": "2010-02",
+   "service_type": "postage_carriage",
+   "line_count": 113,
+   "value": 9272.8
+  },
+  {
+   "year_month": "2010-02",
+   "service_type": "test",
+   "line_count": 2,
+   "value": 0.0
+  },
+  {
+   "year_month": "2010-03",
+   "service_type": "discount",
+   "line_count": 5,
+   "value": -92.77
+  },
+  {
+   "year_month": "2010-03",
+   "service_type": "fee",
+   "line_count": 7,
+   "value": -1008.05
+  },
+  {
+   "year_month": "2010-03",
+   "service_type": "gift_voucher",
+   "line_count": 3,
+   "value": 42.55
+  },
+  {
+   "year_month": "2010-03",
+   "service_type": "manual",
+   "line_count": 132,
+   "value": -656.53
+  },
+  {
+   "year_month": "2010-03",
+   "service_type": "postage_carriage",
+   "line_count": 155,
+   "value": 14122.07
+  },
+  {
+   "year_month": "2010-03",
+   "service_type": "sample",
+   "line_count": 6,
+   "value": -1235.16
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "adjustment",
+   "line_count": 1,
+   "value": -53594.36
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "discount",
+   "line_count": 4,
+   "value": -196.48
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "fee",
+   "line_count": 11,
+   "value": -1693.06
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "gift_voucher",
+   "line_count": 6,
+   "value": 110.63
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "manual",
+   "line_count": 87,
+   "value": -1682.01
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "postage_carriage",
+   "line_count": 125,
+   "value": 8825.86
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "sample",
+   "line_count": 14,
+   "value": -181.21
+  },
+  {
+   "year_month": "2010-04",
+   "service_type": "test",
+   "line_count": 1,
+   "value": 22.5
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "adjustment",
+   "line_count": 3,
+   "value": -731.05
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "discount",
+   "line_count": 2,
+   "value": 53.99
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "fee",
+   "line_count": 5,
+   "value": -545.28
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "gift_voucher",
+   "line_count": 4,
+   "value": 93.61
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "manual",
+   "line_count": 47,
+   "value": -368.62
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "postage_carriage",
+   "line_count": 122,
+   "value": 8752.37
+  },
+  {
+   "year_month": "2010-05",
+   "service_type": "sample",
+   "line_count": 3,
+   "value": -283.44
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "adjustment",
+   "line_count": 3,
+   "value": 731.05
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "discount",
+   "line_count": 9,
+   "value": -340.1
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "fee",
+   "line_count": 9,
+   "value": -2096.01
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "gift_voucher",
+   "line_count": 4,
+   "value": 68.08
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "manual",
+   "line_count": 83,
+   "value": 71.35
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "postage_carriage",
+   "line_count": 136,
+   "value": 8443.48
+  },
+  {
+   "year_month": "2010-06",
+   "service_type": "sample",
+   "line_count": 2,
+   "value": -26.65
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "adjustment",
+   "line_count": 1,
+   "value": -44031.79
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "discount",
+   "line_count": 7,
+   "value": -232.15
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "fee",
+   "line_count": 6,
+   "value": -559.66
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "gift_voucher",
+   "line_count": 4,
+   "value": 85.1
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "manual",
+   "line_count": 46,
+   "value": -7762.52
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "postage_carriage",
+   "line_count": 143,
+   "value": 10150.84
+  },
+  {
+   "year_month": "2010-07",
+   "service_type": "sample",
+   "line_count": 5,
+   "value": -177.72
+  },
+  {
+   "year_month": "2010-08",
+   "service_type": "discount",
+   "line_count": 10,
+   "value": -758.46
+  },
+  {
+   "year_month": "2010-08",
+   "service_type": "fee",
+   "line_count": 5,
+   "value": -19268.38
+  },
+  {
+   "year_month": "2010-08",
+   "service_type": "gift_voucher",
+   "line_count": 17,
+   "value": 155.17
+  },
+  {
+   "year_month": "2010-08",
+   "service_type": "manual",
+   "line_count": 43,
+   "value": 3692.58
+  },
+  {
+   "year_month": "2010-08",
+   "service_type": "postage_carriage",
+   "line_count": 124,
+   "value": 9631.3
+  },
+  {
+   "year_month": "2010-08",
+   "service_type": "sample",
+   "line_count": 1,
+   "value": -317.94
+  },
+  {
+   "year_month": "2010-09",
+   "service_type": "discount",
+   "line_count": 8,
+   "value": -407.91
+  },
+  {
+   "year_month": "2010-09",
+   "service_type": "fee",
+   "line_count": 6,
+   "value": -361.81
+  },
+  {
+   "year_month": "2010-09",
+   "service_type": "gift_voucher",
+   "line_count": 2,
+   "value": 34.04
+  },
+  {
+   "year_month": "2010-09",
+   "service_type": "manual",
+   "line_count": 99,
+   "value": -174.58
+  },
+  {
+   "year_month": "2010-09",
+   "service_type": "postage_carriage",
+   "line_count": 159,
+   "value": 10460.32
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "adjustment",
+   "line_count": 1,
+   "value": -38925.87
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "discount",
+   "line_count": 13,
+   "value": -1646.41
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "fee",
+   "line_count": 5,
+   "value": -720.4
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "gift_voucher",
+   "line_count": 4,
+   "value": 127.65
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "manual",
+   "line_count": 114,
+   "value": 475.07
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "postage_carriage",
+   "line_count": 185,
+   "value": 14142.5
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "sample",
+   "line_count": 8,
+   "value": -729.34
+  },
+  {
+   "year_month": "2010-10",
+   "service_type": "test",
+   "line_count": 4,
+   "value": -22.5
+  },
+  {
+   "year_month": "2010-11",
+   "service_type": "discount",
+   "line_count": 20,
+   "value": -1726.14
+  },
+  {
+   "year_month": "2010-11",
+   "service_type": "fee",
+   "line_count": 5,
+   "value": 15.0
+  },
+  {
+   "year_month": "2010-11",
+   "service_type": "gift_voucher",
+   "line_count": 3,
+   "value": 51.06
+  },
+  {
+   "year_month": "2010-11",
+   "service_type": "manual",
+   "line_count": 77,
+   "value": -939.52
+  },
+  {
+   "year_month": "2010-11",
+   "service_type": "postage_carriage",
+   "line_count": 209,
+   "value": 24695.0
+  },
+  {
+   "year_month": "2010-12",
+   "service_type": "discount",
+   "line_count": 8,
+   "value": -693.98
+  },
+  {
+   "year_month": "2010-12",
+   "service_type": "fee",
+   "line_count": 10,
+   "value": -40290.38
+  },
+  {
+   "year_month": "2010-12",
+   "service_type": "gift_voucher",
+   "line_count": 2,
+   "value": 76.59
+  },
+  {
+   "year_month": "2010-12",
+   "service_type": "manual",
+   "line_count": 40,
+   "value": -51.36
+  },
+  {
+   "year_month": "2010-12",
+   "service_type": "postage_carriage",
+   "line_count": 133,
+   "value": 29657.19
+  },
+  {
+   "year_month": "2010-12",
+   "service_type": "sample",
+   "line_count": 2,
+   "value": -64.95
+  },
+  {
+   "year_month": "2011-01",
+   "service_type": "discount",
+   "line_count": 1,
+   "value": -22.97
+  },
+  {
+   "year_month": "2011-01",
+   "service_type": "fee",
+   "line_count": 4,
+   "value": -34376.88
+  },
+  {
+   "year_month": "2011-01",
+   "service_type": "gift_voucher",
+   "line_count": 3,
+   "value": 59.22
+  },
+  {
+   "year_month": "2011-01",
+   "service_type": "manual",
+   "line_count": 24,
+   "value": -5116.41
+  },
+  {
+   "year_month": "2011-01",
+   "service_type": "postage_carriage",
+   "line_count": 149,
+   "value": 19050.41
+  },
+  {
+   "year_month": "2011-02",
+   "service_type": "discount",
+   "line_count": 4,
+   "value": -284.99
+  },
+  {
+   "year_month": "2011-02",
+   "service_type": "fee",
+   "line_count": 6,
+   "value": -11794.18
+  },
+  {
+   "year_month": "2011-02",
+   "service_type": "gift_voucher",
+   "line_count": 3,
+   "value": 66.67
+  },
+  {
+   "year_month": "2011-02",
+   "service_type": "manual",
+   "line_count": 27,
+   "value": -2934.27
+  },
+  {
+   "year_month": "2011-02",
+   "service_type": "postage_carriage",
+   "line_count": 130,
+   "value": 13317.51
+  },
+  {
+   "year_month": "2011-02",
+   "service_type": "sample",
+   "line_count": 28,
+   "value": -818.42
+  },
+  {
+   "year_month": "2011-03",
+   "service_type": "discount",
+   "line_count": 5,
+   "value": -224.21
+  },
+  {
+   "year_month": "2011-03",
+   "service_type": "fee",
+   "line_count": 6,
+   "value": -11301.69
+  },
+  {
+   "year_month": "2011-03",
+   "service_type": "gift_voucher",
+   "line_count": 1,
+   "value": 8.33
+  },
+  {
+   "year_month": "2011-03",
+   "service_type": "manual",
+   "line_count": 62,
+   "value": -3396.54
+  },
+  {
+   "year_month": "2011-03",
+   "service_type": "postage_carriage",
+   "line_count": 178,
+   "value": 17715.72
+  },
+  {
+   "year_month": "2011-03",
+   "service_type": "sample",
+   "line_count": 2,
+   "value": -116.84
+  },
+  {
+   "year_month": "2011-04",
+   "service_type": "discount",
+   "line_count": 3,
+   "value": -1999.62
+  },
+  {
+   "year_month": "2011-04",
+   "service_type": "fee",
+   "line_count": 2,
+   "value": -460.69
+  },
+  {
+   "year_month": "2011-04",
+   "service_type": "gift_voucher",
+   "line_count": 4,
+   "value": 91.67
+  },
+  {
+   "year_month": "2011-04",
+   "service_type": "manual",
+   "line_count": 43,
+   "value": 1452.79
+  },
+  {
+   "year_month": "2011-04",
+   "service_type": "postage_carriage",
+   "line_count": 114,
+   "value": 11191.76
+  },
+  {
+   "year_month": "2011-04",
+   "service_type": "sample",
+   "line_count": 1,
+   "value": 30.0
+  },
+  {
+   "year_month": "2011-05",
+   "service_type": "discount",
+   "line_count": 7,
+   "value": -94.42
+  },
+  {
+   "year_month": "2011-05",
+   "service_type": "fee",
+   "line_count": 6,
+   "value": -13478.15
+  },
+  {
+   "year_month": "2011-05",
+   "service_type": "gift_voucher",
+   "line_count": 4,
+   "value": 83.33
+  },
+  {
+   "year_month": "2011-05",
+   "service_type": "manual",
+   "line_count": 43,
+   "value": -10578.36
+  },
+  {
+   "year_month": "2011-05",
+   "service_type": "postage_carriage",
+   "line_count": 180,
+   "value": 15576.48
+  },
+  {
+   "year_month": "2011-05",
+   "service_type": "sample",
+   "line_count": 10,
+   "value": -419.55
+  },
+  {
+   "year_month": "2011-06",
+   "service_type": "discount",
+   "line_count": 7,
+   "value": -312.48
+  },
+  {
+   "year_month": "2011-06",
+   "service_type": "fee",
+   "line_count": 4,
+   "value": -10872.83
+  },
+  {
+   "year_month": "2011-06",
+   "service_type": "gift_voucher",
+   "line_count": 6,
+   "value": 125.01
+  },
+  {
+   "year_month": "2011-06",
+   "service_type": "manual",
+   "line_count": 33,
+   "value": -39490.54
+  },
+  {
+   "year_month": "2011-06",
+   "service_type": "postage_carriage",
+   "line_count": 190,
+   "value": 17308.44
+  },
+  {
+   "year_month": "2011-06",
+   "service_type": "sample",
+   "line_count": 7,
+   "value": -625.51
+  },
+  {
+   "year_month": "2011-07",
+   "service_type": "discount",
+   "line_count": 5,
+   "value": -164.03
+  },
+  {
+   "year_month": "2011-07",
+   "service_type": "fee",
+   "line_count": 3,
+   "value": -10902.99
+  },
+  {
+   "year_month": "2011-07",
+   "service_type": "gift_voucher",
+   "line_count": 1,
+   "value": 33.33
+  },
+  {
+   "year_month": "2011-07",
+   "service_type": "manual",
+   "line_count": 66,
+   "value": -4141.66
+  },
+  {
+   "year_month": "2011-07",
+   "service_type": "postage_carriage",
+   "line_count": 169,
+   "value": 18520.26
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "adjustment",
+   "line_count": 3,
+   "value": -11062.06
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "discount",
+   "line_count": 14,
+   "value": -1013.04
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "fee",
+   "line_count": 8,
+   "value": -23262.69
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "gift_voucher",
+   "line_count": 7,
+   "value": 91.66
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "manual",
+   "line_count": 29,
+   "value": -2793.66
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "postage_carriage",
+   "line_count": 147,
+   "value": 18935.52
+  },
+  {
+   "year_month": "2011-08",
+   "service_type": "sample",
+   "line_count": 5,
+   "value": -799.2
+  },
+  {
+   "year_month": "2011-09",
+   "service_type": "discount",
+   "line_count": 7,
+   "value": -326.87
+  },
+  {
+   "year_month": "2011-09",
+   "service_type": "fee",
+   "line_count": 11,
+   "value": -14423.81
+  },
+  {
+   "year_month": "2011-09",
+   "service_type": "gift_voucher",
+   "line_count": 1,
+   "value": 25.0
+  },
+  {
+   "year_month": "2011-09",
+   "service_type": "manual",
+   "line_count": 45,
+   "value": -656.09
+  },
+  {
+   "year_month": "2011-09",
+   "service_type": "postage_carriage",
+   "line_count": 187,
+   "value": 21638.71
+  },
+  {
+   "year_month": "2011-10",
+   "service_type": "discount",
+   "line_count": 3,
+   "value": -56.08
+  },
+  {
+   "year_month": "2011-10",
+   "service_type": "fee",
+   "line_count": 13,
+   "value": -16912.88
+  },
+  {
+   "year_month": "2011-10",
+   "service_type": "gift_voucher",
+   "line_count": 1,
+   "value": 16.67
+  },
+  {
+   "year_month": "2011-10",
+   "service_type": "manual",
+   "line_count": 87,
+   "value": -1061.57
+  },
+  {
+   "year_month": "2011-10",
+   "service_type": "postage_carriage",
+   "line_count": 202,
+   "value": 26191.91
+  },
+  {
+   "year_month": "2011-10",
+   "service_type": "sample",
+   "line_count": 5,
+   "value": -151.04
+  },
+  {
+   "year_month": "2011-11",
+   "service_type": "discount",
+   "line_count": 12,
+   "value": -474.85
+  },
+  {
+   "year_month": "2011-11",
+   "service_type": "fee",
+   "line_count": 10,
+   "value": -18044.0
+  },
+  {
+   "year_month": "2011-11",
+   "service_type": "manual",
+   "line_count": 59,
+   "value": 63.26
+  },
+  {
+   "year_month": "2011-11",
+   "service_type": "postage_carriage",
+   "line_count": 258,
+   "value": 47560.73
+  },
+  {
+   "year_month": "2011-11",
+   "service_type": "sample",
+   "line_count": 3,
+   "value": -83.88
+  },
+  {
+   "year_month": "2011-12",
+   "service_type": "discount",
+   "line_count": 1,
+   "value": -28.68
+  },
+  {
+   "year_month": "2011-12",
+   "service_type": "fee",
+   "line_count": 4,
+   "value": -30508.4
+  },
+  {
+   "year_month": "2011-12",
+   "service_type": "gift_voucher",
+   "line_count": 1,
+   "value": 8.33
+  },
+  {
+   "year_month": "2011-12",
+   "service_type": "manual",
+   "line_count": 14,
+   "value": 32.77
+  },
+  {
+   "year_month": "2011-12",
+   "service_type": "postage_carriage",
+   "line_count": 74,
+   "value": 22815.48
+  }
+ ],
+ "products": [
+  {
+   "sales_rank": 1,
+   "stock_code": "22423",
+   "description": "REGENCY CAKESTAND 3 TIER",
+   "gross_sales": 331084.27,
+   "cancelled_value": -16570.8,
+   "net_sales": 314513.47,
+   "units_sold": 26519,
+   "units_cancelled": 1452,
+   "invoices": 3918,
+   "share_of_net_pct": 1.657
+  },
+  {
+   "sales_rank": 2,
+   "stock_code": "85123A",
+   "description": "WHITE HANGING HEART T-LIGHT HOLDER",
+   "gross_sales": 258065.91,
+   "cancelled_value": -9387.1,
+   "net_sales": 248678.81,
+   "units_sold": 94323,
+   "units_cancelled": 3637,
+   "invoices": 5365,
+   "share_of_net_pct": 1.3101
+  },
+  {
+   "sales_rank": 3,
+   "stock_code": "85099B",
+   "description": "JUMBO BAG RED RETROSPOT",
+   "gross_sales": 180888.03,
+   "cancelled_value": -2168.82,
+   "net_sales": 178719.21,
+   "units_sold": 96931,
+   "units_cancelled": 1213,
+   "invoices": 3989,
+   "share_of_net_pct": 0.9416
+  },
+  {
+   "sales_rank": 4,
+   "stock_code": "47566",
+   "description": "PARTY BUNTING",
+   "gross_sales": 148395.98,
+   "cancelled_value": -1238.55,
+   "net_sales": 147157.43,
+   "units_sold": 28216,
+   "units_cancelled": 285,
+   "invoices": 2674,
+   "share_of_net_pct": 0.7753
+  },
+  {
+   "sales_rank": 5,
+   "stock_code": "84879",
+   "description": "ASSORTED COLOUR BIRD ORNAMENT",
+   "gross_sales": 129681.08,
+   "cancelled_value": -774.07,
+   "net_sales": 128907.01,
+   "units_sold": 80293,
+   "units_cancelled": 511,
+   "invoices": 2807,
+   "share_of_net_pct": 0.6791
+  },
+  {
+   "sales_rank": 6,
+   "stock_code": "22086",
+   "description": "PAPER CHAIN KIT 50'S CHRISTMAS",
+   "gross_sales": 117884.19,
+   "cancelled_value": -1461.7,
+   "net_sales": 116422.49,
+   "units_sold": 35126,
+   "units_cancelled": 590,
+   "invoices": 2018,
+   "share_of_net_pct": 0.6134
+  },
+  {
+   "sales_rank": 7,
+   "stock_code": "79321",
+   "description": "CHILLI LIGHTS",
+   "gross_sales": 80873.23,
+   "cancelled_value": -635.75,
+   "net_sales": 80237.48,
+   "units_sold": 15918,
+   "units_cancelled": 145,
+   "invoices": 1135,
+   "share_of_net_pct": 0.4227
+  },
+  {
+   "sales_rank": 8,
+   "stock_code": "22197",
+   "description": "SMALL POPCORN HOLDER",
+   "gross_sales": 79552.5,
+   "cancelled_value": -616.58,
+   "net_sales": 78935.92,
+   "units_sold": 88537,
+   "units_cancelled": 804,
+   "invoices": 2322,
+   "share_of_net_pct": 0.4159
+  },
+  {
+   "sales_rank": 9,
+   "stock_code": "22386",
+   "description": "JUMBO BAG PINK POLKADOT",
+   "gross_sales": 76385.2,
+   "cancelled_value": -866.98,
+   "net_sales": 75518.22,
+   "units_sold": 39467,
+   "units_cancelled": 482,
+   "invoices": 2245,
+   "share_of_net_pct": 0.3979
+  },
+  {
+   "sales_rank": 10,
+   "stock_code": "84347",
+   "description": "ROTATING SILVER ANGELS T-LIGHT HLDR",
+   "gross_sales": 71361.6,
+   "cancelled_value": -330.45,
+   "net_sales": 71031.15,
+   "units_sold": 31433,
+   "units_cancelled": 9381,
+   "invoices": 756,
+   "share_of_net_pct": 0.3742
+  },
+  {
+   "sales_rank": 11,
+   "stock_code": "20725",
+   "description": "LUNCH BAG RED RETROSPOT",
+   "gross_sales": 71396.14,
+   "cancelled_value": -1383.75,
+   "net_sales": 70012.39,
+   "units_sold": 40506,
+   "units_cancelled": 931,
+   "invoices": 3056,
+   "share_of_net_pct": 0.3689
+  },
+  {
+   "sales_rank": 12,
+   "stock_code": "85099F",
+   "description": "JUMBO BAG STRAWBERRY",
+   "gross_sales": 68091.85,
+   "cancelled_value": -512.24,
+   "net_sales": 67579.61,
+   "units_sold": 36912,
+   "units_cancelled": 283,
+   "invoices": 1830,
+   "share_of_net_pct": 0.356
+  },
+  {
+   "sales_rank": 13,
+   "stock_code": "48138",
+   "description": "DOORMAT UNION FLAG",
+   "gross_sales": 67138.19,
+   "cancelled_value": -359.41,
+   "net_sales": 66778.78,
+   "units_sold": 10095,
+   "units_cancelled": 51,
+   "invoices": 1664,
+   "share_of_net_pct": 0.3518
+  },
+  {
+   "sales_rank": 14,
+   "stock_code": "23084",
+   "description": "RABBIT NIGHT LIGHT",
+   "gross_sales": 66964.99,
+   "cancelled_value": -208.4,
+   "net_sales": 66756.59,
+   "units_sold": 30788,
+   "units_cancelled": 108,
+   "invoices": 994,
+   "share_of_net_pct": 0.3517
+  },
+  {
+   "sales_rank": 15,
+   "stock_code": "20685",
+   "description": "DOORMAT RED RETROSPOT",
+   "gross_sales": 66464.71,
+   "cancelled_value": -632.53,
+   "net_sales": 65832.18,
+   "units_sold": 9789,
+   "units_cancelled": 91,
+   "invoices": 1725,
+   "share_of_net_pct": 0.3468
+  },
+  {
+   "sales_rank": 16,
+   "stock_code": "21137",
+   "description": "BLACK RECORD COVER FRAME",
+   "gross_sales": 65223.04,
+   "cancelled_value": -82.29,
+   "net_sales": 65140.75,
+   "units_sold": 18748,
+   "units_cancelled": 23,
+   "invoices": 634,
+   "share_of_net_pct": 0.3432
+  },
+  {
+   "sales_rank": 17,
+   "stock_code": "21931",
+   "description": "JUMBO STORAGE BAG SUKI",
+   "gross_sales": 61565.11,
+   "cancelled_value": -710.63,
+   "net_sales": 60854.48,
+   "units_sold": 29196,
+   "units_cancelled": 390,
+   "invoices": 2329,
+   "share_of_net_pct": 0.3206
+  },
+  {
+   "sales_rank": 18,
+   "stock_code": "22502",
+   "description": "PICNIC BASKET WICKER SMALL",
+   "gross_sales": 60924.5,
+   "cancelled_value": -436.42,
+   "net_sales": 60488.08,
+   "units_sold": 3774,
+   "units_cancelled": 86,
+   "invoices": 924,
+   "share_of_net_pct": 0.3187
+  },
+  {
+   "sales_rank": 19,
+   "stock_code": "21843",
+   "description": "RED RETROSPOT CAKE STAND",
+   "gross_sales": 65189.95,
+   "cancelled_value": -5270.25,
+   "net_sales": 59919.7,
+   "units_sold": 6155,
+   "units_cancelled": 587,
+   "invoices": 1527,
+   "share_of_net_pct": 0.3157
+  },
+  {
+   "sales_rank": 20,
+   "stock_code": "21621",
+   "description": "VINTAGE UNION JACK BUNTING",
+   "gross_sales": 60405.04,
+   "cancelled_value": -544.0,
+   "net_sales": 59861.04,
+   "units_sold": 6914,
+   "units_cancelled": 64,
+   "invoices": 1292,
+   "share_of_net_pct": 0.3154
+  }
+ ],
+ "countries": [
+  {
+   "country": "United Kingdom",
+   "gross_product_sales": 16856330.96,
+   "cancellation_value": -635249.66,
+   "net_product_revenue": 16221081.3,
+   "sales_invoices": 36184,
+   "known_customers": 5334
+  },
+  {
+   "country": "EIRE",
+   "gross_product_sales": 623795.85,
+   "cancellation_value": -20388.75,
+   "net_product_revenue": 603407.1,
+   "sales_invoices": 581,
+   "known_customers": 3
+  },
+  {
+   "country": "Netherlands",
+   "gross_product_sales": 549775.06,
+   "cancellation_value": -3677.98,
+   "net_product_revenue": 546097.08,
+   "sales_invoices": 216,
+   "known_customers": 22
+  },
+  {
+   "country": "Germany",
+   "gross_product_sales": 383847.67,
+   "cancellation_value": -8715.49,
+   "net_product_revenue": 375132.18,
+   "sales_invoices": 753,
+   "known_customers": 107
+  },
+  {
+   "country": "France",
+   "gross_product_sales": 311288.38,
+   "cancellation_value": -17662.04,
+   "net_product_revenue": 293626.34,
+   "sales_invoices": 598,
+   "known_customers": 93
+  },
+  {
+   "country": "Australia",
+   "gross_product_sales": 167867.51,
+   "cancellation_value": -1517.86,
+   "net_product_revenue": 166349.65,
+   "sales_invoices": 89,
+   "known_customers": 15
+  },
+  {
+   "country": "Spain",
+   "gross_product_sales": 97818.07,
+   "cancellation_value": -12955.19,
+   "net_product_revenue": 84862.88,
+   "sales_invoices": 144,
+   "known_customers": 38
+  },
+  {
+   "country": "Switzerland",
+   "gross_product_sales": 94046.89,
+   "cancellation_value": -1106.53,
+   "net_product_revenue": 92940.36,
+   "sales_invoices": 85,
+   "known_customers": 22
+  },
+  {
+   "country": "Sweden",
+   "gross_product_sales": 86353.04,
+   "cancellation_value": -1973.97,
+   "net_product_revenue": 84379.07,
+   "sales_invoices": 99,
+   "known_customers": 19
+  },
+  {
+   "country": "Denmark",
+   "gross_product_sales": 67422.69,
+   "cancellation_value": -4067.1,
+   "net_product_revenue": 63355.59,
+   "sales_invoices": 42,
+   "known_customers": 12
+  },
+  {
+   "country": "Belgium",
+   "gross_product_sales": 57012.67,
+   "cancellation_value": -394.28,
+   "net_product_revenue": 56618.39,
+   "sales_invoices": 143,
+   "known_customers": 29
+  },
+  {
+   "country": "Portugal",
+   "gross_product_sales": 47406.87,
+   "cancellation_value": -630.28,
+   "net_product_revenue": 46776.59,
+   "sales_invoices": 85,
+   "known_customers": 23
+  },
+  {
+   "country": "Channel Islands",
+   "gross_product_sales": 44040.23,
+   "cancellation_value": -2188.52,
+   "net_product_revenue": 41851.71,
+   "sales_invoices": 54,
+   "known_customers": 13
+  },
+  {
+   "country": "Japan",
+   "gross_product_sales": 43023.91,
+   "cancellation_value": -3277.14,
+   "net_product_revenue": 39746.77,
+   "sales_invoices": 33,
+   "known_customers": 10
+  },
+  {
+   "country": "Norway",
+   "gross_product_sales": 38575.36,
+   "cancellation_value": -161.68,
+   "net_product_revenue": 38413.68,
+   "sales_invoices": 39,
+   "known_customers": 12
+  },
+  {
+   "country": "Italy",
+   "gross_product_sales": 28951.95,
+   "cancellation_value": -710.7,
+   "net_product_revenue": 28241.25,
+   "sales_invoices": 59,
+   "known_customers": 17
+  },
+  {
+   "country": "Finland",
+   "gross_product_sales": 25180.1,
+   "cancellation_value": -90.44,
+   "net_product_revenue": 25089.66,
+   "sales_invoices": 54,
+   "known_customers": 13
+  },
+  {
+   "country": "Cyprus",
+   "gross_product_sales": 24614.44,
+   "cancellation_value": -496.7,
+   "net_product_revenue": 24117.74,
+   "sales_invoices": 35,
+   "known_customers": 11
+  },
+  {
+   "country": "Austria",
+   "gross_product_sales": 20297.01,
+   "cancellation_value": -225.41,
+   "net_product_revenue": 20071.6,
+   "sales_invoices": 40,
+   "known_customers": 13
+  },
+  {
+   "country": "Greece",
+   "gross_product_sales": 18711.19,
+   "cancellation_value": -50.7,
+   "net_product_revenue": 18660.49,
+   "sales_invoices": 18,
+   "known_customers": 5
+  },
+  {
+   "country": "Hong Kong",
+   "gross_product_sales": 13875.25,
+   "cancellation_value": -10.95,
+   "net_product_revenue": 13864.3,
+   "sales_invoices": 9,
+   "known_customers": 0
+  },
+  {
+   "country": "Singapore",
+   "gross_product_sales": 13158.16,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 13158.16,
+   "sales_invoices": 8,
+   "known_customers": 1
+  },
+  {
+   "country": "Israel",
+   "gross_product_sales": 11334.66,
+   "cancellation_value": -227.44,
+   "net_product_revenue": 11107.22,
+   "sales_invoices": 10,
+   "known_customers": 4
+  },
+  {
+   "country": "Unspecified",
+   "gross_product_sales": 10936.01,
+   "cancellation_value": -22.0,
+   "net_product_revenue": 10914.01,
+   "sales_invoices": 24,
+   "known_customers": 6
+  },
+  {
+   "country": "United Arab Emirates",
+   "gross_product_sales": 10273.23,
+   "cancellation_value": -645.08,
+   "net_product_revenue": 9628.15,
+   "sales_invoices": 12,
+   "known_customers": 4
+  },
+  {
+   "country": "Poland",
+   "gross_product_sales": 10214.29,
+   "cancellation_value": -374.36,
+   "net_product_revenue": 9839.93,
+   "sales_invoices": 28,
+   "known_customers": 6
+  },
+  {
+   "country": "USA",
+   "gross_product_sales": 7920.01,
+   "cancellation_value": -2080.32,
+   "net_product_revenue": 5839.69,
+   "sales_invoices": 16,
+   "known_customers": 8
+  },
+  {
+   "country": "Iceland",
+   "gross_product_sales": 4921.53,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 4921.53,
+   "sales_invoices": 8,
+   "known_customers": 1
+  },
+  {
+   "country": "Lithuania",
+   "gross_product_sales": 4892.68,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 4892.68,
+   "sales_invoices": 6,
+   "known_customers": 1
+  },
+  {
+   "country": "Malta",
+   "gross_product_sales": 4757.34,
+   "cancellation_value": -90.12,
+   "net_product_revenue": 4667.22,
+   "sales_invoices": 7,
+   "known_customers": 2
+  },
+  {
+   "country": "Canada",
+   "gross_product_sales": 4332.1,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 4332.1,
+   "sales_invoices": 7,
+   "known_customers": 5
+  },
+  {
+   "country": "RSA",
+   "gross_product_sales": 3369.03,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 3369.03,
+   "sales_invoices": 3,
+   "known_customers": 2
+  },
+  {
+   "country": "Bahrain",
+   "gross_product_sales": 3109.79,
+   "cancellation_value": -248.24,
+   "net_product_revenue": 2861.55,
+   "sales_invoices": 10,
+   "known_customers": 2
+  },
+  {
+   "country": "Thailand",
+   "gross_product_sales": 3070.54,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 3070.54,
+   "sales_invoices": 2,
+   "known_customers": 1
+  },
+  {
+   "country": "Lebanon",
+   "gross_product_sales": 1905.58,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 1905.58,
+   "sales_invoices": 2,
+   "known_customers": 1
+  },
+  {
+   "country": "Brazil",
+   "gross_product_sales": 1411.87,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 1411.87,
+   "sales_invoices": 2,
+   "known_customers": 2
+  },
+  {
+   "country": "Bermuda",
+   "gross_product_sales": 1253.14,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 1253.14,
+   "sales_invoices": 1,
+   "known_customers": 0
+  },
+  {
+   "country": "European Community",
+   "gross_product_sales": 1159.25,
+   "cancellation_value": -8.5,
+   "net_product_revenue": 1150.75,
+   "sales_invoices": 3,
+   "known_customers": 1
+  },
+  {
+   "country": "Korea",
+   "gross_product_sales": 1118.51,
+   "cancellation_value": -168.69,
+   "net_product_revenue": 949.82,
+   "sales_invoices": 2,
+   "known_customers": 2
+  },
+  {
+   "country": "Czech Republic",
+   "gross_product_sales": 786.74,
+   "cancellation_value": -115.02,
+   "net_product_revenue": 671.72,
+   "sales_invoices": 2,
+   "known_customers": 1
+  },
+  {
+   "country": "West Indies",
+   "gross_product_sales": 536.41,
+   "cancellation_value": 0.0,
+   "net_product_revenue": 536.41,
+   "sales_invoices": 1,
+   "known_customers": 1
+  },
+  {
+   "country": "Saudi Arabia",
+   "gross_product_sales": 145.92,
+   "cancellation_value": -14.75,
+   "net_product_revenue": 131.17,
+   "sales_invoices": 1,
+   "known_customers": 1
+  },
+  {
+   "country": "Nigeria",
+   "gross_product_sales": 112.57,
+   "cancellation_value": -147.05,
+   "net_product_revenue": -34.48,
+   "sales_invoices": 1,
+   "known_customers": 1
+  }
+ ],
+ "coverage": [
+  {
+   "year_month": "2009-12",
+   "gross_with_customer": 681066.22,
+   "gross_without_customer": 120036.75,
+   "pct_with_customer": 85.02
+  },
+  {
+   "year_month": "2010-01",
+   "gross_with_customer": 535229.37,
+   "gross_without_customer": 78621.44,
+   "pct_with_customer": 87.19
+  },
+  {
+   "year_month": "2010-02",
+   "gross_with_customer": 499749.69,
+   "gross_without_customer": 39995.0,
+   "pct_with_customer": 92.59
+  },
+  {
+   "year_month": "2010-03",
+   "gross_with_customer": 668577.19,
+   "gross_without_customer": 95756.66,
+   "pct_with_customer": 87.47
+  },
+  {
+   "year_month": "2010-04",
+   "gross_with_customer": 587753.77,
+   "gross_without_customer": 61240.05,
+   "pct_with_customer": 90.56
+  },
+  {
+   "year_month": "2010-05",
+   "gross_with_customer": 594886.54,
+   "gross_without_customer": 50758.85,
+   "pct_with_customer": 92.14
+  },
+  {
+   "year_month": "2010-06",
+   "gross_with_customer": 631504.85,
+   "gross_without_customer": 67811.17,
+   "pct_with_customer": 90.3
+  },
+  {
+   "year_month": "2010-07",
+   "gross_with_customer": 583388.53,
+   "gross_without_customer": 51508.46,
+   "pct_with_customer": 91.89
+  },
+  {
+   "year_month": "2010-08",
+   "gross_with_customer": 596579.22,
+   "gross_without_customer": 79481.5,
+   "pct_with_customer": 88.24
+  },
+  {
+   "year_month": "2010-09",
+   "gross_with_customer": 808145.06,
+   "gross_without_customer": 63733.28,
+   "pct_with_customer": 92.69
+  },
+  {
+   "year_month": "2010-10",
+   "gross_with_customer": 1015139.49,
+   "gross_without_customer": 82878.18,
+   "pct_with_customer": 92.45
+  },
+  {
+   "year_month": "2010-11",
+   "gross_with_customer": 1161854.41,
+   "gross_without_customer": 273825.71,
+   "pct_with_customer": 80.93
+  },
+  {
+   "year_month": "2010-12",
+   "gross_with_customer": 567490.72,
+   "gross_without_customer": 210441.05,
+   "pct_with_customer": 72.95
+  },
+  {
+   "year_month": "2011-01",
+   "gross_with_customer": 564026.64,
+   "gross_without_customer": 107906.55,
+   "pct_with_customer": 83.94
+  },
+  {
+   "year_month": "2011-02",
+   "gross_with_customer": 443346.02,
+   "gross_without_customer": 65540.18,
+   "pct_with_customer": 87.12
+  },
+  {
+   "year_month": "2011-03",
+   "gross_with_customer": 584562.85,
+   "gross_without_customer": 106694.76,
+   "pct_with_customer": 84.57
+  },
+  {
+   "year_month": "2011-04",
+   "gross_with_customer": 455266.91,
+   "gross_without_customer": 60951.21,
+   "pct_with_customer": 88.19
+  },
+  {
+   "year_month": "2011-05",
+   "gross_with_customer": 660481.9,
+   "gross_without_customer": 80710.51,
+   "pct_with_customer": 89.11
+  },
+  {
+   "year_month": "2011-06",
+   "gross_with_customer": 654432.56,
+   "gross_without_customer": 84319.31,
+   "pct_with_customer": 88.59
+  },
+  {
+   "year_month": "2011-07",
+   "gross_with_customer": 592731.9,
+   "gross_without_customer": 96632.51,
+   "pct_with_customer": 85.98
+  },
+  {
+   "year_month": "2011-08",
+   "gross_with_customer": 636807.24,
+   "gross_without_customer": 88706.26,
+   "pct_with_customer": 87.77
+  },
+  {
+   "year_month": "2011-09",
+   "gross_with_customer": 940900.81,
+   "gross_without_customer": 89574.55,
+   "pct_with_customer": 91.31
+  },
+  {
+   "year_month": "2011-10",
+   "gross_with_customer": 1005642.9,
+   "gross_without_customer": 101026.92,
+   "pct_with_customer": 90.87
+  },
+  {
+   "year_month": "2011-11",
+   "gross_with_customer": 1142145.77,
+   "gross_without_customer": 315599.76,
+   "pct_with_customer": 78.35
+  },
+  {
+   "year_month": "2011-12",
+   "gross_with_customer": 513230.43,
+   "gross_without_customer": 102262.84,
+   "pct_with_customer": 83.39
+  }
+ ],
+ "bridge": [
+  {
+   "step": "A",
+   "label": "Raw total, every row of both sheets",
+   "rows": 1067371,
+   "value": 19287250.57
+  },
+  {
+   "step": "B",
+   "label": "less: sheet-overlap copies",
+   "rows": 22523,
+   "value": -377488.45
+  },
+  {
+   "step": "C",
+   "label": "= Deduplicated total (A + B)",
+   "rows": 1044848,
+   "value": 18909762.12
+  },
+  {
+   "step": "",
+   "label": "  of which service_or_fee",
+   "rows": 5811,
+   "value": -71499.4
+  },
+  {
+   "step": "",
+   "label": "  of which unknown_code",
+   "rows": 2,
+   "value": 0.0
+  },
+  {
+   "step": "",
+   "label": "  of which cancellation",
+   "rows": 17974,
+   "value": -719692.94
+  },
+  {
+   "step": "",
+   "label": "  of which negative_qty_non_cancel",
+   "rows": 3391,
+   "value": 0.0
+  },
+  {
+   "step": "",
+   "label": "  of which negative_price",
+   "rows": 0,
+   "value": 0.0
+  },
+  {
+   "step": "",
+   "label": "  of which zero_price",
+   "rows": 2582,
+   "value": 0.0
+  },
+  {
+   "step": "",
+   "label": "  of which normal_sale",
+   "rows": 1015088,
+   "value": 19700954.46
+  },
+  {
+   "step": "",
+   "label": "  of which other_unclassified",
+   "rows": 0,
+   "value": 0.0
+  },
+  {
+   "step": "",
+   "label": "  sum of categories",
+   "rows": 1044848,
+   "value": 18909762.12
+  },
+  {
+   "step": "M1",
+   "label": "Gross product sales (normal_sale)",
+   "rows": 1015088,
+   "value": 19700954.46
+  },
+  {
+   "step": "M2",
+   "label": "Cancellation value (cancellation)",
+   "rows": 17974,
+   "value": -719692.94
+  },
+  {
+   "step": "M3",
+   "label": "Net product revenue (M1 + M2)",
+   "rows": 1033062,
+   "value": 18981261.52
+  }
+ ],
+ "docs": {
+  "cleaning_rules": "# Cleaning rules and metric definitions\n\nStatus: **approved 2026-10-28**, implemented in `src/` (milestone M1).\nEvidence: `docs/diagnostics/diagnostic_report.md`, produced by\n`tools/diagnose_workbook.py` on the original workbook (SHA-256 starts\n`bcbe73b3`). All figures below come from that report unless marked\n*assumption*.\n\n## Principle: label, never delete\n\nEvery one of the 1,067,371 original rows is kept in the database\n(`fact_lines`) with a category and flags. Excluded rows stay visible, and the\n`reconciliation` table walks from the raw total to every headline number. The\nbuild refuses to write the database if rows or pounds do not add up.\n\n## The rules\n\n| # | Rule | Evidence | Limitation |\n|---|------|----------|------------|\n| 1 | **Remove sheet-overlap copies.** A sheet-2 row with an exact twin (all 8 fields) in sheet 1 is excluded. | Both sheets hold 22,523 rows for 1 Dec 08:26 - 9 Dec 20:01 2010; 100% have a twin; all 1,088 shared invoices are identical; no conflicts. Raw total double-counts £377,488.45; Dec 2010 is inflated by 50.4%. | Only exact twins are removed. A conflicting twin would need a human decision (none exist today). |\n| 2 | **Keep and flag repeated identical lines inside a sheet.** | 11,812 extra lines on 4,387 invoices; only 14.3% sit directly below an identical line; 2.7% fall in the overlap window (window = 2.2% of rows), so it is not an overlap effect. Removing them would change gross product sales by £57,092.82 (0.29%). | The data cannot prove they are genuine (*assumption*: a customer can order the same product twice on an invoice). The effect is reported as a sensitivity. |\n| 3 | **Services and fees are never product revenue.** They are kept and reported by type: postage/carriage, manual, adjustment, discount, sample, fee, gift voucher, test. | Meaning checked against the most common description per code. `AMAZONFEE` = -£221,520.50 on 36 rows; bad-debt adjustment `B` = -£147,614.08 on 6 rows; postage `DOT` +£309,844.10, `POST` +£110,430.41. These few large lines would distort monthly trends if mixed into sales. | Treating postage as separate from product revenue is a business choice (*assumption*: postage is customer income but not product sales). |\n| 4 | **`DCGS*`, `SP<digits>` and `PADS` count as product codes.** Any other non-standard code is `unknown_code` and excluded. | Their descriptions are product names (for example \"GIRLS PARTY BAG\", \"SUNJAR LED NIGHT NIGHT LIGHT\") with positive prices. In total only £1,132.89 (0.006% of sales), so this choice cannot move results. | Judgement from descriptions. `C3` and `GIFT` stay `unknown_code` (zero value). |\n| 5 | **Stock adjustments are not sales.** Non-credit-note lines with a negative quantity, and lines with a missing description, are excluded from sales and from units sold, but kept. | All 4,382 missing-description rows have price 0 and no customer; 2,689 have a negative quantity. Non-credit negative-quantity rows carry £0 value but -564,030 units, which would distort unit-based metrics. | *Assumption*: these are write-offs or corrections. The business meaning is inferred from the pattern, not documented. |\n| 6 | **Cancellations** (product lines on `C` invoices) are kept, reported separately and netted into net product revenue. | 17,973 product rows, -£719,656.34 (3.65% of gross product sales). | Credit notes cannot be linked reliably to the original sale, so cancellation rates are **by period**, not by order. One `C` line has a positive quantity (flagged for review). |\n| 7 | **Time.** Each invoice uses its earliest timestamp. The last month of the data is flagged partial if it ends before month end. | 83 invoices carry more than one timestamp. Data ends 9 Dec 2011 (Dec 2011 has 9 days). Dec 2009 and Dec 2010 end on the 23rd and January starts on the 4th (holiday closure, not missing data). | Dec 2011 must not be compared with full months. |\n\nTwo further facts that shape analysis, not cleaning:\n- **22.8% of rows (243,007) have no Customer ID**, which is 13.1% of product\n  sales value (£2,574,858.74). Customer-level analysis covers about 87% of sales\n  value and must say so.\n- **1,232 stock codes have more than one description.** Product analysis groups\n  by `StockCode`. `dim_product` stores the most common description.\n\n## Metric definitions\n\n`Line = Quantity x UnitPrice`, summed with exact float summation.\n\n| Metric | Definition |\n|--------|-----------|\n| Raw total | Sum of `Line` over every row of both sheets. Reproduced exactly: **£19,287,250.57**. |\n| Deduplicated total | Raw total minus overlap copies = **£18,909,762.12**. |\n| Gross product sales | Sum of `Line` over `normal_sale` rows. |\n| Cancellation value | Sum of `Line` over `cancellation` rows (negative). |\n| Net product revenue | Gross product sales + cancellation value. |\n| Cancellation rate | -Cancellation value / gross product sales, per period. |\n\nThese are **revenue figures, not profit**. The data has no product costs.\n\nThe exact final numbers (after rule 4 moves a few hundred pounds of `DCGS*`\nrows into normal sales) are produced by the build and stored in the\n`reconciliation` table.\n\n## Categories (first match wins)\n\n1. `sheet_overlap_copy` 2. `service_or_fee` 3. `unknown_code`\n4. `cancellation` 5. `negative_qty_non_cancel` 6. `negative_price`\n7. `zero_price` 8. `normal_sale` (anything else = `other_unclassified`, which\nmust stay empty or the build fails).\n\nA credit note for postage stays in `service_or_fee`, and a fee line with a\nnegative quantity stays in `service_or_fee`, because the first matching rule\nwins.\n\n## How the rules are checked\n\n- `python -m pytest`: hand-calculated tests for each rule and for the\n  reconciliation. The tests were checked by deliberately breaking the code in\n  eight ways; each break is caught.\n- `python -m src.build_db`: on the real workbook it also compares rows, raw\n  total, overlap rows and value, deduplicated total and the within-sheet repeat\n  count with the diagnostic baseline, and writes nothing on any mismatch.\n",
+  "metrics": "# Metric views (milestone M2)\n\nAll dashboard numbers come from SQL views defined in `sql/views.sql`, created by\n`python -m src.build_db` and read through `src/metrics.py` (read-only connection).\n\n| View | One row per | Use |\n|------|-------------|-----|\n| `v_monthly_revenue` | month | gross, cancellations, net, units, invoices, known customers, cancellation rate, average order value, partial-month flag |\n| `v_monthly_service_lines` | month x service type | postage, fees, adjustments - shown apart from product revenue |\n| `v_top_products` | stock code | rank by **net** sales (gross + cancelled), units, share of net (grouped by code, not description) |\n| `v_country_revenue` | country | gross, cancellations, net, invoices, customers |\n| `v_invoice_summary` | invoice with sales | order value basis |\n| `v_customer_coverage` | month | share of gross sales tied to a known customer (about 87% overall) |\n\n## Rules every view follows\n- Sales population = `normal_sale` + `cancellation` rows only. Overlap copies, services, adjustments, zero/negative price and unknown codes are excluded (they remain in `fact_lines` and the reconciliation).\n- Money is not rounded in views, so totals tie to the bridge to the penny.\n- Cancellation rate = cancellations / gross sales **in the same month** (credit notes cannot be linked to the original sale).\n- The final month (Dec 2011, 9 days) is flagged partial; `metrics.monthly_revenue()` leaves it out by default.\n- Average order value = gross product sales / invoices with sales. Revenue, not profit.\n\n## How they are checked\n- The build compares view totals with the pandas bridge (tolerance 0.005) and refuses to write the database on mismatch.\n- `tests/test_metrics.py`: hand-calculated values, plus a randomized SQL-vs-pandas cross-check.\n- Mutation checks: five deliberate view bugs; all caught after two tests were added.\n\n## Known data quirk: sold-then-cancelled bulk orders\nThe real data holds orders of 75,000+ units that were cancelled the same day\n(for example stock code 23843 in Dec 2011, about £168k, and a ceramic storage\njar order in Jan 2011). They inflate gross sales and the cancellation rate of\nthose months (Jan 2011: 13.6%, Dec 2011: 28.3%) while net revenue is\nunaffected. Product rankings therefore use **net** sales. Month-level\ncancellation rates should be read with this in mind.\n"
+ }
+}

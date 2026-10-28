@@ -8,10 +8,10 @@ app formats money and percentages the same way.
 GBP = "£"
 
 
-def format_currency(value: float, symbol: str = "$") -> str:
-    """Format a number as money, e.g. 1234.5 -> '$1,234.50'.
+def format_currency(value: float, symbol: str = GBP) -> str:
+    """Format a number as money in pounds by default, e.g. 1234.5 -> '£1,234.50'.
 
-    Pass symbol=GBP for pounds. Negative numbers put the minus sign first
+    Pass another symbol for other currencies. Negative numbers put the minus sign first
     ('-£5.00'), not after the symbol ('£-5.00').
     """
     rounded = round(value, 2)

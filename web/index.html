@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business Performance &amp; Decision Lab</title>
+  <meta name="description" content="Reconciled retail sales analytics on Online Retail II: overview, what-if calculator, methodology.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="bg" aria-hidden="true">
+  <img class="b1" src="img/blob-violet.svg" alt="">
+  <img class="b2" src="img/blob-sage.svg" alt="">
+  <img class="b4" src="img/ribbon.svg" alt="">
+  <img class="b3" src="img/orb.svg" alt="">
+</div>
+<div class="app">
+  <aside class="sidebar" aria-label="Main navigation">
+    <div class="brand"><span class="logo" aria-hidden="true">B</span><span>Decision Lab</span></div>
+    <nav>
+      <a href="#overview" data-page="overview" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9zm0 7h6v-5H4v5zm10 0h6v-9h-6v9zm0-16v5h6V4h-6z"/></svg>Overview</a>
+      <a href="#whatif" data-page="whatif" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10h3v10H5zm5.5 0V4h3v16h-3zM16 20v-7h3v7h-3z"/></svg>What-If</a>
+      <a href="#method" data-page="method" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6V3zm8 1.5V8h3.5L14 4.5zM8.5 12h8v1.5h-8V12zm0 3.5h8V17h-8v-1.5z"/></svg>Methodology</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch light or dark theme">Dark mode</button>
+      <p id="build-line" class="muted small"></p>
+    </div>
+  </aside>
+
+  <main>
+    <div id="sample-banner" class="banner" hidden></div>
+
+    <section id="page-overview" class="page" hidden>
+      <header class="page-head">
+        <div><h1>Overview</h1><p class="muted">Online Retail II · Dec 2009 – 9 Dec 2011 · revenue, not profit</p></div>
+        <div class="controls">
+          <div class="segmented" role="group" aria-label="Period">
+            <button type="button" data-period="12m" class="seg active">Last 12 months</button>
+            <button type="button" data-period="all" class="seg">All time</button>
+          </div>
+        </div>
+      </header>
+      <div id="kpis" class="kpis"></div>
+      <div class="grid">
+        <article class="card span-8">
+          <div class="card-head"><h2>Net product revenue by month</h2>
+            <label class="switch"><input type="checkbox" id="toggle-partial"><span>Show incomplete Dec 2011</span></label></div>
+          <div class="chart-box"><canvas id="chart-monthly" role="img" aria-label="Net product revenue by month"></canvas></div>
+          <p class="muted small">November is the peak in both years. Dec 2009 and Dec 2010 end on the 23rd (holiday closure).</p>
+        </article>
+        <article class="card span-4">
+          <div class="card-head"><h2>Cancellation rate</h2></div>
+          <div class="chart-box"><canvas id="chart-cancel" role="img" aria-label="Cancellation rate by month"></canvas></div>
+          <p class="muted small">Cancellations as % of gross sales in the same month. Spikes come from a few very large orders that were sold and cancelled.</p>
+        </article>
+        <article class="card span-6">
+          <div class="card-head"><h2>Top products by net sales</h2></div>
+          <ol id="list-products" class="bars"></ol>
+          <p class="muted small">Net = sales minus cancellations, grouped by stock code.</p>
+        </article>
+        <article class="card span-6">
+          <div class="card-head"><h2>Net revenue by country</h2>
+            <label class="switch"><input type="checkbox" id="toggle-uk"><span>Hide United Kingdom</span></label></div>
+          <ol id="list-countries" class="bars"></ol>
+          <p id="uk-note" class="muted small"></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="page-whatif" class="page" hidden>
+      <header class="page-head">
+        <div><h1>What-If calculator</h1><p id="whatif-sub" class="muted"></p></div>
+      </header>
+      <div class="banner warn"><strong>This is arithmetic, not a forecast.</strong> The baseline is real data. Price change,
+        volume change and cost are <strong>your assumptions</strong>. The data has no product costs, so every profit figure
+        depends on the cost share you choose. The page does not predict how customers react to price.</div>
+      <div class="grid">
+        <article class="card span-4">
+          <div class="card-head"><h2>Your assumptions</h2></div>
+          <div class="slider"><label for="in-price">Price change <b id="out-price"></b></label>
+            <input id="in-price" type="range" min="-30" max="30" step="1" value="5"></div>
+          <div class="slider"><label for="in-volume">Volume change <b id="out-volume"></b></label>
+            <input id="in-volume" type="range" min="-50" max="50" step="1" value="0"></div>
+          <div class="slider"><label for="in-cost">Product cost, % of net revenue <b id="out-cost"></b></label>
+            <input id="in-cost" type="range" min="10" max="90" step="5" value="60">
+            <p class="muted small">Assumption, not in the data. Try several values.</p></div>
+          <p id="breakeven" class="breakeven"></p>
+        </article>
+        <div class="span-8 stack">
+          <div id="sim-kpis" class="kpis kpis-4"></div>
+          <article class="card">
+            <div class="card-head"><h2>Change in profit by price and volume</h2></div>
+            <div id="heat-wrap" class="heat-wrap"></div>
+            <p class="muted small">Blue = above baseline, red = below. Click a cell to set the sliders. Price and volume vary independently; the page deliberately does not guess how volume reacts to price.</p>
+          </article>
+        </div>
+      </div>
+      <details class="card doc"><summary>How the numbers are calculated</summary>
+        <ul class="plain">
+          <li><b>Gross sales</b> = baseline gross × (1 + price change) × (1 + volume change)</li>
+          <li><b>Net revenue</b> = gross × (1 − baseline cancellation rate)</li>
+          <li><b>Cost</b> = cost share × baseline net revenue × (1 + volume change); unit cost unchanged</li>
+          <li><b>Profit</b> = net revenue − cost</li>
+          <li><b>Break-even volume</b> = (1 − cost share) / (1 + price change − cost share) − 1</li>
+        </ul>
+      </details>
+    </section>
+
+    <section id="page-method" class="page" hidden>
+      <header class="page-head">
+        <div><h1>Methodology</h1><p class="muted">How the raw workbook becomes the numbers on these pages, and what they cannot tell you.</p></div>
+      </header>
+      <div class="grid">
+        <article class="card span-12">
+          <div class="card-head"><h2>From raw rows to revenue</h2></div>
+          <div class="chart-box tall"><canvas id="chart-bridge" role="img" aria-label="Bridge from raw total to net product revenue"></canvas></div>
+          <p class="muted small">The axis starts near £18.6M so the steps are visible. Cancellations stay inside net product revenue. Postage, fees and adjustments were net negative, so removing them raises the total.</p>
+          <details class="doc"><summary>Full reconciliation table</summary><div id="bridge-table" class="table-wrap"></div></details>
+        </article>
+      </div>
+      <details class="card doc"><summary>Cleaning rules and metric definitions</summary><div id="doc-rules" class="md"></div></details>
+      <details class="card doc"><summary>Metric views</summary><div id="doc-metrics" class="md"></div></details>
+      <article class="card">
+        <h2>What this data cannot tell you</h2>
+        <ul class="plain">
+          <li><b>Profit.</b> There are no product costs, so every figure is revenue.</li>
+          <li><b>Customer behaviour for everyone.</b> About 13% of sales value has no customer ID.</li>
+          <li><b>Order-level return rates.</b> Credit notes cannot be linked to the original sale.</li>
+          <li><b>The last month.</b> December 2011 stops on the 9th.</li>
+          <li><b>Causes.</b> The data shows what was sold, not why.</li>
+        </ul>
+      </article>
+    </section>
+
+    <footer class="foot muted small">
+      Data: <span id="foot-dataset"></span> · <a id="foot-doi" href="#" rel="noopener">DOI</a>
+    </footer>
+  </main>
+</div>
+<script src="vendor/chart.umd.js"></script>
+<script src="vendor/marked.min.js"></script>
+<script src="data/metrics.js"></script>
+<script src="js/scenario.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

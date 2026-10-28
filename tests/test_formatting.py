@@ -1,8 +1,12 @@
 from utils.formatting import GBP, format_currency, format_percent
 
 
-def test_default_currency_is_dollar_as_before():
-    assert format_currency(1234.5) == "$1,234.50"
+def test_default_currency_is_pound():
+    assert format_currency(1234.5) == "£1,234.50"
+
+
+def test_other_symbol_still_possible():
+    assert format_currency(1234.5, "$") == "$1,234.50"
 
 
 def test_pound_symbol():
