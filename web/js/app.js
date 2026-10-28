@@ -147,8 +147,14 @@
         tr.appendChild(td);
       }); t.appendChild(tr);
     });
-    var wrap = $("#heat-wrap"); wrap.textContent = ""; wrap.appendChild(t);
+    var wrap = $("#heat-wrap"), prev = wrap.scrollLeft; wrap.textContent = ""; wrap.appendChild(t);
+    if (wrap.clientWidth > 0 && wrap.scrollWidth > wrap.clientWidth) {   // phone: keep the scroll position; first time, centre the chosen cell
+      var cur = t.querySelector("td.current");
+      if (!heatCentred && cur) { wrap.scrollLeft = cur.offsetLeft - (wrap.clientWidth - cur.offsetWidth) / 2; heatCentred = true; }
+      else wrap.scrollLeft = prev;
+    }
   }
+  var heatCentred = false;
 
   /* ---------- methodology ---------- */
   function bridgeValue(part) { var r = M.bridge.filter(function (b) { return b.label.indexOf(part) !== -1; }); return r.length ? r[0].value : 0; }

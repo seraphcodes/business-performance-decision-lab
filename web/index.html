@@ -103,6 +103,7 @@
           <div id="sim-kpis" class="kpis kpis-4"></div>
           <article class="card">
             <div class="card-head"><h2>Change in profit by price and volume</h2></div>
+            <p class="muted small mobile-hint">Swipe sideways to see all columns. Tap a cell to set the sliders.</p>
             <div id="heat-wrap" class="heat-wrap"></div>
             <p class="muted small">Blue = above baseline, red = below. Click a cell to set the sliders. Price and volume vary independently; the page deliberately does not guess how volume reacts to price.</p>
           </article>
@@ -126,7 +127,8 @@
       <div class="grid">
         <article class="card span-12">
           <div class="card-head"><h2>From raw rows to revenue</h2></div>
-          <div class="chart-box tall"><canvas id="chart-bridge" role="img" aria-label="Bridge from raw total to net product revenue"></canvas></div>
+          <p class="muted small mobile-hint">Swipe sideways to see the whole chart.</p>
+          <div class="chart-scroll"><div class="chart-box tall"><canvas id="chart-bridge" role="img" aria-label="Bridge from raw total to net product revenue"></canvas></div></div>
           <p class="muted small">The axis starts near £18.6M so the steps are visible. Cancellations stay inside net product revenue. Postage, fees and adjustments were net negative, so removing them raises the total.</p>
           <details class="doc"><summary>Full reconciliation table</summary><div id="bridge-table" class="table-wrap"></div></details>
         </article>
