@@ -19,16 +19,17 @@
   /* ---------- theme ---------- */
   function applyTheme(t) {
     document.documentElement.setAttribute("data-theme", t);
-    $("#theme-toggle").textContent = t === "dark" ? "Light mode" : "Dark mode";
+    document.querySelectorAll(".theme-icon").forEach(function (b) { b.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode"); });
     try { localStorage.setItem("lab-theme", t); } catch (e) {}
   }
   function initTheme() {
     var t = null; try { t = localStorage.getItem("lab-theme"); } catch (e) {}
     if (!t) t = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     applyTheme(t);
-    $("#theme-toggle").addEventListener("click", function () {
+    function flip() {
       applyTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark"); renderAll();
-    });
+    }
+    document.querySelectorAll(".theme-icon").forEach(function (b) { b.addEventListener("click", flip); });
   }
 
   /* ---------- KPI cards ---------- */
@@ -204,7 +205,22 @@
     document.querySelectorAll("input[type=range]").forEach(function (r) {
       function fill() { r.style.setProperty("--pct", ((r.value - r.min) / (r.max - r.min) * 100) + "%"); }
       r.addEventListener("input", fill); fill(); r._fill = fill; });
+    initMenu();
     renderDocs(); window.addEventListener("hashchange", route); route();
+  }
+  function initMenu() {
+    var btn = $("#menu-btn"), side = $("#sidebar"), scrim = $("#scrim");
+    function setOpen(open) {
+      side.classList.toggle("open", open); scrim.hidden = !open;
+      document.body.classList.toggle("menu-open", open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+    btn.addEventListener("click", function () { setOpen(!side.classList.contains("open")); });
+    scrim.addEventListener("click", function () { setOpen(false); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
+    document.querySelectorAll(".nav-link").forEach(function (a) { a.addEventListener("click", function () { setOpen(false); }); });
+    window.addEventListener("resize", function () { if (window.innerWidth > 760) setOpen(false); });
   }
   init();
 })();

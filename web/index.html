@@ -15,7 +15,15 @@
   <img class="b3" src="img/orb.svg" alt="">
 </div>
 <div class="app">
-  <aside class="sidebar" aria-label="Main navigation">
+  <header class="topbar">
+    <button id="menu-btn" class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v2H4v-2zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/></svg></button>
+    <button class="menu-btn theme-icon" type="button" aria-label="Switch to dark mode">
+      <svg class="i-contrast" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 3.8a8.2 8.2 0 0 0 0 16.4z" fill="currentColor"/></svg></button>
+    <span class="logo" aria-label="Decision Lab" role="img">B</span>
+  </header>
+  <div id="scrim" class="scrim" hidden></div>
+  <aside id="sidebar" class="sidebar" aria-label="Main navigation">
     <div class="brand"><span class="logo" aria-hidden="true">B</span><span>Decision Lab</span></div>
     <nav>
       <a href="#overview" data-page="overview" class="nav-link">
@@ -26,12 +34,13 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6V3zm8 1.5V8h3.5L14 4.5zM8.5 12h8v1.5h-8V12zm0 3.5h8V17h-8v-1.5z"/></svg>Methodology</a>
     </nav>
     <div class="sidebar-foot">
-      <button id="theme-toggle" class="theme-btn" type="button" aria-label="Switch light or dark theme">Dark mode</button>
       <p id="build-line" class="muted small"></p>
     </div>
   </aside>
 
   <main>
+    <button class="theme-desk theme-icon" type="button" aria-label="Switch to dark mode">
+      <svg class="i-contrast" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.2" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 3.8a8.2 8.2 0 0 0 0 16.4z" fill="currentColor"/></svg></button>
     <div id="sample-banner" class="banner" hidden></div>
 
     <section id="page-overview" class="page" hidden>
