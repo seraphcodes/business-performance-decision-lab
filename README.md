@@ -5,11 +5,23 @@ A business-intelligence project on two years of real retail transactions
 pipeline that reconciles to the penny, documented cleaning rules, SQL metric
 views, and a dashboard that states what the data can and cannot say.
 
-Stack: Python, pandas, SQLite, Streamlit, Plotly, pytest.
+**[Live demo](https://seraphcodes.github.io/business-performance-decision-lab/)** · Stack: Python, pandas, SQLite, Streamlit, Plotly, JavaScript, pytest.
 
-**Status:** core release done: data pipeline, metric views, Overview,
-Methodology and a narrow What-If Simulator. Planned next: customer analytics
-(cohorts, RFM).
+![Overview page](docs/screenshots/web-overview.png)
+
+## Why this project
+
+Most student dashboards start with charts. This one starts with a question: *can
+I trust the number?* The raw workbook double-counts £377,488.45 because its two
+sheets overlap, and a few huge orders that were sold and then cancelled would
+have put the wrong products at the top of a naive ranking. I wanted a project
+where every pound is accounted for, every cleaning rule is written down with
+evidence, and the dashboard says plainly what the data cannot tell you (for
+example: there are no product costs, so there is no real profit).
+
+**Status:** core release done and live: data pipeline, metric views, Overview,
+Methodology and a narrow What-If Simulator, as a Streamlit app and a public
+static website. Planned next: customer analytics (cohorts, RFM).
 
 ## What it does
 
@@ -43,22 +55,19 @@ already checked.
 - The what-if arithmetic in `web/js/scenario.js` is a port of `src/scenario.py`;
   `tests/test_web_scenario.py` runs both on 140 combinations and requires identical results
   (needs Node.js; skipped if it is not installed).
-- Publish free on GitHub Pages: copy `docs/deploy/pages.yml` to `.github/workflows/pages.yml`,
-  push, then set repository Settings > Pages > Source to **GitHub Actions**.
+- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main`
+  (repository Settings > Pages > Source: **GitHub Actions**). The live site is
+  https://seraphcodes.github.io/business-performance-decision-lab/
 
 ## Screenshots
 
-**Overview: net revenue by month** (incomplete Dec 2011 hidden by default)
+**What-If calculator** (arithmetic on a real 12-month baseline, not a forecast)
 
-![Net product revenue by month](docs/screenshots/overview-monthly.png)
-
-**Overview: top products (net) and countries**
-
-![Top products and countries](docs/screenshots/overview-products-countries.png)
+![What-If calculator](docs/screenshots/web-whatif.png)
 
 **Methodology: from raw rows to net revenue**
 
-![Reconciliation chart](docs/screenshots/methodology-bridge.png)
+![Reconciliation chart](docs/screenshots/web-methodology.png)
 
 ## Findings
 
