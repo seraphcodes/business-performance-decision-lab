@@ -161,6 +161,16 @@ def view_checks(connection, df, tolerance=0.005):
     checks.append(Check("View v_invoice_summary: gross equals the bridge",
                         abs(inv - expected["gross_product_sales"]) <= tolerance,
                         f"view {inv:,.2f} vs bridge {expected['gross_product_sales']:,.2f}"))
+    known = connection.execute("SELECT SUM(gross_value), COUNT(*) FROM v_customer_value").fetchone()
+    guest = connection.execute("SELECT SUM(gross_without_customer) FROM v_customer_coverage").fetchone()[0]
+    known_value, guest_value = known[0] or 0.0, guest or 0.0
+    checks.append(Check("Customer views: known customers + unknown = gross sales (bridge)",
+                        abs(known_value + guest_value - expected["gross_product_sales"]) <= tolerance,
+                        f"{known_value:,.2f} + {guest_value:,.2f} vs bridge {expected['gross_product_sales']:,.2f}"))
+    rfm = connection.execute("SELECT SUM(monetary), COUNT(*) FROM v_customer_rfm").fetchone()
+    checks.append(Check("View v_customer_rfm: same customers and value as v_customer_value",
+                        abs((rfm[0] or 0.0) - known_value) <= tolerance and rfm[1] == known[1],
+                        f"{rfm[1]} customers / {(rfm[0] or 0.0):,.2f} vs {known[1]} / {known_value:,.2f}"))
     return checks
 
 

@@ -56,6 +56,26 @@ def verify(monthly, countries, products_all, bridge):
     return [{"name": name, "passed": True, "detail": f"{got:,.2f}"} for name, got, _ in checks]
 
 
+def customer_section(database, money):
+    """Cohorts, RFM segments and concentration; all aggregates, no customer IDs."""
+    summary = metrics.customer_summary(database)
+    segments = metrics.rfm_segments(database)
+    problems = []
+    if summary["known_customers"] != int(segments["customers"].sum() if len(segments) else 0):
+        problems.append("segment customers do not add up to known customers")
+    if abs(summary["known_gross"] - (segments["gross_value"].sum() if len(segments) else 0.0)) > TOLERANCE:
+        problems.append("segment value does not add up to known customer value")
+    if problems:
+        raise ReconciliationError("Export refused, customer tables do not tie: " + "; ".join(problems))
+    return {
+        "summary": {key: (round(value, 4) if isinstance(value, float) else value)
+                    for key, value in summary.items()},
+        "cohorts": _records(money(metrics.cohort_retention(database))),
+        "segments": _records(money(segments)),
+        "concentration": _records(money(metrics.customer_concentration(database))),
+    }
+
+
 def build_payload(database=DATABASE, top_n=20, docs_dir=None):
     docs_dir = Path(docs_dir) if docs_dir else PROJECT_ROOT / "docs"
     monthly = metrics.monthly_revenue(database, include_partial=True)
@@ -95,6 +115,7 @@ def build_payload(database=DATABASE, top_n=20, docs_dir=None):
         "products": _records(money(products_all.head(top_n))),
         "countries": _records(money(countries)),
         "coverage": _records(money(metrics.customer_coverage(database))),
+        "customers": customer_section(database, money),
         "bridge": _records(money(bridge)),
         "docs": docs,
     }

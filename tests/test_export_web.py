@@ -18,7 +18,7 @@ def payload(sheets, tmp_path):
 
 def test_payload_has_every_section_and_hand_values(payload):
     assert set(payload) == {"meta", "kpis", "monthly", "services", "products", "countries",
-                            "coverage", "bridge", "docs"}
+                            "coverage", "customers", "bridge", "docs"}
     assert round(payload["kpis"]["net_product_revenue"], 2) == 93.63
     months = {row["year_month"]: row for row in payload["monthly"]}
     assert round(months["2011-03"]["net_product_revenue"], 2) == 26.13
@@ -48,3 +48,14 @@ def test_export_refuses_when_views_do_not_tie_to_the_bridge(sheets, tmp_path):
     broken.loc[0, "net_product_revenue"] += 1.00
     with pytest.raises(ReconciliationError, match="monthly net"):
         verify(broken, countries, products, bridge)
+
+
+def test_customer_section_ties_to_known_customers(payload):
+    section = payload["customers"]
+    summary = section["summary"]
+    assert summary["known_customers"] == sum(row["customers"] for row in section["segments"])
+    assert summary["known_gross"] == pytest.approx(sum(row["gross_value"] for row in section["segments"]), abs=0.01)
+    assert 0 < summary["known_share_of_gross_pct"] <= 100
+    assert summary["first_data_month"] == "2010-11" and summary["last_full_month"] == "2011-03"
+    assert all(row["top_pct"] > 0 for row in section["concentration"])
+    assert "customer_id" not in json.dumps(section)  # aggregates only, no customer IDs

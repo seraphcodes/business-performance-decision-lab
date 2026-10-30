@@ -30,6 +30,8 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 13h6V4H4v9zm0 7h6v-5H4v5zm10 0h6v-9h-6v9zm0-16v5h6V4h-6z"/></svg>Overview</a>
       <a href="#whatif" data-page="whatif" class="nav-link">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10h3v10H5zm5.5 0V4h3v16h-3zM16 20v-7h3v7h-3z"/></svg>What-If</a>
+      <a href="#customers" data-page="customers" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7 .5a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zM9 13c-3 0-6 1.5-6 4v2h12v-2c0-2.5-3-4-6-4zm7 .5c-.5 0-1 0-1.5.1 1.2.9 2 2.1 2 3.4V19H21v-1.7c0-2.2-2.6-3.8-5-3.8z"/></svg>Customers</a>
       <a href="#method" data-page="method" class="nav-link">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6V3zm8 1.5V8h3.5L14 4.5zM8.5 12h8v1.5h-8V12zm0 3.5h8V17h-8v-1.5z"/></svg>Methodology</a>
     </nav>
@@ -120,6 +122,55 @@
           <li><b>Break-even volume</b> = (1 − cost share) / (1 + price change − cost share) − 1</li>
         </ul>
       </details>
+    </section>
+
+    <section id="page-customers" class="page" hidden>
+      <header class="page-head">
+        <div><h1>Customers</h1><p id="cust-sub" class="muted"></p></div>
+      </header>
+      <div id="cust-missing" class="banner warn" hidden></div>
+      <div id="cust-body">
+        <div class="banner" id="cust-scope"></div>
+        <div id="cust-kpis" class="kpis kpis-4"></div>
+        <div class="grid">
+          <article class="card span-12">
+            <div class="card-head"><h2>Cohort retention</h2></div>
+            <p class="muted small">Customers grouped by the month of their first order. Each cell: the share of that group who ordered again N months later. Full months only.</p>
+            <p class="muted small mobile-hint">Swipe sideways to see all columns.</p>
+            <div id="cohort-wrap" class="heat-wrap"></div>
+            <p id="cohort-note" class="muted small"></p>
+          </article>
+          <article class="card span-8">
+            <div class="card-head"><h2>RFM segments</h2></div>
+            <div id="seg-wrap" class="table-wrap"></div>
+            <p id="seg-note" class="muted small"></p>
+          </article>
+          <article class="card span-4">
+            <div class="card-head"><h2>Customer concentration</h2></div>
+            <p class="muted small">Share of known-customer gross sales from the largest customers.</p>
+            <ol id="list-conc" class="bars"></ol>
+            <p id="conc-note" class="muted small"></p>
+          </article>
+        </div>
+        <details class="card doc"><summary>How segments are defined</summary>
+          <ul class="plain">
+            <li><b>Recency</b> = days from the customer's last order to the day after the last invoice in the data. <b>Frequency</b> = number of orders. <b>Monetary</b> = gross product sales.</li>
+            <li>Each is scored 1 to 5 (5 = best) from the share of customers at or below that value, so customers with the same value always get the same score.</li>
+            <li><b>Champions</b>: recency and frequency scores both 4-5. <b>Loyal</b>: both 3 or more. <b>Recent</b>: recency 4-5, low frequency. <b>At risk</b>: recency 1-2, frequency 3 or more. <b>Inactive</b>: recency 1-2, low frequency. <b>Needs attention</b>: everyone else.</li>
+            <li>These are descriptive labels for the past. They do not predict who will buy again.</li>
+          </ul>
+        </details>
+        <article class="card">
+          <h2>What this page cannot tell you</h2>
+          <ul class="plain">
+            <li><b>Everyone.</b> Only orders with a customer ID are used; the rest (guest checkouts) cannot be followed over time.</li>
+            <li><b>True new customers in Dec 2009.</b> The data starts in Dec 2009, so that group includes people who had already been buying before. It is marked with *.</li>
+            <li><b>Churn.</b> "Inactive" only means no order up to the end of the data. Some of these customers may order later.</li>
+            <li><b>Net value.</b> Customer values are gross sales; credit notes are not matched to customers here.</li>
+            <li><b>Who the customers are.</b> Many large accounts are probably businesses buying wholesale, so a few customers can be very large.</li>
+          </ul>
+        </article>
+      </div>
     </section>
 
     <section id="page-method" class="page" hidden>

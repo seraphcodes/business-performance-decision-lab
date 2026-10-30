@@ -215,13 +215,83 @@
     $("#doc-rules").innerHTML = md(M.docs.cleaning_rules); $("#doc-metrics").innerHTML = md(M.docs.metrics);   // our own project docs
   }
 
+  /* ---------- customers ---------- */
+  function pct(v, d) { return v.toFixed(d == null ? 1 : d) + "%"; }
+  function renderCustomers() {
+    var C = M.customers, miss = $("#cust-missing"), body = $("#cust-body");
+    if (!C) {
+      miss.hidden = false; body.hidden = true;
+      miss.textContent = "This export has no customer data yet. Run: python -m src.export_web, then reload.";
+      $("#cust-sub").textContent = ""; return;
+    }
+    miss.hidden = true; body.hidden = false;
+    var u = C.summary;
+    $("#cust-sub").textContent = "Cohorts, RFM segments and concentration · customers with an ID only · " + monthLabel(u.first_data_month) + " – " + monthLabel(u.last_full_month) + " (full months)";
+    $("#cust-scope").textContent = "Scope: " + u.known_customers.toLocaleString("en-GB") + " customers with an ID, covering " + pct(u.known_share_of_gross_pct) +
+      " of gross product sales (" + gbp(u.known_gross) + " of " + gbp(u.all_gross) + "). The other " + pct(100 - u.known_share_of_gross_pct) + " has no customer ID and is not analysed here. Values are gross sales.";
+    var top10 = C.concentration.filter(function (c) { return c.top_pct === 10; })[0];
+    var box = $("#cust-kpis"); box.textContent = "";
+    [["Customers with an ID", u.known_customers.toLocaleString("en-GB"), "of all customers; guest checkouts excluded", true],
+     ["Ordered 2+ times", pct(u.repeat_customers_pct), u.repeat_customers.toLocaleString("en-GB") + " customers"],
+     ["Top 10% of customers", top10 ? pct(top10.share_of_known_pct) : "n/a", "of known-customer gross sales"],
+     ["Snapshot day", u.snapshot_day, "recency counted up to this day"]].forEach(function (k) {
+      var c = el("div", "kpi" + (k[3] ? " hero" : "")); c.appendChild(el("div", "label", k[0])); c.appendChild(el("div", "value", k[1]));
+      c.appendChild(el("div", "sub", k[2])); box.appendChild(c); });
+
+    // cohort heatmap: rows = first-order month, columns = months since (0..12)
+    var MAXM = 12, cohorts = {}, order = [];
+    C.cohorts.forEach(function (r) {
+      if (!cohorts[r.cohort_month]) { cohorts[r.cohort_month] = { size: r.cohort_customers, censored: r.is_left_censored === 1, cells: {} }; order.push(r.cohort_month); }
+      cohorts[r.cohort_month].cells[r.months_since] = r;
+    });
+    var t = el("table", "heat static"), head = el("tr"); head.appendChild(el("th", null, "First order"));
+    for (var m = 0; m <= MAXM; m++) head.appendChild(el("th", null, m === 0 ? "M0" : "+" + m)); t.appendChild(head);
+    var accent = css("--accent"), lastFull = u.last_full_month;
+    function monthsBetween(a, b) { var x = a.split("-"), y = b.split("-"); return (+y[0] - +x[0]) * 12 + (+y[1] - +x[1]); }
+    order.forEach(function (cm) {
+      var info = cohorts[cm], tr = el("tr"), th = el("th", info.censored ? "censored" : null);
+      th.appendChild(document.createTextNode(monthLabel(cm) + (info.censored ? "*" : ""))); th.appendChild(el("br")); th.appendChild(el("span", "sz", info.size.toLocaleString("en-GB")));
+      tr.appendChild(th);
+      var reach = monthsBetween(cm, lastFull);   // how many months after the first month are inside the data
+      for (var k = 0; k <= MAXM; k++) {
+        var cell = info.cells[k], td;
+        if (k > reach) td = el("td", "na", "");
+        else {
+          var v = cell ? cell.retention_pct : 0; td = el("td", k === 0 ? "base" : "", pct(v, 0));
+          if (k > 0) td.style.background = "color-mix(in srgb, " + accent + " " + Math.round(Math.min(v / 40, 1) * 72) + "%, transparent)";
+          td.title = monthLabel(cm) + " cohort, " + (k === 0 ? "first month" : k + " month(s) later") + ": " + (cell ? cell.active_customers : 0) + " of " + info.size + " customers ordered";
+        }
+        tr.appendChild(td);
+      }
+      t.appendChild(tr);
+    });
+    var wrap = $("#cohort-wrap"); wrap.textContent = ""; wrap.appendChild(t);
+    $("#cohort-note").textContent = "The small number under each month is the group size. * " + monthLabel(u.first_data_month) + " is the first month of the data, so it also holds customers who were already buying before; read it as 'customers seen for the first time in this data', not new customers. Colour is capped at 40% so the later months stay readable. Columns beyond +" + MAXM + " are not shown.";
+
+    // segments
+    var sw = $("#seg-wrap"); sw.textContent = ""; var st = el("table"), sh = el("tr");
+    ["Segment", "Customers", "% of customers", "% of gross sales", "Avg days since last order", "Avg orders"].forEach(function (c, i) { sh.appendChild(el("th", i ? "num" : null, c)); }); st.appendChild(sh);
+    C.segments.forEach(function (g) {
+      var tr = el("tr"); tr.appendChild(el("td", null, g.segment));
+      [g.customers.toLocaleString("en-GB"), pct(g.customers_pct), pct(g.gross_value_pct), Math.round(g.avg_recency_days).toString(), g.avg_orders.toFixed(1)].forEach(function (x) { tr.appendChild(el("td", "num", x)); });
+      st.appendChild(tr); });
+    sw.appendChild(st);
+    var champ = C.segments.filter(function (g) { return g.segment === "Champions"; })[0];
+    $("#seg-note").textContent = champ ? "Why it matters: Champions are " + pct(champ.customers_pct) + " of customers but " + pct(champ.gross_value_pct) + " of gross sales to known customers. Segments are descriptive labels, not predictions." : "";
+
+    // concentration
+    renderBars("#list-conc", C.concentration.map(function (c) { return { name: "Top " + c.top_pct + "%", value: c.gross_value }; }), u.known_gross);
+    var t20 = C.concentration.filter(function (c) { return c.top_pct === 20; })[0];
+    $("#conc-note").textContent = t20 ? "Why it matters: the top 20% of customers bring " + pct(t20.share_of_known_pct) + " of known-customer sales, so losing a few large accounts would be felt much more than losing many small ones." : "";
+  }
+
   /* ---------- shell ---------- */
   function renderAll() {
-    renderKpis(); renderMonthly(); renderCancel(); renderLists(); renderWhatIf(); renderBridge();
+    renderKpis(); renderMonthly(); renderCancel(); renderLists(); renderWhatIf(); renderBridge(); renderCustomers();
   }
   function route() {
-    var page = (location.hash || "#overview").slice(1); if (["overview", "whatif", "method"].indexOf(page) === -1) page = "overview";
-    ["overview", "whatif", "method"].forEach(function (p) { $("#page-" + p).hidden = p !== page; });
+    var page = (location.hash || "#overview").slice(1); if (["overview", "whatif", "customers", "method"].indexOf(page) === -1) page = "overview";
+    ["overview", "whatif", "customers", "method"].forEach(function (p) { $("#page-" + p).hidden = p !== page; });
     document.querySelectorAll(".nav-link").forEach(function (a) { a.classList.toggle("active", a.dataset.page === page); });
     renderAll(); window.scrollTo(0, 0);
   }

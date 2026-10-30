@@ -3,10 +3,10 @@
   "dataset": "Online Retail II, UCI Machine Learning Repository (Chen, 2012), CC BY 4.0",
   "doi": "https://doi.org/10.24432/C5CG6D",
   "currency": "GBP",
-  "built_at": "2026-10-28T13:53:30",
+  "built_at": "2026-10-30T13:48:27",
   "source_file": "online_retail_II.xlsx",
   "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
-  "reconciliation_checks_passed": "18 of 18",
+  "reconciliation_checks_passed": "20 of 20",
   "export_checks": [
    {
     "name": "monthly gross",
@@ -2027,6 +2027,2803 @@
    "pct_with_customer": 83.39
   }
  ],
+ "customers": {
+  "summary": {
+   "known_customers": 5852,
+   "repeat_customers": 4234,
+   "repeat_customers_pct": 72.3513,
+   "known_gross": 17124940.997,
+   "all_gross": 19700954.457,
+   "known_share_of_gross_pct": 86.9244,
+   "snapshot_day": "2011-12-10",
+   "first_data_month": "2009-12",
+   "last_full_month": "2011-11"
+  },
+  "cohorts": [
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2009-12",
+    "months_since": 0,
+    "active_customers": 951,
+    "cohort_customers": 951,
+    "retention_pct": 100.0,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-01",
+    "months_since": 1,
+    "active_customers": 333,
+    "cohort_customers": 951,
+    "retention_pct": 35.02,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-02",
+    "months_since": 2,
+    "active_customers": 317,
+    "cohort_customers": 951,
+    "retention_pct": 33.33,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-03",
+    "months_since": 3,
+    "active_customers": 404,
+    "cohort_customers": 951,
+    "retention_pct": 42.48,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-04",
+    "months_since": 4,
+    "active_customers": 360,
+    "cohort_customers": 951,
+    "retention_pct": 37.85,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-05",
+    "months_since": 5,
+    "active_customers": 342,
+    "cohort_customers": 951,
+    "retention_pct": 35.96,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-06",
+    "months_since": 6,
+    "active_customers": 358,
+    "cohort_customers": 951,
+    "retention_pct": 37.64,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-07",
+    "months_since": 7,
+    "active_customers": 327,
+    "cohort_customers": 951,
+    "retention_pct": 34.38,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-08",
+    "months_since": 8,
+    "active_customers": 321,
+    "cohort_customers": 951,
+    "retention_pct": 33.75,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-09",
+    "months_since": 9,
+    "active_customers": 344,
+    "cohort_customers": 951,
+    "retention_pct": 36.17,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-10",
+    "months_since": 10,
+    "active_customers": 401,
+    "cohort_customers": 951,
+    "retention_pct": 42.17,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-11",
+    "months_since": 11,
+    "active_customers": 472,
+    "cohort_customers": 951,
+    "retention_pct": 49.63,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2010-12",
+    "months_since": 12,
+    "active_customers": 358,
+    "cohort_customers": 951,
+    "retention_pct": 37.64,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-01",
+    "months_since": 13,
+    "active_customers": 268,
+    "cohort_customers": 951,
+    "retention_pct": 28.18,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-02",
+    "months_since": 14,
+    "active_customers": 232,
+    "cohort_customers": 951,
+    "retention_pct": 24.4,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-03",
+    "months_since": 15,
+    "active_customers": 288,
+    "cohort_customers": 951,
+    "retention_pct": 30.28,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-04",
+    "months_since": 16,
+    "active_customers": 250,
+    "cohort_customers": 951,
+    "retention_pct": 26.29,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-05",
+    "months_since": 17,
+    "active_customers": 288,
+    "cohort_customers": 951,
+    "retention_pct": 30.28,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-06",
+    "months_since": 18,
+    "active_customers": 270,
+    "cohort_customers": 951,
+    "retention_pct": 28.39,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-07",
+    "months_since": 19,
+    "active_customers": 246,
+    "cohort_customers": 951,
+    "retention_pct": 25.87,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-08",
+    "months_since": 20,
+    "active_customers": 242,
+    "cohort_customers": 951,
+    "retention_pct": 25.45,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-09",
+    "months_since": 21,
+    "active_customers": 298,
+    "cohort_customers": 951,
+    "retention_pct": 31.34,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-10",
+    "months_since": 22,
+    "active_customers": 289,
+    "cohort_customers": 951,
+    "retention_pct": 30.39,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2009-12",
+    "activity_month": "2011-11",
+    "months_since": 23,
+    "active_customers": 386,
+    "cohort_customers": 951,
+    "retention_pct": 40.59,
+    "is_left_censored": 1
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-01",
+    "months_since": 0,
+    "active_customers": 368,
+    "cohort_customers": 368,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-02",
+    "months_since": 1,
+    "active_customers": 79,
+    "cohort_customers": 368,
+    "retention_pct": 21.47,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-03",
+    "months_since": 2,
+    "active_customers": 118,
+    "cohort_customers": 368,
+    "retention_pct": 32.07,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-04",
+    "months_since": 3,
+    "active_customers": 116,
+    "cohort_customers": 368,
+    "retention_pct": 31.52,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-05",
+    "months_since": 4,
+    "active_customers": 100,
+    "cohort_customers": 368,
+    "retention_pct": 27.17,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-06",
+    "months_since": 5,
+    "active_customers": 114,
+    "cohort_customers": 368,
+    "retention_pct": 30.98,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-07",
+    "months_since": 6,
+    "active_customers": 99,
+    "cohort_customers": 368,
+    "retention_pct": 26.9,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-08",
+    "months_since": 7,
+    "active_customers": 86,
+    "cohort_customers": 368,
+    "retention_pct": 23.37,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-09",
+    "months_since": 8,
+    "active_customers": 105,
+    "cohort_customers": 368,
+    "retention_pct": 28.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-10",
+    "months_since": 9,
+    "active_customers": 120,
+    "cohort_customers": 368,
+    "retention_pct": 32.61,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-11",
+    "months_since": 10,
+    "active_customers": 114,
+    "cohort_customers": 368,
+    "retention_pct": 30.98,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2010-12",
+    "months_since": 11,
+    "active_customers": 66,
+    "cohort_customers": 368,
+    "retention_pct": 17.93,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-01",
+    "months_since": 12,
+    "active_customers": 84,
+    "cohort_customers": 368,
+    "retention_pct": 22.83,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-02",
+    "months_since": 13,
+    "active_customers": 66,
+    "cohort_customers": 368,
+    "retention_pct": 17.93,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-03",
+    "months_since": 14,
+    "active_customers": 72,
+    "cohort_customers": 368,
+    "retention_pct": 19.57,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-04",
+    "months_since": 15,
+    "active_customers": 56,
+    "cohort_customers": 368,
+    "retention_pct": 15.22,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-05",
+    "months_since": 16,
+    "active_customers": 90,
+    "cohort_customers": 368,
+    "retention_pct": 24.46,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-06",
+    "months_since": 17,
+    "active_customers": 75,
+    "cohort_customers": 368,
+    "retention_pct": 20.38,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-07",
+    "months_since": 18,
+    "active_customers": 71,
+    "cohort_customers": 368,
+    "retention_pct": 19.29,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-08",
+    "months_since": 19,
+    "active_customers": 74,
+    "cohort_customers": 368,
+    "retention_pct": 20.11,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-09",
+    "months_since": 20,
+    "active_customers": 93,
+    "cohort_customers": 368,
+    "retention_pct": 25.27,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-10",
+    "months_since": 21,
+    "active_customers": 73,
+    "cohort_customers": 368,
+    "retention_pct": 19.84,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-01",
+    "activity_month": "2011-11",
+    "months_since": 22,
+    "active_customers": 93,
+    "cohort_customers": 368,
+    "retention_pct": 25.27,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-02",
+    "months_since": 0,
+    "active_customers": 375,
+    "cohort_customers": 375,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-03",
+    "months_since": 1,
+    "active_customers": 88,
+    "cohort_customers": 375,
+    "retention_pct": 23.47,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-04",
+    "months_since": 2,
+    "active_customers": 85,
+    "cohort_customers": 375,
+    "retention_pct": 22.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-05",
+    "months_since": 3,
+    "active_customers": 110,
+    "cohort_customers": 375,
+    "retention_pct": 29.33,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-06",
+    "months_since": 4,
+    "active_customers": 92,
+    "cohort_customers": 375,
+    "retention_pct": 24.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-07",
+    "months_since": 5,
+    "active_customers": 74,
+    "cohort_customers": 375,
+    "retention_pct": 19.73,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-08",
+    "months_since": 6,
+    "active_customers": 72,
+    "cohort_customers": 375,
+    "retention_pct": 19.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-09",
+    "months_since": 7,
+    "active_customers": 108,
+    "cohort_customers": 375,
+    "retention_pct": 28.8,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-10",
+    "months_since": 8,
+    "active_customers": 96,
+    "cohort_customers": 375,
+    "retention_pct": 25.6,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-11",
+    "months_since": 9,
+    "active_customers": 104,
+    "cohort_customers": 375,
+    "retention_pct": 27.73,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2010-12",
+    "months_since": 10,
+    "active_customers": 43,
+    "cohort_customers": 375,
+    "retention_pct": 11.47,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-01",
+    "months_since": 11,
+    "active_customers": 47,
+    "cohort_customers": 375,
+    "retention_pct": 12.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-02",
+    "months_since": 12,
+    "active_customers": 57,
+    "cohort_customers": 375,
+    "retention_pct": 15.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-03",
+    "months_since": 13,
+    "active_customers": 66,
+    "cohort_customers": 375,
+    "retention_pct": 17.6,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-04",
+    "months_since": 14,
+    "active_customers": 46,
+    "cohort_customers": 375,
+    "retention_pct": 12.27,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-05",
+    "months_since": 15,
+    "active_customers": 75,
+    "cohort_customers": 375,
+    "retention_pct": 20.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-06",
+    "months_since": 16,
+    "active_customers": 60,
+    "cohort_customers": 375,
+    "retention_pct": 16.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-07",
+    "months_since": 17,
+    "active_customers": 61,
+    "cohort_customers": 375,
+    "retention_pct": 16.27,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-08",
+    "months_since": 18,
+    "active_customers": 54,
+    "cohort_customers": 375,
+    "retention_pct": 14.4,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-09",
+    "months_since": 19,
+    "active_customers": 86,
+    "cohort_customers": 375,
+    "retention_pct": 22.93,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-10",
+    "months_since": 20,
+    "active_customers": 86,
+    "cohort_customers": 375,
+    "retention_pct": 22.93,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-02",
+    "activity_month": "2011-11",
+    "months_since": 21,
+    "active_customers": 62,
+    "cohort_customers": 375,
+    "retention_pct": 16.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-03",
+    "months_since": 0,
+    "active_customers": 441,
+    "cohort_customers": 441,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-04",
+    "months_since": 1,
+    "active_customers": 84,
+    "cohort_customers": 441,
+    "retention_pct": 19.05,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-05",
+    "months_since": 2,
+    "active_customers": 102,
+    "cohort_customers": 441,
+    "retention_pct": 23.13,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-06",
+    "months_since": 3,
+    "active_customers": 107,
+    "cohort_customers": 441,
+    "retention_pct": 24.26,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-07",
+    "months_since": 4,
+    "active_customers": 102,
+    "cohort_customers": 441,
+    "retention_pct": 23.13,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-08",
+    "months_since": 5,
+    "active_customers": 90,
+    "cohort_customers": 441,
+    "retention_pct": 20.41,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-09",
+    "months_since": 6,
+    "active_customers": 109,
+    "cohort_customers": 441,
+    "retention_pct": 24.72,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-10",
+    "months_since": 7,
+    "active_customers": 135,
+    "cohort_customers": 441,
+    "retention_pct": 30.61,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-11",
+    "months_since": 8,
+    "active_customers": 122,
+    "cohort_customers": 441,
+    "retention_pct": 27.66,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2010-12",
+    "months_since": 9,
+    "active_customers": 48,
+    "cohort_customers": 441,
+    "retention_pct": 10.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-01",
+    "months_since": 10,
+    "active_customers": 51,
+    "cohort_customers": 441,
+    "retention_pct": 11.56,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-02",
+    "months_since": 11,
+    "active_customers": 64,
+    "cohort_customers": 441,
+    "retention_pct": 14.51,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-03",
+    "months_since": 12,
+    "active_customers": 88,
+    "cohort_customers": 441,
+    "retention_pct": 19.95,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-04",
+    "months_since": 13,
+    "active_customers": 72,
+    "cohort_customers": 441,
+    "retention_pct": 16.33,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-05",
+    "months_since": 14,
+    "active_customers": 88,
+    "cohort_customers": 441,
+    "retention_pct": 19.95,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-06",
+    "months_since": 15,
+    "active_customers": 75,
+    "cohort_customers": 441,
+    "retention_pct": 17.01,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-07",
+    "months_since": 16,
+    "active_customers": 77,
+    "cohort_customers": 441,
+    "retention_pct": 17.46,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-08",
+    "months_since": 17,
+    "active_customers": 69,
+    "cohort_customers": 441,
+    "retention_pct": 15.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-09",
+    "months_since": 18,
+    "active_customers": 78,
+    "cohort_customers": 441,
+    "retention_pct": 17.69,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-10",
+    "months_since": 19,
+    "active_customers": 90,
+    "cohort_customers": 441,
+    "retention_pct": 20.41,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-03",
+    "activity_month": "2011-11",
+    "months_since": 20,
+    "active_customers": 94,
+    "cohort_customers": 441,
+    "retention_pct": 21.32,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-04",
+    "months_since": 0,
+    "active_customers": 294,
+    "cohort_customers": 294,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-05",
+    "months_since": 1,
+    "active_customers": 56,
+    "cohort_customers": 294,
+    "retention_pct": 19.05,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-06",
+    "months_since": 2,
+    "active_customers": 56,
+    "cohort_customers": 294,
+    "retention_pct": 19.05,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-07",
+    "months_since": 3,
+    "active_customers": 47,
+    "cohort_customers": 294,
+    "retention_pct": 15.99,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-08",
+    "months_since": 4,
+    "active_customers": 54,
+    "cohort_customers": 294,
+    "retention_pct": 18.37,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-09",
+    "months_since": 5,
+    "active_customers": 65,
+    "cohort_customers": 294,
+    "retention_pct": 22.11,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-10",
+    "months_since": 6,
+    "active_customers": 81,
+    "cohort_customers": 294,
+    "retention_pct": 27.55,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-11",
+    "months_since": 7,
+    "active_customers": 78,
+    "cohort_customers": 294,
+    "retention_pct": 26.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2010-12",
+    "months_since": 8,
+    "active_customers": 31,
+    "cohort_customers": 294,
+    "retention_pct": 10.54,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-01",
+    "months_since": 9,
+    "active_customers": 32,
+    "cohort_customers": 294,
+    "retention_pct": 10.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-02",
+    "months_since": 10,
+    "active_customers": 22,
+    "cohort_customers": 294,
+    "retention_pct": 7.48,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-03",
+    "months_since": 11,
+    "active_customers": 41,
+    "cohort_customers": 294,
+    "retention_pct": 13.95,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-04",
+    "months_since": 12,
+    "active_customers": 42,
+    "cohort_customers": 294,
+    "retention_pct": 14.29,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-05",
+    "months_since": 13,
+    "active_customers": 46,
+    "cohort_customers": 294,
+    "retention_pct": 15.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-06",
+    "months_since": 14,
+    "active_customers": 46,
+    "cohort_customers": 294,
+    "retention_pct": 15.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-07",
+    "months_since": 15,
+    "active_customers": 46,
+    "cohort_customers": 294,
+    "retention_pct": 15.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-08",
+    "months_since": 16,
+    "active_customers": 41,
+    "cohort_customers": 294,
+    "retention_pct": 13.95,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-09",
+    "months_since": 17,
+    "active_customers": 44,
+    "cohort_customers": 294,
+    "retention_pct": 14.97,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-10",
+    "months_since": 18,
+    "active_customers": 53,
+    "cohort_customers": 294,
+    "retention_pct": 18.03,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-04",
+    "activity_month": "2011-11",
+    "months_since": 19,
+    "active_customers": 67,
+    "cohort_customers": 294,
+    "retention_pct": 22.79,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-05",
+    "months_since": 0,
+    "active_customers": 255,
+    "cohort_customers": 255,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-06",
+    "months_since": 1,
+    "active_customers": 40,
+    "cohort_customers": 255,
+    "retention_pct": 15.69,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-07",
+    "months_since": 2,
+    "active_customers": 43,
+    "cohort_customers": 255,
+    "retention_pct": 16.86,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-08",
+    "months_since": 3,
+    "active_customers": 45,
+    "cohort_customers": 255,
+    "retention_pct": 17.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-09",
+    "months_since": 4,
+    "active_customers": 45,
+    "cohort_customers": 255,
+    "retention_pct": 17.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-10",
+    "months_since": 5,
+    "active_customers": 65,
+    "cohort_customers": 255,
+    "retention_pct": 25.49,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-11",
+    "months_since": 6,
+    "active_customers": 54,
+    "cohort_customers": 255,
+    "retention_pct": 21.18,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2010-12",
+    "months_since": 7,
+    "active_customers": 32,
+    "cohort_customers": 255,
+    "retention_pct": 12.55,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-01",
+    "months_since": 8,
+    "active_customers": 15,
+    "cohort_customers": 255,
+    "retention_pct": 5.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-02",
+    "months_since": 9,
+    "active_customers": 21,
+    "cohort_customers": 255,
+    "retention_pct": 8.24,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-03",
+    "months_since": 10,
+    "active_customers": 29,
+    "cohort_customers": 255,
+    "retention_pct": 11.37,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-04",
+    "months_since": 11,
+    "active_customers": 34,
+    "cohort_customers": 255,
+    "retention_pct": 13.33,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-05",
+    "months_since": 12,
+    "active_customers": 39,
+    "cohort_customers": 255,
+    "retention_pct": 15.29,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-06",
+    "months_since": 13,
+    "active_customers": 39,
+    "cohort_customers": 255,
+    "retention_pct": 15.29,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-07",
+    "months_since": 14,
+    "active_customers": 25,
+    "cohort_customers": 255,
+    "retention_pct": 9.8,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-08",
+    "months_since": 15,
+    "active_customers": 32,
+    "cohort_customers": 255,
+    "retention_pct": 12.55,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-09",
+    "months_since": 16,
+    "active_customers": 35,
+    "cohort_customers": 255,
+    "retention_pct": 13.73,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-10",
+    "months_since": 17,
+    "active_customers": 42,
+    "cohort_customers": 255,
+    "retention_pct": 16.47,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-05",
+    "activity_month": "2011-11",
+    "months_since": 18,
+    "active_customers": 39,
+    "cohort_customers": 255,
+    "retention_pct": 15.29,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-06",
+    "months_since": 0,
+    "active_customers": 267,
+    "cohort_customers": 267,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-07",
+    "months_since": 1,
+    "active_customers": 47,
+    "cohort_customers": 267,
+    "retention_pct": 17.6,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-08",
+    "months_since": 2,
+    "active_customers": 50,
+    "cohort_customers": 267,
+    "retention_pct": 18.73,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-09",
+    "months_since": 3,
+    "active_customers": 55,
+    "cohort_customers": 267,
+    "retention_pct": 20.6,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-10",
+    "months_since": 4,
+    "active_customers": 62,
+    "cohort_customers": 267,
+    "retention_pct": 23.22,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-11",
+    "months_since": 5,
+    "active_customers": 76,
+    "cohort_customers": 267,
+    "retention_pct": 28.46,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2010-12",
+    "months_since": 6,
+    "active_customers": 34,
+    "cohort_customers": 267,
+    "retention_pct": 12.73,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-01",
+    "months_since": 7,
+    "active_customers": 24,
+    "cohort_customers": 267,
+    "retention_pct": 8.99,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-02",
+    "months_since": 8,
+    "active_customers": 22,
+    "cohort_customers": 267,
+    "retention_pct": 8.24,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-03",
+    "months_since": 9,
+    "active_customers": 30,
+    "cohort_customers": 267,
+    "retention_pct": 11.24,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-04",
+    "months_since": 10,
+    "active_customers": 28,
+    "cohort_customers": 267,
+    "retention_pct": 10.49,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-05",
+    "months_since": 11,
+    "active_customers": 37,
+    "cohort_customers": 267,
+    "retention_pct": 13.86,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-06",
+    "months_since": 12,
+    "active_customers": 40,
+    "cohort_customers": 267,
+    "retention_pct": 14.98,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-07",
+    "months_since": 13,
+    "active_customers": 33,
+    "cohort_customers": 267,
+    "retention_pct": 12.36,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-08",
+    "months_since": 14,
+    "active_customers": 30,
+    "cohort_customers": 267,
+    "retention_pct": 11.24,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-09",
+    "months_since": 15,
+    "active_customers": 33,
+    "cohort_customers": 267,
+    "retention_pct": 12.36,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-10",
+    "months_since": 16,
+    "active_customers": 35,
+    "cohort_customers": 267,
+    "retention_pct": 13.11,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-06",
+    "activity_month": "2011-11",
+    "months_since": 17,
+    "active_customers": 54,
+    "cohort_customers": 267,
+    "retention_pct": 20.22,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2010-07",
+    "months_since": 0,
+    "active_customers": 185,
+    "cohort_customers": 185,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2010-08",
+    "months_since": 1,
+    "active_customers": 29,
+    "cohort_customers": 185,
+    "retention_pct": 15.68,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2010-09",
+    "months_since": 2,
+    "active_customers": 34,
+    "cohort_customers": 185,
+    "retention_pct": 18.38,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2010-10",
+    "months_since": 3,
+    "active_customers": 55,
+    "cohort_customers": 185,
+    "retention_pct": 29.73,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2010-11",
+    "months_since": 4,
+    "active_customers": 54,
+    "cohort_customers": 185,
+    "retention_pct": 29.19,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2010-12",
+    "months_since": 5,
+    "active_customers": 26,
+    "cohort_customers": 185,
+    "retention_pct": 14.05,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-01",
+    "months_since": 6,
+    "active_customers": 21,
+    "cohort_customers": 185,
+    "retention_pct": 11.35,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-02",
+    "months_since": 7,
+    "active_customers": 27,
+    "cohort_customers": 185,
+    "retention_pct": 14.59,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-03",
+    "months_since": 8,
+    "active_customers": 27,
+    "cohort_customers": 185,
+    "retention_pct": 14.59,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-04",
+    "months_since": 9,
+    "active_customers": 21,
+    "cohort_customers": 185,
+    "retention_pct": 11.35,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-05",
+    "months_since": 10,
+    "active_customers": 25,
+    "cohort_customers": 185,
+    "retention_pct": 13.51,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-06",
+    "months_since": 11,
+    "active_customers": 27,
+    "cohort_customers": 185,
+    "retention_pct": 14.59,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-07",
+    "months_since": 12,
+    "active_customers": 24,
+    "cohort_customers": 185,
+    "retention_pct": 12.97,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-08",
+    "months_since": 13,
+    "active_customers": 25,
+    "cohort_customers": 185,
+    "retention_pct": 13.51,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-09",
+    "months_since": 14,
+    "active_customers": 36,
+    "cohort_customers": 185,
+    "retention_pct": 19.46,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-10",
+    "months_since": 15,
+    "active_customers": 32,
+    "cohort_customers": 185,
+    "retention_pct": 17.3,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-07",
+    "activity_month": "2011-11",
+    "months_since": 16,
+    "active_customers": 44,
+    "cohort_customers": 185,
+    "retention_pct": 23.78,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2010-08",
+    "months_since": 0,
+    "active_customers": 163,
+    "cohort_customers": 163,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2010-09",
+    "months_since": 1,
+    "active_customers": 32,
+    "cohort_customers": 163,
+    "retention_pct": 19.63,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2010-10",
+    "months_since": 2,
+    "active_customers": 47,
+    "cohort_customers": 163,
+    "retention_pct": 28.83,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2010-11",
+    "months_since": 3,
+    "active_customers": 53,
+    "cohort_customers": 163,
+    "retention_pct": 32.52,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2010-12",
+    "months_since": 4,
+    "active_customers": 27,
+    "cohort_customers": 163,
+    "retention_pct": 16.56,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-01",
+    "months_since": 5,
+    "active_customers": 19,
+    "cohort_customers": 163,
+    "retention_pct": 11.66,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-02",
+    "months_since": 6,
+    "active_customers": 16,
+    "cohort_customers": 163,
+    "retention_pct": 9.82,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-03",
+    "months_since": 7,
+    "active_customers": 21,
+    "cohort_customers": 163,
+    "retention_pct": 12.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-04",
+    "months_since": 8,
+    "active_customers": 22,
+    "cohort_customers": 163,
+    "retention_pct": 13.5,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-05",
+    "months_since": 9,
+    "active_customers": 21,
+    "cohort_customers": 163,
+    "retention_pct": 12.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-06",
+    "months_since": 10,
+    "active_customers": 21,
+    "cohort_customers": 163,
+    "retention_pct": 12.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-07",
+    "months_since": 11,
+    "active_customers": 19,
+    "cohort_customers": 163,
+    "retention_pct": 11.66,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-08",
+    "months_since": 12,
+    "active_customers": 24,
+    "cohort_customers": 163,
+    "retention_pct": 14.72,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-09",
+    "months_since": 13,
+    "active_customers": 28,
+    "cohort_customers": 163,
+    "retention_pct": 17.18,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-10",
+    "months_since": 14,
+    "active_customers": 28,
+    "cohort_customers": 163,
+    "retention_pct": 17.18,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-08",
+    "activity_month": "2011-11",
+    "months_since": 15,
+    "active_customers": 32,
+    "cohort_customers": 163,
+    "retention_pct": 19.63,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2010-09",
+    "months_since": 0,
+    "active_customers": 239,
+    "cohort_customers": 239,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2010-10",
+    "months_since": 1,
+    "active_customers": 55,
+    "cohort_customers": 239,
+    "retention_pct": 23.01,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2010-11",
+    "months_since": 2,
+    "active_customers": 56,
+    "cohort_customers": 239,
+    "retention_pct": 23.43,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2010-12",
+    "months_since": 3,
+    "active_customers": 31,
+    "cohort_customers": 239,
+    "retention_pct": 12.97,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-01",
+    "months_since": 4,
+    "active_customers": 21,
+    "cohort_customers": 239,
+    "retention_pct": 8.79,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-02",
+    "months_since": 5,
+    "active_customers": 25,
+    "cohort_customers": 239,
+    "retention_pct": 10.46,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-03",
+    "months_since": 6,
+    "active_customers": 33,
+    "cohort_customers": 239,
+    "retention_pct": 13.81,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-04",
+    "months_since": 7,
+    "active_customers": 23,
+    "cohort_customers": 239,
+    "retention_pct": 9.62,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-05",
+    "months_since": 8,
+    "active_customers": 31,
+    "cohort_customers": 239,
+    "retention_pct": 12.97,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-06",
+    "months_since": 9,
+    "active_customers": 31,
+    "cohort_customers": 239,
+    "retention_pct": 12.97,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-07",
+    "months_since": 10,
+    "active_customers": 29,
+    "cohort_customers": 239,
+    "retention_pct": 12.13,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-08",
+    "months_since": 11,
+    "active_customers": 24,
+    "cohort_customers": 239,
+    "retention_pct": 10.04,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-09",
+    "months_since": 12,
+    "active_customers": 54,
+    "cohort_customers": 239,
+    "retention_pct": 22.59,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-10",
+    "months_since": 13,
+    "active_customers": 40,
+    "cohort_customers": 239,
+    "retention_pct": 16.74,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-09",
+    "activity_month": "2011-11",
+    "months_since": 14,
+    "active_customers": 40,
+    "cohort_customers": 239,
+    "retention_pct": 16.74,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2010-10",
+    "months_since": 0,
+    "active_customers": 375,
+    "cohort_customers": 375,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2010-11",
+    "months_since": 1,
+    "active_customers": 97,
+    "cohort_customers": 375,
+    "retention_pct": 25.87,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2010-12",
+    "months_since": 2,
+    "active_customers": 55,
+    "cohort_customers": 375,
+    "retention_pct": 14.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-01",
+    "months_since": 3,
+    "active_customers": 47,
+    "cohort_customers": 375,
+    "retention_pct": 12.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-02",
+    "months_since": 4,
+    "active_customers": 33,
+    "cohort_customers": 375,
+    "retention_pct": 8.8,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-03",
+    "months_since": 5,
+    "active_customers": 31,
+    "cohort_customers": 375,
+    "retention_pct": 8.27,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-04",
+    "months_since": 6,
+    "active_customers": 49,
+    "cohort_customers": 375,
+    "retention_pct": 13.07,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-05",
+    "months_since": 7,
+    "active_customers": 52,
+    "cohort_customers": 375,
+    "retention_pct": 13.87,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-06",
+    "months_since": 8,
+    "active_customers": 40,
+    "cohort_customers": 375,
+    "retention_pct": 10.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-07",
+    "months_since": 9,
+    "active_customers": 35,
+    "cohort_customers": 375,
+    "retention_pct": 9.33,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-08",
+    "months_since": 10,
+    "active_customers": 40,
+    "cohort_customers": 375,
+    "retention_pct": 10.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-09",
+    "months_since": 11,
+    "active_customers": 48,
+    "cohort_customers": 375,
+    "retention_pct": 12.8,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-10",
+    "months_since": 12,
+    "active_customers": 72,
+    "cohort_customers": 375,
+    "retention_pct": 19.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-10",
+    "activity_month": "2011-11",
+    "months_since": 13,
+    "active_customers": 87,
+    "cohort_customers": 375,
+    "retention_pct": 23.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2010-11",
+    "months_since": 0,
+    "active_customers": 326,
+    "cohort_customers": 326,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2010-12",
+    "months_since": 1,
+    "active_customers": 57,
+    "cohort_customers": 326,
+    "retention_pct": 17.48,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-01",
+    "months_since": 2,
+    "active_customers": 31,
+    "cohort_customers": 326,
+    "retention_pct": 9.51,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-02",
+    "months_since": 3,
+    "active_customers": 31,
+    "cohort_customers": 326,
+    "retention_pct": 9.51,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-03",
+    "months_since": 4,
+    "active_customers": 25,
+    "cohort_customers": 326,
+    "retention_pct": 7.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-04",
+    "months_since": 5,
+    "active_customers": 29,
+    "cohort_customers": 326,
+    "retention_pct": 8.9,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-05",
+    "months_since": 6,
+    "active_customers": 42,
+    "cohort_customers": 326,
+    "retention_pct": 12.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-06",
+    "months_since": 7,
+    "active_customers": 33,
+    "cohort_customers": 326,
+    "retention_pct": 10.12,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-07",
+    "months_since": 8,
+    "active_customers": 28,
+    "cohort_customers": 326,
+    "retention_pct": 8.59,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-08",
+    "months_since": 9,
+    "active_customers": 30,
+    "cohort_customers": 326,
+    "retention_pct": 9.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-09",
+    "months_since": 10,
+    "active_customers": 36,
+    "cohort_customers": 326,
+    "retention_pct": 11.04,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-10",
+    "months_since": 11,
+    "active_customers": 48,
+    "cohort_customers": 326,
+    "retention_pct": 14.72,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-11",
+    "activity_month": "2011-11",
+    "months_since": 12,
+    "active_customers": 82,
+    "cohort_customers": 326,
+    "retention_pct": 25.15,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2010-12",
+    "months_since": 0,
+    "active_customers": 76,
+    "cohort_customers": 76,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-01",
+    "months_since": 1,
+    "active_customers": 7,
+    "cohort_customers": 76,
+    "retention_pct": 9.21,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-02",
+    "months_since": 2,
+    "active_customers": 4,
+    "cohort_customers": 76,
+    "retention_pct": 5.26,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-03",
+    "months_since": 3,
+    "active_customers": 7,
+    "cohort_customers": 76,
+    "retention_pct": 9.21,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-04",
+    "months_since": 4,
+    "active_customers": 9,
+    "cohort_customers": 76,
+    "retention_pct": 11.84,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-05",
+    "months_since": 5,
+    "active_customers": 5,
+    "cohort_customers": 76,
+    "retention_pct": 6.58,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-06",
+    "months_since": 6,
+    "active_customers": 4,
+    "cohort_customers": 76,
+    "retention_pct": 5.26,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-07",
+    "months_since": 7,
+    "active_customers": 7,
+    "cohort_customers": 76,
+    "retention_pct": 9.21,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-08",
+    "months_since": 8,
+    "active_customers": 4,
+    "cohort_customers": 76,
+    "retention_pct": 5.26,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-09",
+    "months_since": 9,
+    "active_customers": 2,
+    "cohort_customers": 76,
+    "retention_pct": 2.63,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-10",
+    "months_since": 10,
+    "active_customers": 7,
+    "cohort_customers": 76,
+    "retention_pct": 9.21,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2010-12",
+    "activity_month": "2011-11",
+    "months_since": 11,
+    "active_customers": 15,
+    "cohort_customers": 76,
+    "retention_pct": 19.74,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-01",
+    "months_since": 0,
+    "active_customers": 72,
+    "cohort_customers": 72,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-02",
+    "months_since": 1,
+    "active_customers": 12,
+    "cohort_customers": 72,
+    "retention_pct": 16.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-03",
+    "months_since": 2,
+    "active_customers": 16,
+    "cohort_customers": 72,
+    "retention_pct": 22.22,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-04",
+    "months_since": 3,
+    "active_customers": 14,
+    "cohort_customers": 72,
+    "retention_pct": 19.44,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-05",
+    "months_since": 4,
+    "active_customers": 16,
+    "cohort_customers": 72,
+    "retention_pct": 22.22,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-06",
+    "months_since": 5,
+    "active_customers": 11,
+    "cohort_customers": 72,
+    "retention_pct": 15.28,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-07",
+    "months_since": 6,
+    "active_customers": 11,
+    "cohort_customers": 72,
+    "retention_pct": 15.28,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-08",
+    "months_since": 7,
+    "active_customers": 9,
+    "cohort_customers": 72,
+    "retention_pct": 12.5,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-09",
+    "months_since": 8,
+    "active_customers": 8,
+    "cohort_customers": 72,
+    "retention_pct": 11.11,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-10",
+    "months_since": 9,
+    "active_customers": 15,
+    "cohort_customers": 72,
+    "retention_pct": 20.83,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-01",
+    "activity_month": "2011-11",
+    "months_since": 10,
+    "active_customers": 18,
+    "cohort_customers": 72,
+    "retention_pct": 25.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-02",
+    "months_since": 0,
+    "active_customers": 125,
+    "cohort_customers": 125,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-03",
+    "months_since": 1,
+    "active_customers": 20,
+    "cohort_customers": 125,
+    "retention_pct": 16.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-04",
+    "months_since": 2,
+    "active_customers": 20,
+    "cohort_customers": 125,
+    "retention_pct": 16.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-05",
+    "months_since": 3,
+    "active_customers": 23,
+    "cohort_customers": 125,
+    "retention_pct": 18.4,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-06",
+    "months_since": 4,
+    "active_customers": 27,
+    "cohort_customers": 125,
+    "retention_pct": 21.6,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-07",
+    "months_since": 5,
+    "active_customers": 20,
+    "cohort_customers": 125,
+    "retention_pct": 16.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-08",
+    "months_since": 6,
+    "active_customers": 20,
+    "cohort_customers": 125,
+    "retention_pct": 16.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-09",
+    "months_since": 7,
+    "active_customers": 19,
+    "cohort_customers": 125,
+    "retention_pct": 15.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-10",
+    "months_since": 8,
+    "active_customers": 19,
+    "cohort_customers": 125,
+    "retention_pct": 15.2,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-02",
+    "activity_month": "2011-11",
+    "months_since": 9,
+    "active_customers": 23,
+    "cohort_customers": 125,
+    "retention_pct": 18.4,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-03",
+    "months_since": 0,
+    "active_customers": 179,
+    "cohort_customers": 179,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-04",
+    "months_since": 1,
+    "active_customers": 32,
+    "cohort_customers": 179,
+    "retention_pct": 17.88,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-05",
+    "months_since": 2,
+    "active_customers": 39,
+    "cohort_customers": 179,
+    "retention_pct": 21.79,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-06",
+    "months_since": 3,
+    "active_customers": 36,
+    "cohort_customers": 179,
+    "retention_pct": 20.11,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-07",
+    "months_since": 4,
+    "active_customers": 40,
+    "cohort_customers": 179,
+    "retention_pct": 22.35,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-08",
+    "months_since": 5,
+    "active_customers": 27,
+    "cohort_customers": 179,
+    "retention_pct": 15.08,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-09",
+    "months_since": 6,
+    "active_customers": 37,
+    "cohort_customers": 179,
+    "retention_pct": 20.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-10",
+    "months_since": 7,
+    "active_customers": 36,
+    "cohort_customers": 179,
+    "retention_pct": 20.11,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-03",
+    "activity_month": "2011-11",
+    "months_since": 8,
+    "active_customers": 43,
+    "cohort_customers": 179,
+    "retention_pct": 24.02,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-04",
+    "months_since": 0,
+    "active_customers": 106,
+    "cohort_customers": 106,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-05",
+    "months_since": 1,
+    "active_customers": 26,
+    "cohort_customers": 106,
+    "retention_pct": 24.53,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-06",
+    "months_since": 2,
+    "active_customers": 21,
+    "cohort_customers": 106,
+    "retention_pct": 19.81,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-07",
+    "months_since": 3,
+    "active_customers": 21,
+    "cohort_customers": 106,
+    "retention_pct": 19.81,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-08",
+    "months_since": 4,
+    "active_customers": 19,
+    "cohort_customers": 106,
+    "retention_pct": 17.92,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-09",
+    "months_since": 5,
+    "active_customers": 25,
+    "cohort_customers": 106,
+    "retention_pct": 23.58,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-10",
+    "months_since": 6,
+    "active_customers": 19,
+    "cohort_customers": 106,
+    "retention_pct": 17.92,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-04",
+    "activity_month": "2011-11",
+    "months_since": 7,
+    "active_customers": 27,
+    "cohort_customers": 106,
+    "retention_pct": 25.47,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-05",
+    "months_since": 0,
+    "active_customers": 111,
+    "cohort_customers": 111,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-06",
+    "months_since": 1,
+    "active_customers": 26,
+    "cohort_customers": 111,
+    "retention_pct": 23.42,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-07",
+    "months_since": 2,
+    "active_customers": 27,
+    "cohort_customers": 111,
+    "retention_pct": 24.32,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-08",
+    "months_since": 3,
+    "active_customers": 18,
+    "cohort_customers": 111,
+    "retention_pct": 16.22,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-09",
+    "months_since": 4,
+    "active_customers": 24,
+    "cohort_customers": 111,
+    "retention_pct": 21.62,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-10",
+    "months_since": 5,
+    "active_customers": 23,
+    "cohort_customers": 111,
+    "retention_pct": 20.72,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-05",
+    "activity_month": "2011-11",
+    "months_since": 6,
+    "active_customers": 29,
+    "cohort_customers": 111,
+    "retention_pct": 26.13,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-06",
+    "activity_month": "2011-06",
+    "months_since": 0,
+    "active_customers": 108,
+    "cohort_customers": 108,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-06",
+    "activity_month": "2011-07",
+    "months_since": 1,
+    "active_customers": 25,
+    "cohort_customers": 108,
+    "retention_pct": 23.15,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-06",
+    "activity_month": "2011-08",
+    "months_since": 2,
+    "active_customers": 23,
+    "cohort_customers": 108,
+    "retention_pct": 21.3,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-06",
+    "activity_month": "2011-09",
+    "months_since": 3,
+    "active_customers": 29,
+    "cohort_customers": 108,
+    "retention_pct": 26.85,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-06",
+    "activity_month": "2011-10",
+    "months_since": 4,
+    "active_customers": 22,
+    "cohort_customers": 108,
+    "retention_pct": 20.37,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-06",
+    "activity_month": "2011-11",
+    "months_since": 5,
+    "active_customers": 30,
+    "cohort_customers": 108,
+    "retention_pct": 27.78,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-07",
+    "activity_month": "2011-07",
+    "months_since": 0,
+    "active_customers": 101,
+    "cohort_customers": 101,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-07",
+    "activity_month": "2011-08",
+    "months_since": 1,
+    "active_customers": 21,
+    "cohort_customers": 101,
+    "retention_pct": 20.79,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-07",
+    "activity_month": "2011-09",
+    "months_since": 2,
+    "active_customers": 30,
+    "cohort_customers": 101,
+    "retention_pct": 29.7,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-07",
+    "activity_month": "2011-10",
+    "months_since": 3,
+    "active_customers": 28,
+    "cohort_customers": 101,
+    "retention_pct": 27.72,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-07",
+    "activity_month": "2011-11",
+    "months_since": 4,
+    "active_customers": 35,
+    "cohort_customers": 101,
+    "retention_pct": 34.65,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-08",
+    "activity_month": "2011-08",
+    "months_since": 0,
+    "active_customers": 107,
+    "cohort_customers": 107,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-08",
+    "activity_month": "2011-09",
+    "months_since": 1,
+    "active_customers": 28,
+    "cohort_customers": 107,
+    "retention_pct": 26.17,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-08",
+    "activity_month": "2011-10",
+    "months_since": 2,
+    "active_customers": 32,
+    "cohort_customers": 107,
+    "retention_pct": 29.91,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-08",
+    "activity_month": "2011-11",
+    "months_since": 3,
+    "active_customers": 28,
+    "cohort_customers": 107,
+    "retention_pct": 26.17,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-09",
+    "activity_month": "2011-09",
+    "months_since": 0,
+    "active_customers": 188,
+    "cohort_customers": 188,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-09",
+    "activity_month": "2011-10",
+    "months_since": 1,
+    "active_customers": 51,
+    "cohort_customers": 188,
+    "retention_pct": 27.13,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-09",
+    "activity_month": "2011-11",
+    "months_since": 2,
+    "active_customers": 71,
+    "cohort_customers": 188,
+    "retention_pct": 37.77,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-10",
+    "activity_month": "2011-10",
+    "months_since": 0,
+    "active_customers": 221,
+    "cohort_customers": 221,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-10",
+    "activity_month": "2011-11",
+    "months_since": 1,
+    "active_customers": 70,
+    "cohort_customers": 221,
+    "retention_pct": 31.67,
+    "is_left_censored": 0
+   },
+   {
+    "cohort_month": "2011-11",
+    "activity_month": "2011-11",
+    "months_since": 0,
+    "active_customers": 191,
+    "cohort_customers": 191,
+    "retention_pct": 100.0,
+    "is_left_censored": 0
+   }
+  ],
+  "segments": [
+   {
+    "segment": "Champions",
+    "customers": 1583,
+    "customers_pct": 27.0506,
+    "gross_value": 12001832.04,
+    "gross_value_pct": 70.0839,
+    "avg_recency_days": 20.85,
+    "avg_orders": 14.74
+   },
+   {
+    "segment": "Loyal",
+    "customers": 1445,
+    "customers_pct": 24.6924,
+    "gross_value": 2716257.01,
+    "gross_value_pct": 15.8614,
+    "avg_recency_days": 78.22,
+    "avg_orders": 4.67
+   },
+   {
+    "segment": "Recent",
+    "customers": 239,
+    "customers_pct": 4.0841,
+    "gross_value": 80166.07,
+    "gross_value_pct": 0.4681,
+    "avg_recency_days": 30.45,
+    "avg_orders": 1.0
+   },
+   {
+    "segment": "Needs attention",
+    "customers": 246,
+    "customers_pct": 4.2037,
+    "gross_value": 101102.7,
+    "gross_value_pct": 0.5904,
+    "avg_recency_days": 104.71,
+    "avg_orders": 1.0
+   },
+   {
+    "segment": "At risk",
+    "customers": 1206,
+    "customers_pct": 20.6083,
+    "gross_value": 1848329.19,
+    "gross_value_pct": 10.7932,
+    "avg_recency_days": 379.91,
+    "avg_orders": 4.05
+   },
+   {
+    "segment": "Inactive",
+    "customers": 1133,
+    "customers_pct": 19.3609,
+    "gross_value": 377253.99,
+    "gross_value_pct": 2.203,
+    "avg_recency_days": 474.34,
+    "avg_orders": 1.0
+   }
+  ],
+  "concentration": [
+   {
+    "top_pct": 1.0,
+    "customers": 59,
+    "gross_value": 5481429.97,
+    "share_of_known_pct": 32.0085
+   },
+   {
+    "top_pct": 5.0,
+    "customers": 293,
+    "gross_value": 8886941.43,
+    "share_of_known_pct": 51.8947
+   },
+   {
+    "top_pct": 10.0,
+    "customers": 586,
+    "gross_value": 10927073.97,
+    "share_of_known_pct": 63.808
+   },
+   {
+    "top_pct": 20.0,
+    "customers": 1171,
+    "gross_value": 13203646.0,
+    "share_of_known_pct": 77.1018
+   }
+  ]
+ },
  "bridge": [
   {
    "step": "A",
