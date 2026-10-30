@@ -54,6 +54,7 @@
         </div>
       </header>
       <div id="kpis" class="kpis"></div>
+      <p id="kpi-scope" class="muted small kpi-scope"></p>
       <div class="grid">
         <article class="card span-8">
           <div class="card-head"><h2>Net product revenue by month</h2>
@@ -67,12 +68,13 @@
           <p class="muted small">Cancellations as % of gross sales in the same month. Spikes come from a few very large orders that were sold and cancelled.</p>
         </article>
         <article class="card span-6">
-          <div class="card-head"><h2>Top products by net sales</h2></div>
+          <div class="card-head"><h2>Top products by net sales <span class="scope-tag">whole period</span></h2></div>
           <ol id="list-products" class="bars"></ol>
-          <p class="muted small">Net = sales minus cancellations, grouped by stock code.</p>
+          <p class="muted small">Net = sales minus cancellations, grouped by stock code. Always the whole period (Dec 2009 – 9 Dec 2011): the period buttons above do not change this list.</p>
+          <p id="products-note" class="muted small"></p>
         </article>
         <article class="card span-6">
-          <div class="card-head"><h2>Net revenue by country</h2>
+          <div class="card-head"><h2>Net revenue by country <span class="scope-tag">whole period</span></h2>
             <label class="switch"><input type="checkbox" id="toggle-uk"><span>Hide United Kingdom</span></label></div>
           <ol id="list-countries" class="bars"></ol>
           <p id="uk-note" class="muted small"></p>
@@ -127,9 +129,17 @@
       <div class="grid">
         <article class="card span-12">
           <div class="card-head"><h2>From raw rows to revenue</h2></div>
+          <div class="bridge-controls">
+            <div class="segmented" role="group" aria-label="Chart axis">
+              <button type="button" data-axis="zoom" class="seg active">Zoomed axis</button>
+              <button type="button" data-axis="zero" class="seg">From £0</button>
+            </div>
+          </div>
+          <p id="bridge-axis" class="axis-note" role="note"></p>
           <p class="muted small mobile-hint">Swipe sideways to see the whole chart.</p>
           <div class="chart-scroll"><div class="chart-box tall"><canvas id="chart-bridge" role="img" aria-label="Bridge from raw total to net product revenue"></canvas></div></div>
-          <p class="muted small">The axis starts near £18.6M so the steps are visible. Cancellations stay inside net product revenue. Postage, fees and adjustments were net negative, so removing them raises the total.</p>
+          <p class="muted small">Cancellations stay inside net product revenue. Postage, fees and adjustments were net negative, so removing them raises the total.</p>
+          <p id="bridge-why" class="muted small"></p>
           <details class="doc"><summary>Full reconciliation table</summary><div id="bridge-table" class="table-wrap"></div></details>
         </article>
       </div>

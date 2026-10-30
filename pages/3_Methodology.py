@@ -41,7 +41,9 @@ if Path(DB).is_file():
     labels = ["Raw total<br>both sheets", "Duplicate copies<br>(sheet overlap)", "After removing<br>duplicates",
               "Remove postage,<br>fees, adjustments", "Net product<br>revenue"]
     # Plain bars: (bottom, height, colour, label). Totals start at the axis floor.
-    floor = min(raw, dedup, net) - 250_000
+    over = (raw / dedup - 1) * 100 if dedup > 0 else None   # overlap as % of the deduplicated total
+    zero_axis = st.toggle("Show the chart from £0 (full scale)", value=False)
+    floor = 0 if zero_axis else min(raw, dedup, net) - 250_000
     bars = [
         (floor, raw - floor, "#5b6b82", f"£{raw:,.0f}"),
         (dedup, raw - dedup, "#c0392b", f"-£{raw - dedup:,.0f}"),
@@ -54,11 +56,19 @@ if Path(DB).is_file():
         marker_color=[c for _, _, c, _ in bars], text=[t for _, _, _, t in bars],
         textposition="outside", cliponaxis=False, hoverinfo="skip"))
     waterfall.update_layout(height=420, margin=dict(l=0, r=0, t=30, b=0), showlegend=False,
-                            yaxis=dict(range=[floor, raw + 250_000], tickprefix="£", tickformat=",.0f"))
+                            yaxis=dict(range=[floor, raw * 1.08 if zero_axis else raw + 250_000],
+                                       tickprefix="£", tickformat=",.0f"))
     st.plotly_chart(waterfall, use_container_width=True)
-    st.caption("The axis starts near £18.6M so the steps are visible. Cancellations stay inside net product "
-               "revenue (they reduce it). Postage, fees and adjustments were a net negative, so taking them "
-               "out raises the total.")
+    if zero_axis:
+        st.caption("Full-scale view: the axis starts at £0, so bar heights are proportional. The steps are "
+                   "small next to the totals.")
+    else:
+        st.warning(f"Zoomed view: the axis starts at £{floor:,.0f}, not £0, so the bar heights exaggerate the "
+                   "steps." + (f" The raw total is only {over:.1f}% above the deduplicated total." if over is not None else ""))
+    st.caption("Cancellations stay inside net product revenue (they reduce it). Postage, fees and adjustments were "
+               "a net negative, so taking them out raises the total. "
+               f"Why it matters: without the overlap fix, revenue would be overstated by £{raw - dedup:,.0f}"
+               + (f" ({over:.1f}%)." if over is not None else "."))
     info = metrics.read_view("SELECT key, value FROM build_metadata", DB).set_index("key")["value"]
     st.caption(f"Built {info.get('built_at', '?')} from {info.get('source_file', '?')}. "
                f"Reconciliation checks passed: {info.get('reconciliation_checks_passed', '?')}. "

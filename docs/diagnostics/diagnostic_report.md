@@ -1,5 +1,11 @@
 # Online Retail II - workbook diagnostic report
 
+> **Historical snapshot (milestone M0).** The category table and figures below are the *proposal* made before the final classification rules.
+> The published figures are in `README.md` and `docs/cleaning_rules.md` and come from the final build.
+> Main difference: this report has a `review_code` group (181 rows, +£1,132.89). Rule 4 later resolved those rows, so here cancellations show
+> 17,973 rows / -£719,656.34 and gross product sales £19,699,784.97, while the final build has 17,974 rows / -£719,692.94 and £19,700,954.46.
+> The £36.60 difference is one credit-note line. Net product revenue differs by exactly the £1,132.89 of the former `review_code` group.
+
 ## 1. Provenance
 - File: `online_retail_II.xlsx`  (45,622,278 bytes)
 - SHA-256 before reading: `bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980`

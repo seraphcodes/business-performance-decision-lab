@@ -49,12 +49,20 @@ with st.sidebar:
 
 # ------------------------------------------------------------------ KPIs
 columns = st.columns(5)
-columns[0].metric("Net product revenue", format_currency(kpis["net_product_revenue"]))
-columns[1].metric("Gross product sales", format_currency(kpis["gross_product_sales"]))
+columns[0].metric("Net product revenue", format_currency(kpis["net_product_revenue"]),
+                  help="Gross product sales plus cancellations (credit notes count as negative). "
+                       "Postage, fees and stock adjustments are not included.")
+columns[1].metric("Gross product sales", format_currency(kpis["gross_product_sales"]),
+                  help="Quantity x unit price of normal sales lines. It still includes orders that were cancelled later.")
 columns[2].metric(f"Cancellations ({format_percent(kpis['cancellation_rate_pct'])} of gross)",
-                  format_currency(kpis["cancellation_value"]))
-columns[3].metric("Orders (invoices)", f"{kpis['sales_invoices']:,}")
-columns[4].metric("Average order value", format_currency(kpis["avg_order_value"]))
+                  format_currency(kpis["cancellation_value"]),
+                  help="Value of credit-note lines (negative). The % is cancellations divided by gross sales; "
+                       "credit notes cannot be linked to the original sale.")
+columns[3].metric("Orders (invoices)", f"{kpis['sales_invoices']:,}",
+                  help="Invoices with at least one normal sales line. Credit notes are not counted.")
+columns[4].metric("Average order value (gross)", format_currency(kpis["avg_order_value"]),
+                  help="Gross product sales divided by the number of invoices. Because gross sales include orders "
+                       "cancelled later, a net-based average would be lower.")
 st.caption(
     f"Whole period, {kpis['known_customers']:,} identified customers. "
     f"Only {kpis['known_customer_share_pct']:.0f}% of sales value has a customer ID, so customer "
@@ -100,7 +108,7 @@ with left:
     figure.update_layout(height=420, margin=dict(l=0, r=0, t=10, b=0), xaxis_tickprefix="£",
                          xaxis_tickformat=",.0f")
     st.plotly_chart(figure, use_container_width=True)
-    st.caption("Net = sales minus cancellations, grouped by stock code.")
+    st.caption("Net = sales minus cancellations, grouped by stock code. Whole period (Dec 2009 - 9 Dec 2011).")
 with right:
     st.subheader("Top 10 countries by net revenue")
     countries = data["countries"]
@@ -114,7 +122,7 @@ with right:
     st.plotly_chart(figure, use_container_width=True)
     uk_share = (data["countries"].set_index("country").loc["United Kingdom", "net_product_revenue"]
                 / kpis["net_product_revenue"] * 100)
-    st.caption(f"The United Kingdom is {uk_share:.0f}% of net revenue; hide it to compare the rest.")
+    st.caption(f"Whole period. The United Kingdom is {uk_share:.0f}% of net revenue; hide it to compare the rest.")
 
 with st.expander("Table: monthly figures"):
     table = shown.rename(columns={

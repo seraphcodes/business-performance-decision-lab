@@ -18,7 +18,7 @@ def test_overview_renders_with_hand_values(sheets, tmp_path, monkeypatch):
     values = {metric.label: metric.value for metric in app.metric}
     assert values["Net product revenue"] == "£93.63"
     assert values["Orders (invoices)"] == "6"
-    assert values["Average order value"] == "£16.44"
+    assert values["Average order value (gross)"] == "£16.44"
 
 
 def test_overview_explains_a_missing_database(tmp_path, monkeypatch):
@@ -73,3 +73,16 @@ def test_simulator_missing_database(tmp_path, monkeypatch):
     app = streamlit_testing.AppTest.from_file(SIMULATOR, default_timeout=30).run()
     assert not app.exception
     assert "build_db" in app.error[0].value
+
+
+def test_methodology_warns_that_the_default_chart_axis_is_zoomed(sheets, tmp_path, monkeypatch):
+    database = tmp_path / "retail.db"
+    build_from_sheets(sheets, database, baseline=None, log=lambda *_: None)
+    monkeypatch.setenv("RETAIL_DB", str(database))
+    app = streamlit_testing.AppTest.from_file(METHODOLOGY, default_timeout=30).run()
+    assert not app.exception
+    assert any("Zoomed view" in warning.value and "not £0" in warning.value for warning in app.warning)
+    app.toggle[0].set_value(True).run()   # full-scale view
+    assert not app.exception
+    assert not any("Zoomed view" in warning.value for warning in app.warning)
+    assert any("Full-scale view" in caption.value for caption in app.caption)

@@ -7,6 +7,8 @@ views, and a dashboard that states what the data can and cannot say.
 
 **[Live demo](https://seraphcodes.github.io/business-performance-decision-lab/)** · Stack: Python, pandas, SQLite, Streamlit, Plotly, JavaScript, pytest.
 
+![Tests](https://github.com/seraphcodes/business-performance-decision-lab/actions/workflows/tests.yml/badge.svg)
+
 ![Overview page](docs/screenshots/web-overview.png)
 
 ## Why this project
@@ -55,7 +57,7 @@ already checked.
 - The what-if arithmetic in `web/js/scenario.js` is a port of `src/scenario.py`;
   `tests/test_web_scenario.py` runs both on 140 combinations and requires identical results
   (needs Node.js; skipped if it is not installed).
-- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main`
+- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main` that changes `web/` (the tests run first)
   (repository Settings > Pages > Source: **GitHub Actions**). The live site is
   https://seraphcodes.github.io/business-performance-decision-lab/
 
@@ -117,8 +119,13 @@ environment (Windows PowerShell shown).
 - `pages/` Streamlit pages; `app.py` landing page
 - `web/` static website; `src/export_web.py` creates its data file
 - `tests/` hand-calculated fixtures; the rules were also checked by deliberately
-  breaking the code (all breaks caught)
+  breaking the code (all breaks caught). A test also keeps the figures quoted in the README
+  and docs equal to the verified export, so a document cannot drift from the build
 - `docs/` cleaning rules, metric definitions, diagnostic evidence
+
+## Licence
+
+Code: MIT (see `LICENSE`). The dataset has its own licence, see below.
 
 ## Dataset and attribution
 

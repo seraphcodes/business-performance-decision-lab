@@ -17,7 +17,7 @@ All dashboard numbers come from SQL views defined in `sql/views.sql`, created by
 - Money is not rounded in views, so totals tie to the bridge to the penny.
 - Cancellation rate = cancellations / gross sales **in the same month** (credit notes cannot be linked to the original sale).
 - The final month (Dec 2011, 9 days) is flagged partial; `metrics.monthly_revenue()` leaves it out by default.
-- Average order value = gross product sales / invoices with sales. Revenue, not profit.
+- Average order value = gross product sales / invoices with sales. Revenue, not profit. It is a *gross* figure: it includes orders that were cancelled later, so a net-based average would be lower.
 
 ## How they are checked
 - The build compares view totals with the pandas bridge (tolerance 0.005) and refuses to write the database on mismatch.

@@ -4,6 +4,7 @@ import sqlite3
 import pandas as pd
 import pytest
 
+import src.build_db as build_db_module
 from src.build_db import build, build_from_sheets, product_dimension
 from src.load import prepare, read_workbook
 from src.reconcile import ReconciliationError
@@ -124,3 +125,35 @@ def test_build_from_a_workbook_file_and_the_original_is_untouched(sheets, tmp_pa
 def test_missing_workbook_gives_a_clear_error(tmp_path):
     with pytest.raises(FileNotFoundError, match="Workbook not found"):
         build(tmp_path / "nope.xlsx", tmp_path / "x.db", log=lambda *_: None)
+
+
+def _views_that_do_not_tie_to_the_bridge(tmp_path):
+    """A copy of sql/views.sql where the country view overstates gross sales by 1%."""
+    text = build_db_module.VIEWS_SQL.read_text(encoding="utf-8")
+    head, tail = text.split("CREATE VIEW v_country_revenue", 1)
+    broken = tail.replace("THEN line_value ELSE 0 END) AS gross_product_sales",
+                          "THEN line_value * 1.01 ELSE 0 END) AS gross_product_sales", 1)
+    assert broken != tail
+    path = tmp_path / "broken_views.sql"
+    path.write_text(head + "CREATE VIEW v_country_revenue" + broken, encoding="utf-8")
+    return path
+
+
+def test_a_view_that_does_not_tie_to_the_bridge_blocks_the_build(sheets, tmp_path, monkeypatch):
+    monkeypatch.setattr(build_db_module, "VIEWS_SQL", _views_that_do_not_tie_to_the_bridge(tmp_path))
+    database = tmp_path / "retail.db"
+    with pytest.raises(ReconciliationError, match="v_country_revenue"):
+        build_from_sheets(sheets, database, baseline=HAND_BASELINE, log=lambda *_: None)
+    assert not database.exists()
+    assert not (tmp_path / "retail.db.building").exists()
+
+
+def test_a_view_mismatch_keeps_the_previous_database(sheets, tmp_path, monkeypatch):
+    database = tmp_path / "retail.db"
+    build_from_sheets(sheets, database, baseline=HAND_BASELINE, log=lambda *_: None)
+    before = database.read_bytes()
+    monkeypatch.setattr(build_db_module, "VIEWS_SQL", _views_that_do_not_tie_to_the_bridge(tmp_path))
+    with pytest.raises(ReconciliationError):
+        build_from_sheets(sheets, database, baseline=HAND_BASELINE, log=lambda *_: None)
+    assert database.read_bytes() == before
+    assert not (tmp_path / "retail.db.building").exists()
