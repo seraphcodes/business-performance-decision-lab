@@ -1,0 +1,60 @@
+// Business Performance & Decision Lab: DAX measures for Power BI Desktop.
+// Same definitions as docs/metrics.md and docs/customer_analytics.md, so the report
+// shows the same numbers as the website. Create each measure in table "fact_sales"
+// (Table tools > New measure), except the ones marked [dim_customer] / [cohort_activity].
+// Format: money = Currency (GBP), rates = Percentage.
+
+// ---------- Sales (table: fact_sales) ----------
+Gross Sales = CALCULATE ( SUM ( fact_sales[line_value] ), fact_sales[row_class] = "normal_sale" )
+
+Cancellations = CALCULATE ( SUM ( fact_sales[line_value] ), fact_sales[row_class] = "cancellation" )   // negative number
+
+Net Revenue = [Gross Sales] + [Cancellations]
+
+Cancellation Rate = DIVIDE ( -[Cancellations], [Gross Sales] )
+
+Sales Invoices = CALCULATE ( DISTINCTCOUNT ( fact_sales[invoice_no] ), fact_sales[row_class] = "normal_sale" )
+
+// Gross basis (includes orders cancelled later), same as the website.
+Average Order Value (gross) = DIVIDE ( [Gross Sales], [Sales Invoices] )
+
+// The last month of the data (Dec 2011) stops on the 9th. Use this on trend visuals.
+Net Revenue (full months) = CALCULATE ( [Net Revenue], dim_date[is_partial_month] = 0 )
+
+// ---------- Customers (table: fact_sales) ----------
+Known Customers = CALCULATE ( DISTINCTCOUNTNOBLANK ( fact_sales[customer_id] ), fact_sales[row_class] = "normal_sale" )
+
+// About 87% in the real data; the rest has no customer ID.
+Known-Customer Share of Gross = DIVIDE ( CALCULATE ( [Gross Sales], fact_sales[customer_id] <> BLANK () ), [Gross Sales] )
+
+// ---------- Customers (table: dim_customer; whole period, ignores the date slicer) ----------
+Customers = COUNTROWS ( dim_customer )
+
+Repeat Customers % = DIVIDE ( CALCULATE ( COUNTROWS ( dim_customer ), dim_customer[orders] >= 2 ), COUNTROWS ( dim_customer ) )
+
+Segment Customers % = DIVIDE ( COUNTROWS ( dim_customer ), CALCULATE ( COUNTROWS ( dim_customer ), ALL ( dim_customer[segment] ) ) )
+
+Segment Gross Share = DIVIDE ( SUM ( dim_customer[gross_value] ), CALCULATE ( SUM ( dim_customer[gross_value] ), ALL ( dim_customer[segment] ) ) )
+
+// Calculated column in dim_customer (Table tools > New column). Ties are broken by customer_id.
+Value Rank = RANKX ( ALL ( dim_customer ), dim_customer[gross_value] + dim_customer[customer_id] / 1E9, , DESC, DENSE )
+
+// Share of known-customer gross sales from the largest ceil(p x customers) customers.
+Top 10% Share =
+VAR n = COUNTROWS ( ALL ( dim_customer ) )
+VAR k = ROUNDUP ( ROUND ( 0.10 * n, 6 ), 0 )
+RETURN DIVIDE (
+    CALCULATE ( SUM ( dim_customer[gross_value] ), FILTER ( ALL ( dim_customer ), dim_customer[Value Rank] <= k ) ),
+    CALCULATE ( SUM ( dim_customer[gross_value] ), ALL ( dim_customer ) ) )
+
+Top 20% Share =
+VAR n = COUNTROWS ( ALL ( dim_customer ) )
+VAR k = ROUNDUP ( ROUND ( 0.20 * n, 6 ), 0 )
+RETURN DIVIDE (
+    CALCULATE ( SUM ( dim_customer[gross_value] ), FILTER ( ALL ( dim_customer ), dim_customer[Value Rank] <= k ) ),
+    CALCULATE ( SUM ( dim_customer[gross_value] ), ALL ( dim_customer ) ) )
+
+// ---------- Cohorts (table: cohort_activity; no relationship needed) ----------
+// Matrix: rows = cohort_month, columns = months_since, values = this measure.
+// Dec 2009 is left-censored (is_left_censored = 1): it includes customers who were already buying.
+Cohort Retention % = MAX ( cohort_activity[retention_pct] ) / 100

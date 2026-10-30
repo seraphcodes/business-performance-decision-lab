@@ -56,3 +56,11 @@ def test_website_embeds_the_current_docs():
 
 def test_the_diagnostic_report_says_it_is_a_historical_snapshot():
     assert "Historical snapshot" in read("docs/diagnostics/diagnostic_report.md")
+
+
+def test_powerbi_guide_quotes_the_exported_headline_figures():
+    guide = read("docs/powerbi/build_guide.md")
+    kpis = EXPORT["kpis"]
+    assert f"£{kpis['gross_product_sales']:,.2f}" in guide
+    assert f"-£{-kpis['cancellation_value']:,.2f}" in guide
+    assert f"£{kpis['net_product_revenue']:,.2f}" in guide
