@@ -91,7 +91,7 @@ with st.expander("How the numbers are calculated"):
     st.markdown("""
 - **Gross sales** = baseline gross x (1 + price change) x (1 + volume change).
 - **Net revenue** = gross x (1 - baseline cancellation rate).
-- **Cost** = cost share x baseline net revenue x (1 + volume change). Unit cost is assumed unchanged.
+- **Cost** = cost share x baseline net revenue x (1 + volume change). Unit cost is assumed unchanged. Cost is applied to net revenue, so goods that were cancelled are assumed to cost nothing (returned to stock).
 - **Profit** = net revenue - cost.
 - **Break-even volume** = (1 - cost share) / (1 + price change - cost share) - 1.
 """)

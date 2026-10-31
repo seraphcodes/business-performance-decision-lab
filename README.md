@@ -97,6 +97,10 @@ steps to rebuild it are in `docs/powerbi/build_guide.md`.
 
 ![What-If calculator](docs/screenshots/web-whatif.png)
 
+**Customers: cohort retention (share and customer count), RFM segments, concentration**
+
+![Customers page](docs/screenshots/web-customers.png)
+
 **Methodology: from raw rows to net revenue**
 
 ![Reconciliation chart](docs/screenshots/web-methodology.png)
