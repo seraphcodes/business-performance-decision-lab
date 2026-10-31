@@ -7,8 +7,6 @@ views, and a dashboard that states what the data can and cannot say.
 
 **[Live demo](https://seraphcodes.github.io/business-performance-decision-lab/)** · Stack: Python, pandas, SQLite, Streamlit, Plotly, JavaScript, pytest.
 
-![Tests](https://github.com/seraphcodes/business-performance-decision-lab/actions/workflows/tests.yml/badge.svg)
-
 ![Overview page](docs/screenshots/web-overview.png)
 
 ## Why this project
@@ -57,25 +55,9 @@ already checked.
 - The what-if arithmetic in `web/js/scenario.js` is a port of `src/scenario.py`;
   `tests/test_web_scenario.py` runs both on 140 combinations and requires identical results
   (needs Node.js; skipped if it is not installed).
-- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main` that changes `web/` (the tests run first)
+- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main`
   (repository Settings > Pages > Source: **GitHub Actions**). The live site is
   https://seraphcodes.github.io/business-performance-decision-lab/
-
-## Power BI report
-
-The same reconciled data is also available as a Power BI report (3 pages: Overview,
-Customers, Methodology). `python -m src.export_powerbi` writes a star schema to
-`data/processed/powerbi/` and refuses to write if it does not tie to the
-reconciliation bridge. The DAX measures are in `docs/powerbi/measures.dax` and the
-steps to rebuild it are in `docs/powerbi/build_guide.md`.
-
-- Report file: `docs/powerbi/decision_lab.pbix` (open with free Power BI Desktop, Windows)
-- PDF: `docs/powerbi/report.pdf`
-- Static preview on the website: the **Power BI** page
-- Limit: the model has no product relationship (stock codes that differ only by
-  upper/lower case collide), so product visuals can differ slightly from the website.
-
-![Power BI overview](docs/powerbi/screenshot_overview.jpg)
 
 ## Screenshots
 
@@ -135,13 +117,8 @@ environment (Windows PowerShell shown).
 - `pages/` Streamlit pages; `app.py` landing page
 - `web/` static website; `src/export_web.py` creates its data file
 - `tests/` hand-calculated fixtures; the rules were also checked by deliberately
-  breaking the code (all breaks caught). A test also keeps the figures quoted in the README
-  and docs equal to the verified export, so a document cannot drift from the build
+  breaking the code (all breaks caught)
 - `docs/` cleaning rules, metric definitions, diagnostic evidence
-
-## Licence
-
-Code: MIT (see `LICENSE`). The dataset has its own licence, see below.
 
 ## Dataset and attribution
 
