@@ -7,6 +7,8 @@ views, and a dashboard that states what the data can and cannot say.
 
 **[Live demo](https://seraphcodes.github.io/business-performance-decision-lab/)** · Stack: Python, pandas, SQLite, Streamlit, Plotly, JavaScript, pytest.
 
+![Tests](https://github.com/seraphcodes/business-performance-decision-lab/actions/workflows/tests.yml/badge.svg)
+
 ![Overview page](docs/screenshots/web-overview.png)
 
 ## Why this project
@@ -19,9 +21,19 @@ where every pound is accounted for, every cleaning rule is written down with
 evidence, and the dashboard says plainly what the data cannot tell you (for
 example: there are no product costs, so there is no real profit).
 
-**Status:** core release done and live: data pipeline, metric views, Overview,
-Methodology and a narrow What-If Simulator, as a Streamlit app and a public
-static website. Planned next: customer analytics (cohorts, RFM).
+**Status:** complete and live: data pipeline, metric views, Overview, What-If
+Simulator, Customers (repeat rate, RFM segments, concentration, cohort retention)
+and Methodology, as a Streamlit app, a public static website and a Power BI report.
+
+## What I found
+
+- **A few customers carry the business.** Among known customers, the top 10% bring
+  63.8% of gross sales. Champions are 27.05% of customers and 70.08% of gross sales.
+- **72.35% of customers buy again** (known customers only, 5,852 in total).
+- **The raw total cannot be trusted as it is.** It double-counts £377,488.45 because
+  two sheets overlap; the build refuses to run if the numbers do not reconcile.
+
+Details and limits are in **Findings** and **Limitations** below.
 
 ## What it does
 
@@ -34,7 +46,8 @@ static website. Planned next: customer analytics (cohorts, RFM).
    reconciliation at build time.
 4. **Shows them in a Streamlit app**: Overview (trends, cancellations, products,
    countries), Methodology (the reconciliation chart, rules, limits) and a
-   What-If Simulator.
+   What-If Simulator. The static website and Power BI report also have a
+   Customers view (see `docs/customer_analytics.md`).
 5. **What-If Simulator**: a scenario calculator on a real 12-month baseline. Price
    change, volume change and cost share are the user's inputs. It shows revenue
    effect, break-even volume and a sensitivity grid. It is arithmetic, not a
@@ -44,7 +57,7 @@ static website. Planned next: customer analytics (cohorts, RFM).
 ## Web frontend (static site)
 
 `web/` is a separate, dependency-free website (HTML, CSS, JavaScript; Chart.js is
-included in `web/vendor/`). It has the same three pages as the Streamlit app, a
+included in `web/vendor/`). It has five pages (Overview, What-If, Customers, Power BI, Methodology), a
 light/dark theme and a phone layout. It only displays `web/data/metrics.js`, an
 export of the reconciled SQL views, so its numbers are the numbers the build
 already checked.
@@ -55,9 +68,25 @@ already checked.
 - The what-if arithmetic in `web/js/scenario.js` is a port of `src/scenario.py`;
   `tests/test_web_scenario.py` runs both on 140 combinations and requires identical results
   (needs Node.js; skipped if it is not installed).
-- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main`
+- Published on GitHub Pages by `.github/workflows/pages.yml` on every push to `main` that changes `web/` (the tests run first)
   (repository Settings > Pages > Source: **GitHub Actions**). The live site is
   https://seraphcodes.github.io/business-performance-decision-lab/
+
+## Power BI report
+
+The same reconciled data is also available as a Power BI report (3 pages: Overview,
+Customers, Methodology). `python -m src.export_powerbi` writes a star schema to
+`data/processed/powerbi/` and refuses to write if it does not tie to the
+reconciliation bridge. The DAX measures are in `docs/powerbi/measures.dax` and the
+steps to rebuild it are in `docs/powerbi/build_guide.md`.
+
+- Report file: `docs/powerbi/decision_lab.pbix` (open with free Power BI Desktop, Windows)
+- PDF: `docs/powerbi/report.pdf`
+- Static preview on the website: the **Power BI** page
+- Limit: the model has no product relationship (stock codes that differ only by
+  upper/lower case collide), so product visuals can differ slightly from the website.
+
+![Power BI overview](docs/powerbi/screenshot_overview.jpg)
 
 ## Screenshots
 
@@ -81,6 +110,8 @@ already checked.
 - **Cancellation spikes come from a few huge orders** that were sold and cancelled
   (for example stock code 23843, about £168k, in Dec 2011), so products are ranked
   by net sales, not gross.
+- **Customers are concentrated and mostly loyal**: see *What I found* above for the
+  concentration, segment and repeat figures.
 - **The UK is the large majority of revenue** (about £16.2M net of £19.0M).
 
 ## Limitations (read before quoting a number)
@@ -112,13 +143,19 @@ environment (Windows PowerShell shown).
 
 ## Project layout
 
-- `src/` pipeline: `load`, `classify`, `reconcile`, `build_db`, `metrics`, `scenario`
+- `src/` pipeline: `load`, `classify`, `reconcile`, `build_db`, `metrics`, `scenario`,
+  `export_web`, `export_powerbi`
 - `sql/views.sql` metric definitions
 - `pages/` Streamlit pages; `app.py` landing page
 - `web/` static website; `src/export_web.py` creates its data file
 - `tests/` hand-calculated fixtures; the rules were also checked by deliberately
-  breaking the code (all breaks caught)
-- `docs/` cleaning rules, metric definitions, diagnostic evidence
+  breaking the code (all breaks caught). A test also keeps the figures quoted in the README
+  and docs equal to the verified export, so a document cannot drift from the build
+- `docs/` cleaning rules, metric definitions, customer analytics, Power BI files, diagnostic evidence
+
+## Licence
+
+Code: MIT (see `LICENSE`). The dataset has its own licence, see below.
 
 ## Dataset and attribution
 
