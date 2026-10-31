@@ -23,12 +23,13 @@ example: there are no product costs, so there is no real profit).
 
 **Status:** complete and live: data pipeline, metric views, Overview, What-If
 Simulator, Customers (repeat rate, RFM segments, concentration, cohort retention)
-and Methodology, as a Streamlit app, a public static website and a Power BI report.
+and Methodology. The Streamlit app has Overview, What-If and Methodology; the static
+website and the Power BI report also cover Customers.
 
 ## What I found
 
 - **A few customers carry the business.** Among known customers, the top 10% bring
-  63.8% of gross sales. Champions are 27.05% of customers and 70.08% of gross sales.
+  63.8% of gross sales. The 'Recent & frequent' group is 27.05% of customers and 70.08% of gross sales.
 - **72.35% of customers buy again** (known customers only, 5,852 in total).
 - **The raw total cannot be trusted as it is.** It double-counts £377,488.45 because
   two sheets overlap; the build refuses to run if the numbers do not reconcile.
@@ -83,8 +84,10 @@ steps to rebuild it are in `docs/powerbi/build_guide.md`.
 - Report file: `docs/powerbi/decision_lab.pbix` (open with free Power BI Desktop, Windows)
 - PDF: `docs/powerbi/report.pdf`
 - Static preview on the website: the **Power BI** page
-- Limit: the model has no product relationship (stock codes that differ only by
-  upper/lower case collide), so product visuals can differ slightly from the website.
+- Products are joined by an integer `product_key` built from the exact stock code, so codes
+  that differ only by upper/lower case (170 pairs) stay separate and product totals equal
+  the SQL and website figures. The export checks this and refuses to write otherwise.
+- Customer figures use known customers only (about 87% of gross sales).
 
 ![Power BI overview](docs/powerbi/screenshot_overview.jpg)
 
@@ -151,6 +154,7 @@ environment (Windows PowerShell shown).
 - `tests/` hand-calculated fixtures; the rules were also checked by deliberately
   breaking the code (all breaks caught). A test also keeps the figures quoted in the README
   and docs equal to the verified export, so a document cannot drift from the build
+- `legacy/` the frozen first version of this project (economics and finance calculators); not part of the current app
 - `docs/` cleaning rules, metric definitions, customer analytics, Power BI files, diagnostic evidence
 
 ## Licence

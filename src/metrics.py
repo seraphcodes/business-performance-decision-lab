@@ -66,7 +66,8 @@ def customer_rfm(database=DATABASE):
     return read_view("SELECT * FROM v_customer_rfm ORDER BY customer_id", database)
 
 
-SEGMENT_ORDER = ["Champions", "Loyal", "Recent", "Needs attention", "At risk", "Inactive"]
+SEGMENT_ORDER = ["Recent & frequent", "Repeat buyers", "Recent, low frequency", "Mid recency, low frequency",
+                 "Repeat, not recent", "Not recent, low frequency"]
 
 
 def rfm_segments(database=DATABASE):

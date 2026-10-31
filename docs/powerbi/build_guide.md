@@ -16,7 +16,7 @@ Files appear in `data\processed\powerbi\`. If the export says "STOPPED", the tot
 ## 3. Relationships (Model view)
 All many-to-one, single direction, from the fact table to the dimension:
 - `fact_sales[date]` > `dim_date[date]`
-- `fact_sales[stock_code]` > `dim_product[stock_code]`
+- `fact_sales[product_key]` > `dim_product[product_key]` (an integer key built from the exact stock code; do not relate on `stock_code`, because Power BI ignores upper/lower case and 170 codes such as `15056BL` / `15056bl` would collide)
 - `fact_sales[country]` > `dim_country[country]`
 - `fact_sales[customer_id]` > `dim_customer[customer_id]` (guest orders have no ID and show as blank; cancellation lines also have a blank customer, because credit notes are not matched to customers)
 

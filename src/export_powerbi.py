@@ -10,6 +10,13 @@ for your own Power BI report). Same rules as the website export:
   * files are written to a temporary folder first and swapped in at the end.
 
 Tables: fact_sales, dim_date, dim_product, dim_country, dim_customer, cohort_activity.
+
+Products: Power BI compares text without regard to case, but the stock codes in the data are
+case-sensitive (170 pairs such as 15056BL / 15056bl exist as separate codes, and a few of them
+carry different descriptions). Relating on stock_code would therefore join those codes to each
+other. So dim_product gets an integer product_key built from the EXACT stock code, fact_sales
+carries only that key, and the relationship is product_key -> product_key. No two codes are
+merged, and product totals equal v_top_products.
 """
 import argparse
 import shutil
@@ -50,7 +57,11 @@ def build_tables(database=DATABASE):
     products = metrics.read_view(
         "SELECT stock_code, canonical_description AS description FROM dim_product "
         "WHERE stock_code IN (SELECT DISTINCT stock_code FROM fact_lines "
-        "WHERE row_class IN ('normal_sale', 'cancellation')) ORDER BY stock_code", database)
+        "WHERE row_class IN ('normal_sale', 'cancellation'))", database)
+    products = products.sort_values("stock_code", kind="stable").reset_index(drop=True)   # exact (case-sensitive) order
+    products.insert(0, "product_key", range(1, len(products) + 1))
+    fact["product_key"] = fact["stock_code"].map(dict(zip(products["stock_code"], products["product_key"]))).astype("Int64")
+    fact = fact.drop(columns=["stock_code"])   # the key replaces it, so no report can group on case-folded codes
     countries = pd.DataFrame({"country": sorted(fact["country"].dropna().unique())})
     customers = metrics.read_view(
         "SELECT v.customer_id, v.first_month, v.first_day, v.last_day, v.orders, v.gross_value, "
@@ -63,8 +74,12 @@ def build_tables(database=DATABASE):
             "dim_country": countries, "dim_customer": customers, "cohort_activity": cohorts}
 
 
-def verify(tables, bridge):
-    """The exported fact table must tie to the bridge, and every key must have a dimension row."""
+def verify(tables, bridge, sql_products=None):
+    """The exported fact table must tie to the bridge, and every key must have a dimension row.
+
+    sql_products (optional): DataFrame [stock_code, net_sales] from v_top_products. When given, the
+    net sales of every product in the export must equal the SQL figure for that exact stock code.
+    """
     fact = tables["fact_sales"]
     gross = fact.loc[fact["row_class"] == "normal_sale", "line_value"].sum()
     cancel = fact.loc[fact["row_class"] == "cancellation", "line_value"].sum()
@@ -73,7 +88,20 @@ def verify(tables, bridge):
               ("net", gross + cancel, _bridge_value(bridge, "Net product revenue"))]
     problems = [f"{name}: {got:,.2f} vs bridge {want:,.2f}" for name, got, want in checks
                 if abs(got - want) > TOLERANCE]
-    for column, dim, key in (("stock_code", "dim_product", "stock_code"), ("country", "dim_country", "country"),
+    products = tables["dim_product"]
+    if not products["product_key"].is_unique or not products["stock_code"].is_unique:
+        problems.append("dim_product has duplicate keys or stock codes")
+    if fact["product_key"].isna().any():
+        problems.append(f"{int(fact['product_key'].isna().sum())} fact rows have no product_key")
+    if sql_products is not None:
+        net = fact.groupby("product_key")["line_value"].sum()
+        mine = products.set_index("product_key")["stock_code"].to_frame().join(net.rename("net")).fillna({"net": 0.0})
+        theirs = sql_products.set_index("stock_code")["net_sales"]
+        joined = mine.set_index("stock_code")["net"].to_frame().join(theirs, how="outer").fillna(0.0)
+        bad = joined[(joined["net"] - joined["net_sales"]).abs() > TOLERANCE]
+        if len(bad):
+            problems.append(f"{len(bad)} products differ from v_top_products (first: {bad.index[0]})")
+    for column, dim, key in (("product_key", "dim_product", "product_key"), ("country", "dim_country", "country"),
                              ("date", "dim_date", "date")):
         missing = set(fact[column].dropna()) - set(tables[dim][key])
         if missing:
@@ -112,7 +140,8 @@ def main(argv=None):
     try:
         tables = build_tables(args.database)
         bridge = metrics.read_view("SELECT step, label, rows, value FROM reconciliation", args.database)
-        checks = verify(tables, bridge)
+        sql_products = metrics.read_view("SELECT stock_code, net_sales FROM v_top_products", args.database)
+        checks = verify(tables, bridge, sql_products)
         path = write(tables, args.out)
     except (ReconciliationError, FileNotFoundError) as error:
         sys.exit(f"\nPOWER BI EXPORT STOPPED: {error}")

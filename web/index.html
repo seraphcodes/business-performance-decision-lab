@@ -160,8 +160,8 @@
         <details class="card doc"><summary>How segments are defined</summary>
           <ul class="plain">
             <li><b>Recency</b> = days from the customer's last order to the day after the last invoice in the data. <b>Frequency</b> = number of orders. <b>Monetary</b> = gross product sales.</li>
-            <li>Each is scored 1 to 5 (5 = best) from the share of customers at or below that value, so customers with the same value always get the same score.</li>
-            <li><b>Champions</b>: recency and frequency scores both 4-5. <b>Loyal</b>: both 3 or more. <b>Recent</b>: recency 4-5, low frequency. <b>At risk</b>: recency 1-2, frequency 3 or more. <b>Inactive</b>: recency 1-2, low frequency. <b>Needs attention</b>: everyone else.</li>
+            <li>Each is scored 1 to 5 (5 = best) from the share of customers at or below that value, so customers with the same value always get the same score. Recency: fewer days since the last order scores higher. Frequency and monetary: more orders or more sales score higher. In this data more than 20% of customers have exactly one order, so that group scores 2 and no customer scores 1 for frequency.</li>
+            <li>The first rule that matches applies. <b>Recent &amp; frequent</b>: recency and frequency scores both 4-5. <b>Repeat buyers</b>: both 3 or more (this includes customers with only 2 orders). <b>Recent, low frequency</b>: recency 4-5, frequency 1-2. <b>Repeat, not recent</b>: recency 1-2, frequency 3 or more. <b>Not recent, low frequency</b>: recency 1-2, frequency 1-2. <b>Mid recency, low frequency</b>: everyone else. The monetary score is calculated but not used for the segments; each segment's share of sales is shown in the table.</li>
             <li>These are descriptive labels for the past. They do not predict who will buy again.</li>
           </ul>
         </details>
@@ -170,7 +170,7 @@
           <ul class="plain">
             <li><b>Everyone.</b> Only orders with a customer ID are used; the rest (guest checkouts) cannot be followed over time.</li>
             <li><b>True new customers in Dec 2009.</b> The data starts in Dec 2009, so that group includes people who had already been buying before. It is marked with *.</li>
-            <li><b>Churn.</b> "Inactive" only means no order up to the end of the data. Some of these customers may order later.</li>
+            <li><b>Churn.</b> "Not recent" only means no order for a long time before the end of the data. Some of these customers may order later.</li>
             <li><b>Net value.</b> Customer values are gross sales; credit notes are not matched to customers here.</li>
             <li><b>Who the customers are.</b> Many large accounts are probably businesses buying wholesale, so a few customers can be very large.</li>
           </ul>
@@ -186,7 +186,7 @@
         <article class="card span-12">
           <div class="card-head"><h2>About this report</h2></div>
           <p class="small">The data comes from the same checked pipeline as this website: <code>src/export_powerbi.py</code> writes a star schema (one sales table plus date, product, country, customer and cohort tables) and refuses to write if it does not tie to the reconciliation bridge. The measures (gross sales, cancellations, net revenue, customer shares, cohort retention) use the same definitions as the website. Headline check: gross £19,700,954.46, cancellations −£719,692.94, net £18,981,261.52, the same as the Overview page.</p>
-          <p class="small muted">Limits: the Power BI model has no product relationship (stock codes that differ only by upper/lower case collide), so product visuals can differ slightly from the website. Customer figures use known customers only.</p>
+          <p class="small muted">Limits: products are joined by a numeric key built from the exact stock code, so codes that differ only by upper/lower case stay separate and product totals match the website. Customer figures use known customers only.</p>
           <p class="small"><a href="powerbi/report.pdf">Open the PDF</a> · <a href="https://github.com/seraphcodes/business-performance-decision-lab/tree/main/docs/powerbi">Report file (.pbix) and build guide on GitHub</a> (needs Power BI Desktop, free, Windows)</p>
         </article>
         <article class="card span-12">

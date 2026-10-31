@@ -184,5 +184,6 @@ table.heat.static td { cursor: default; }
 table.heat td.na { background: transparent; }
 table.heat td.base { background: var(--track); color: var(--muted); }
 table.heat th .sz { font-size: 10px; font-weight: 450; color: var(--muted); }
+table.heat td .sz { font-size: 10px; font-weight: 450; opacity: .7; }
 table.heat th.censored { text-decoration: underline dotted; text-underline-offset: 3px; }
 .pbi-shot { display: block; width: 100%; height: auto; border: 1px solid var(--border); border-radius: 10px; background: #fff; }

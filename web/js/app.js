@@ -257,7 +257,7 @@
         var cell = info.cells[k], td;
         if (k > reach) td = el("td", "na", "");
         else {
-          var v = cell ? cell.retention_pct : 0; td = el("td", k === 0 ? "base" : "", pct(v, 0));
+          var v = cell ? cell.retention_pct : 0; td = el("td", k === 0 ? "base" : "", pct(v, 0)); td.appendChild(el("br")); td.appendChild(el("span", "sz", (cell ? cell.active_customers : 0).toLocaleString("en-GB")));
           if (k > 0) td.style.background = "color-mix(in srgb, " + accent + " " + Math.round(Math.min(v / 40, 1) * 72) + "%, transparent)";
           td.title = monthLabel(cm) + " cohort, " + (k === 0 ? "first month" : k + " month(s) later") + ": " + (cell ? cell.active_customers : 0) + " of " + info.size + " customers ordered";
         }
@@ -266,7 +266,8 @@
       t.appendChild(tr);
     });
     var wrap = $("#cohort-wrap"); wrap.textContent = ""; wrap.appendChild(t);
-    $("#cohort-note").textContent = "The small number under each month is the group size. * " + monthLabel(u.first_data_month) + " is the first month of the data, so it also holds customers who were already buying before; read it as 'customers seen for the first time in this data', not new customers. Colour is capped at 40% so the later months stay readable. Columns beyond +" + MAXM + " are not shown.";
+    var inCohorts = order.reduce(function (a, cm) { return a + cohorts[cm].size; }, 0), outside = u.known_customers - inCohorts;
+    $("#cohort-note").textContent = "Each cell shows the share of the cohort that ordered that month, with the number of customers underneath; the small number under each first-order month is the cohort size. Empty cells are months that are not in the data yet, so recent cohorts have fewer months to observe. " + (outside > 0 ? outside.toLocaleString("en-GB") + " of the " + u.known_customers.toLocaleString("en-GB") + " customers first ordered in the partial last month and are in no cohort. " : "") + "* " + monthLabel(u.first_data_month) + " is the first month of the data, so it also holds customers who were already buying before; read it as 'customers seen for the first time in this data', not new customers. Colour is capped at 40% so the later months stay readable. Columns beyond +" + MAXM + " are not shown.";
 
     // segments
     var sw = $("#seg-wrap"); sw.textContent = ""; var st = el("table"), sh = el("tr");
@@ -276,8 +277,8 @@
       [g.customers.toLocaleString("en-GB"), pct(g.customers_pct), pct(g.gross_value_pct), Math.round(g.avg_recency_days).toString(), g.avg_orders.toFixed(1)].forEach(function (x) { tr.appendChild(el("td", "num", x)); });
       st.appendChild(tr); });
     sw.appendChild(st);
-    var champ = C.segments.filter(function (g) { return g.segment === "Champions"; })[0];
-    $("#seg-note").textContent = champ ? "Why it matters: Champions are " + pct(champ.customers_pct) + " of customers but " + pct(champ.gross_value_pct) + " of gross sales to known customers. Segments are descriptive labels, not predictions." : "";
+    var champ = C.segments.filter(function (g) { return g.segment === "Recent & frequent"; })[0];
+    $("#seg-note").textContent = champ ? "Why it matters: the 'Recent & frequent' group is " + pct(champ.customers_pct) + " of customers but " + pct(champ.gross_value_pct) + " of gross sales to known customers. Segments are descriptive labels, not predictions." : "";
 
     // concentration
     renderBars("#list-conc", C.concentration.map(function (c) { return { name: "Top " + c.top_pct + "%", value: c.gross_value }; }), u.known_gross);

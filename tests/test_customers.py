@@ -85,8 +85,9 @@ def test_rfm_scores_and_segments_by_hand(db):
     assert rfm["r_score"].to_dict() == {1001: 4, 1002: 1, 1003: 2, 1004: 3, 1005: 5}
     assert rfm["f_score"].to_dict() == {1001: 5, 1002: 2, 1003: 4, 1004: 4, 1005: 2}
     assert rfm["m_score"].to_dict() == {1001: 4, 1002: 3, 1003: 1, 1004: 5, 1005: 2}
-    assert rfm["segment"].to_dict() == {1001: "Champions", 1002: "Inactive", 1003: "At risk",
-                                        1004: "Loyal", 1005: "Recent"}
+    assert rfm["segment"].to_dict() == {1001: "Recent & frequent", 1002: "Not recent, low frequency",
+                                        1003: "Repeat, not recent", 1004: "Repeat buyers",
+                                        1005: "Recent, low frequency"}
 
 
 def test_customers_with_equal_values_get_equal_scores(tmp_path):
@@ -103,7 +104,7 @@ def test_segment_summary_adds_up(db):
     assert seg["customers"].sum() == 5
     assert seg["gross_value"].sum() == pytest.approx(300.0)
     assert seg["gross_value_pct"].sum() == pytest.approx(100.0)
-    assert seg.loc["Champions", "gross_value"] == pytest.approx(65.0)
+    assert seg.loc["Recent & frequent", "gross_value"] == pytest.approx(65.0)
 
 
 def test_concentration_by_hand(db):

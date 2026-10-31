@@ -172,7 +172,10 @@ GROUP BY c.first_month, m.year_month;
 -- RFM: Recency (days since last order), Frequency (orders), Monetary (gross sales).
 -- Snapshot = the day after the last invoice day in the data. Each score is 1-5
 -- (5 = best) from the cumulative share of customers, so customers with the same
--- value always get the same score (no arbitrary split of ties).
+-- value always get the same score (no arbitrary split of ties). Because many customers
+-- share the lowest frequency (one order), that group can score 2, not 1. The monetary
+-- score is reported but not used in the segment rules. Segment names only describe
+-- the recency and frequency scores; they do not predict behaviour.
 CREATE VIEW v_customer_rfm AS
 WITH base AS (
     SELECT
@@ -197,11 +200,11 @@ scored AS (
 )
 SELECT *,
     CASE
-        WHEN r_score >= 4 AND f_score >= 4 THEN 'Champions'
-        WHEN r_score >= 3 AND f_score >= 3 THEN 'Loyal'
-        WHEN r_score >= 4                  THEN 'Recent'
-        WHEN r_score <= 2 AND f_score >= 3 THEN 'At risk'
-        WHEN r_score <= 2                  THEN 'Inactive'
-        ELSE 'Needs attention'
+        WHEN r_score >= 4 AND f_score >= 4 THEN 'Recent & frequent'
+        WHEN r_score >= 3 AND f_score >= 3 THEN 'Repeat buyers'
+        WHEN r_score >= 4                  THEN 'Recent, low frequency'
+        WHEN r_score <= 2 AND f_score >= 3 THEN 'Repeat, not recent'
+        WHEN r_score <= 2                  THEN 'Not recent, low frequency'
+        ELSE 'Mid recency, low frequency'
     END AS segment
 FROM scored;

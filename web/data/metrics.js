@@ -3,7 +3,7 @@ window.METRICS = {
   "dataset": "Online Retail II, UCI Machine Learning Repository (Chen, 2012), CC BY 4.0",
   "doi": "https://doi.org/10.24432/C5CG6D",
   "currency": "GBP",
-  "built_at": "2026-10-30T13:48:27",
+  "built_at": "2026-10-31T18:00:28",
   "source_file": "online_retail_II.xlsx",
   "source_sha256": "bcbe73b35f5b7babf197fb0cb983a11f5d9ff929078d4aa53d171b1f2df2e980",
   "reconciliation_checks_passed": "20 of 20",
@@ -4743,7 +4743,7 @@ window.METRICS = {
   ],
   "segments": [
    {
-    "segment": "Champions",
+    "segment": "Recent & frequent",
     "customers": 1583,
     "customers_pct": 27.0506,
     "gross_value": 12001832.04,
@@ -4752,7 +4752,7 @@ window.METRICS = {
     "avg_orders": 14.74
    },
    {
-    "segment": "Loyal",
+    "segment": "Repeat buyers",
     "customers": 1445,
     "customers_pct": 24.6924,
     "gross_value": 2716257.01,
@@ -4761,7 +4761,7 @@ window.METRICS = {
     "avg_orders": 4.67
    },
    {
-    "segment": "Recent",
+    "segment": "Recent, low frequency",
     "customers": 239,
     "customers_pct": 4.0841,
     "gross_value": 80166.07,
@@ -4770,7 +4770,7 @@ window.METRICS = {
     "avg_orders": 1.0
    },
    {
-    "segment": "Needs attention",
+    "segment": "Mid recency, low frequency",
     "customers": 246,
     "customers_pct": 4.2037,
     "gross_value": 101102.7,
@@ -4779,7 +4779,7 @@ window.METRICS = {
     "avg_orders": 1.0
    },
    {
-    "segment": "At risk",
+    "segment": "Repeat, not recent",
     "customers": 1206,
     "customers_pct": 20.6083,
     "gross_value": 1848329.19,
@@ -4788,7 +4788,7 @@ window.METRICS = {
     "avg_orders": 4.05
    },
    {
-    "segment": "Inactive",
+    "segment": "Not recent, low frequency",
     "customers": 1133,
     "customers_pct": 19.3609,
     "gross_value": 377253.99,

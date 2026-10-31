@@ -33,7 +33,8 @@ def test_fact_ties_to_the_bridge_and_only_has_sales_rows(tables, database):
 
 def test_every_fact_key_has_a_dimension_row(tables):
     fact = tables["fact_sales"]
-    assert set(fact["stock_code"]) <= set(tables["dim_product"]["stock_code"])
+    assert set(fact["product_key"]) <= set(tables["dim_product"]["product_key"])
+    assert "stock_code" not in fact.columns
     assert set(fact["country"]) <= set(tables["dim_country"]["country"])
     assert set(fact["date"]) <= set(tables["dim_date"]["date"])
     assert set(fact["customer_id"].dropna()) == set(tables["dim_customer"]["customer_id"])
@@ -47,6 +48,7 @@ def test_partial_month_is_flagged_in_dim_date(tables):
 
 def test_dimensions_have_unique_keys(tables):
     assert tables["dim_product"]["stock_code"].is_unique
+    assert tables["dim_product"]["product_key"].is_unique
     assert tables["dim_date"]["date"].is_unique
     assert tables["dim_customer"]["customer_id"].is_unique
 
@@ -82,3 +84,32 @@ def test_customers_only_on_credit_notes_do_not_break_the_export(tmp_path):
     fact = tables["fact_sales"]
     assert fact.loc[fact["row_class"] == "cancellation", "customer_id"].isna().all()
     assert set(tables["dim_customer"]["customer_id"]) == {1001}
+
+
+def _sql_products(database):
+    return metrics.read_view("SELECT stock_code, net_sales FROM v_top_products", database)
+
+
+def test_product_totals_equal_the_sql_view(tables, database):
+    verify(tables, _bridge(database), _sql_products(database))
+
+
+def test_codes_that_differ_only_by_case_get_separate_keys(tmp_path):
+    from tests.helpers import raw_row
+    rows = [raw_row("500001", "85123A", "WHITE HEART", 2, "2010-03-05 10:00", 5.0, 1001.0),
+            raw_row("500002", "85123a", "WHITE HEART", 3, "2010-03-06 10:00", 5.0, 1001.0)]
+    path = tmp_path / "case.db"
+    build_from_sheets({"S": pd.DataFrame(rows)}, path, baseline=None, log=lambda *_: None)
+    tables = build_tables(path)
+    products = tables["dim_product"].set_index("stock_code")
+    assert products.loc["85123A", "product_key"] != products.loc["85123a", "product_key"]
+    net = tables["fact_sales"].groupby("product_key")["line_value"].sum()
+    assert net[products.loc["85123A", "product_key"]] == pytest.approx(10.0)
+    assert net[products.loc["85123a", "product_key"]] == pytest.approx(15.0)
+    verify(tables, _bridge(path), _sql_products(path))   # still ties to SQL, nothing merged
+
+
+def test_export_refuses_when_a_product_total_differs_from_sql(tables, database):
+    tables["fact_sales"].loc[tables["fact_sales"].index[0], "product_key"] = tables["dim_product"]["product_key"].iloc[-1]
+    with pytest.raises(ReconciliationError, match="v_top_products"):
+        verify(tables, _bridge(database), _sql_products(database))
