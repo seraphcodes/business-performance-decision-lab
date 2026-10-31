@@ -16,7 +16,8 @@ case-sensitive (170 pairs such as 15056BL / 15056bl exist as separate codes, and
 carry different descriptions). Relating on stock_code would therefore join those codes to each
 other. So dim_product gets an integer product_key built from the EXACT stock code, fact_sales
 carries only that key, and the relationship is product_key -> product_key. No two codes are
-merged, and product totals equal v_top_products.
+merged, and product totals equal v_top_products. Use product_label (unique ignoring case) to
+label visuals; a text column such as stock_code is itself compared without case in Power BI.
 """
 import argparse
 import shutil
@@ -60,6 +61,10 @@ def build_tables(database=DATABASE):
         "WHERE row_class IN ('normal_sale', 'cancellation'))", database)
     products = products.sort_values("stock_code", kind="stable").reset_index(drop=True)   # exact (case-sensitive) order
     products.insert(0, "product_key", range(1, len(products) + 1))
+    # Power BI also folds case inside a text column, so grouping a visual by stock_code would still
+    # show 85123A and 85123a as one product. product_label is unique even when case is ignored.
+    has_lower = products["stock_code"] != products["stock_code"].str.upper()
+    products["product_label"] = products["stock_code"].where(~has_lower, products["stock_code"] + " (lower-case code)")
     fact["product_key"] = fact["stock_code"].map(dict(zip(products["stock_code"], products["product_key"]))).astype("Int64")
     fact = fact.drop(columns=["stock_code"])   # the key replaces it, so no report can group on case-folded codes
     countries = pd.DataFrame({"country": sorted(fact["country"].dropna().unique())})
@@ -89,8 +94,9 @@ def verify(tables, bridge, sql_products=None):
     problems = [f"{name}: {got:,.2f} vs bridge {want:,.2f}" for name, got, want in checks
                 if abs(got - want) > TOLERANCE]
     products = tables["dim_product"]
-    if not products["product_key"].is_unique or not products["stock_code"].is_unique:
-        problems.append("dim_product has duplicate keys or stock codes")
+    if (not products["product_key"].is_unique or not products["stock_code"].is_unique
+            or not products["product_label"].str.lower().is_unique):
+        problems.append("dim_product has duplicate keys, stock codes or labels (labels must be unique even ignoring case)")
     if fact["product_key"].isna().any():
         problems.append(f"{int(fact['product_key'].isna().sum())} fact rows have no product_key")
     if sql_products is not None:

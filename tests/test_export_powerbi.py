@@ -106,6 +106,8 @@ def test_codes_that_differ_only_by_case_get_separate_keys(tmp_path):
     net = tables["fact_sales"].groupby("product_key")["line_value"].sum()
     assert net[products.loc["85123A", "product_key"]] == pytest.approx(10.0)
     assert net[products.loc["85123a", "product_key"]] == pytest.approx(15.0)
+    labels = tables["dim_product"]["product_label"]
+    assert labels.str.lower().is_unique   # a visual grouped by label cannot fold the two codes together
     verify(tables, _bridge(path), _sql_products(path))   # still ties to SQL, nothing merged
 
 
