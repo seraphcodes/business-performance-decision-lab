@@ -61,6 +61,22 @@ already checked.
   (repository Settings > Pages > Source: **GitHub Actions**). The live site is
   https://seraphcodes.github.io/business-performance-decision-lab/
 
+## Power BI report
+
+The same reconciled data is also available as a Power BI report (3 pages: Overview,
+Customers, Methodology). `python -m src.export_powerbi` writes a star schema to
+`data/processed/powerbi/` and refuses to write if it does not tie to the
+reconciliation bridge. The DAX measures are in `docs/powerbi/measures.dax` and the
+steps to rebuild it are in `docs/powerbi/build_guide.md`.
+
+- Report file: `docs/powerbi/decision_lab.pbix` (open with free Power BI Desktop, Windows)
+- PDF: `docs/powerbi/report.pdf`
+- Static preview on the website: the **Power BI** page
+- Limit: the model has no product relationship (stock codes that differ only by
+  upper/lower case collide), so product visuals can differ slightly from the website.
+
+![Power BI overview](docs/powerbi/screenshot_overview.jpg)
+
 ## Screenshots
 
 **What-If calculator** (arithmetic on a real 12-month baseline, not a forecast)

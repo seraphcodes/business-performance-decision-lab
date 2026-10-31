@@ -32,6 +32,8 @@
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V10h3v10H5zm5.5 0V4h3v16h-3zM16 20v-7h3v7h-3z"/></svg>What-If</a>
       <a href="#customers" data-page="customers" class="nav-link">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm7 .5a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6zM9 13c-3 0-6 1.5-6 4v2h12v-2c0-2.5-3-4-6-4zm7 .5c-.5 0-1 0-1.5.1 1.2.9 2 2.1 2 3.4V19H21v-1.7c0-2.2-2.6-3.8-5-3.8z"/></svg>Customers</a>
+      <a href="#powerbi" data-page="powerbi" class="nav-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V9h3.5v11H5zm5.25 0V4h3.5v16h-3.5zM15.5 20v-7H19v7h-3.5z"/></svg>Power BI</a>
       <a href="#method" data-page="method" class="nav-link">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h9l4 4v14H6V3zm8 1.5V8h3.5L14 4.5zM8.5 12h8v1.5h-8V12zm0 3.5h8V17h-8v-1.5z"/></svg>Methodology</a>
     </nav>
@@ -169,6 +171,32 @@
             <li><b>Net value.</b> Customer values are gross sales; credit notes are not matched to customers here.</li>
             <li><b>Who the customers are.</b> Many large accounts are probably businesses buying wholesale, so a few customers can be very large.</li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="page-powerbi" class="page" hidden>
+      <header class="page-head">
+        <div><h1>Power BI report</h1><p class="muted">The same numbers, rebuilt as a Power BI report from the same reconciled data. This is a static preview; the report file is in the repository.</p></div>
+      </header>
+      <div class="grid">
+        <article class="card span-12">
+          <div class="card-head"><h2>About this report</h2></div>
+          <p class="small">The data comes from the same checked pipeline as this website: <code>src/export_powerbi.py</code> writes a star schema (one sales table plus date, product, country, customer and cohort tables) and refuses to write if it does not tie to the reconciliation bridge. The measures (gross sales, cancellations, net revenue, customer shares, cohort retention) use the same definitions as the website. Headline check: gross £19,700,954.46, cancellations −£719,692.94, net £18,981,261.52, the same as the Overview page.</p>
+          <p class="small muted">Limits: the Power BI model has no product relationship (stock codes that differ only by upper/lower case collide), so product visuals can differ slightly from the website. Customer figures use known customers only.</p>
+          <p class="small"><a href="powerbi/report.pdf">Open the PDF</a> · <a href="https://github.com/seraphcodes/business-performance-decision-lab/tree/main/docs/powerbi">Report file (.pbix) and build guide on GitHub</a> (needs Power BI Desktop, free, Windows)</p>
+        </article>
+        <article class="card span-12">
+          <div class="card-head"><h2>Overview</h2></div>
+          <img class="pbi-shot" src="img/powerbi-overview.jpg" alt="Power BI Overview page: headline figures, net revenue by month and gross sales by country">
+        </article>
+        <article class="card span-12">
+          <div class="card-head"><h2>Customers</h2></div>
+          <img class="pbi-shot" src="img/powerbi-customers.jpg" alt="Power BI Customers page: customer measures, RFM segment shares and cohort retention matrix">
+        </article>
+        <article class="card span-12">
+          <div class="card-head"><h2>Methodology</h2></div>
+          <img class="pbi-shot" src="img/powerbi-methodology.jpg" alt="Power BI Methodology page: rules and limits">
         </article>
       </div>
     </section>

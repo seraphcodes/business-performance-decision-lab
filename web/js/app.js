@@ -290,8 +290,8 @@
     renderKpis(); renderMonthly(); renderCancel(); renderLists(); renderWhatIf(); renderBridge(); renderCustomers();
   }
   function route() {
-    var page = (location.hash || "#overview").slice(1); if (["overview", "whatif", "customers", "method"].indexOf(page) === -1) page = "overview";
-    ["overview", "whatif", "customers", "method"].forEach(function (p) { $("#page-" + p).hidden = p !== page; });
+    var page = (location.hash || "#overview").slice(1); if (["overview", "whatif", "customers", "powerbi", "method"].indexOf(page) === -1) page = "overview";
+    ["overview", "whatif", "customers", "powerbi", "method"].forEach(function (p) { $("#page-" + p).hidden = p !== page; });
     document.querySelectorAll(".nav-link").forEach(function (a) { a.classList.toggle("active", a.dataset.page === page); });
     renderAll(); window.scrollTo(0, 0);
   }
